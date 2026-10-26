@@ -246,6 +246,10 @@ export default function App() {
   };
 
   const handleSwitchRole = async (targetRole) => {
+    if (targetRole === 'public') {
+      handleLogout();
+      return;
+    }
     const roleEmails = {
       ngo: 'contact@aashray-uplift.org',
       corporate: 'marcus.chen@apextech.com',
