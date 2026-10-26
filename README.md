@@ -1,5 +1,9 @@
 # 🌍 ImpactConnect — Social Impact & Community SDG Partnership Platform
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fshivam404x%2FImpactConnect)
+[![GitHub Repository](https://img.shields.io/badge/GitHub-shivam404x%2FImpactConnect-181717?logo=github)](https://github.com/shivam404x/ImpactConnect)
+[![UN SDGs](https://img.shields.io/badge/UN%20SDGs-1%20through%2017-00689D.svg)](https://sdgs.un.org/goals)
+
 > **Accelerating UN Sustainable Development Goals (SDGs) by bridging the gap between grassroots NGOs, community organizations, philanthropic donors, corporate CSR programs, skilled professionals, and volunteers.**
 
 ---
