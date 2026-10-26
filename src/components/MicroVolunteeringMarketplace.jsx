@@ -286,7 +286,7 @@ export default function MicroVolunteeringMarketplace({
                   rows={2}
                   value={skillsNote}
                   onChange={(e) => setSkillsNote(e.target.value)}
-                  placeholder="e.g. Fluent in Hindi, experienced in proofreading..."
+                  placeholder="e.g. Community outreach, content proofreading, data analysis..."
                   className="w-full p-2.5 rounded-xl border border-slate-200 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#16A36A]"
                 />
               </div>
