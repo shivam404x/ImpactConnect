@@ -2616,37 +2616,15 @@
   ],
   "impact_stories": [
     {
-      "id": "story-1793041314009",
-      "project_id": "proj-1",
-      "ngo_name": "Verified NGO",
-      "title": "Solar RO Pure Water Transformation",
-      "cause": "Clean Water",
-      "before_image": "https://images.unsplash.com/test-before.jpg",
-      "after_image": "https://images.unsplash.com/test-after.jpg",
-      "before_description": "High arsenic open well",
-      "after_description": "Clean RO water station",
-      "quantified_outcomes": [
-        {
-          "label": "Clean Water",
-          "value": "50000 L/mo"
-        }
-      ],
-      "verification_status": "field_audited",
-      "auditor_name": "Authorized Field Inspector",
-      "consent_verified": true,
-      "published_date": "2026-10-26",
-      "created_at": "2026-10-26T19:01:54.009Z"
-    },
-    {
       "id": "story-1",
       "project_id": "proj-1",
       "ngo_name": "Jal Jeevan Mission Trust",
       "title": "From Toxic Arsenic Groundwater to Safe Solar RO: Darbhanga Ward 12 Transformation",
       "cause": "Clean Water & Public Health",
-      "before_image": "https://images.unsplash.com/photo-1541252260730-0412e8e2108e?auto=format&fit=crop&w=800&q=80",
-      "after_image": "https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=800&q=80",
-      "before_description": "High turbidity open wells with arsenic levels 3.8x above WHO safety limit. Children suffered from frequent gastrointestinal infections.",
-      "after_description": "Installed 5,000 LPD solar-powered reverse osmosis station with automated mineral remineralization and 24/7 smart RFID water dispensing.",
+      "before_image": "https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&w=800&q=80",
+      "after_image": "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=800&q=80",
+      "before_description": "High turbidity open wells with arsenic levels 3.8x above WHO safety limit. Children suffered from frequent gastrointestinal infections and chronic waterborne illnesses.",
+      "after_description": "Installed a 5,000 LPD solar-powered reverse osmosis station with automated mineral remineralization and 24/7 smart RFID community water dispensing.",
       "quantified_outcomes": [
         {
           "label": "Clean Water Dispensed",
@@ -2674,8 +2652,8 @@
       "cause": "Climate Action & Bio-Diversity",
       "before_image": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=800&q=80",
       "after_image": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80",
-      "before_description": "Construction debris dumping ground with compacted alkaline soil, zero bird nesting activity, and severe PM10 dust emission.",
-      "after_description": "Decompacted soil with organic biomass, planted 42 native species at 3 plants/m² density. Self-sustaining canopy reached 14 feet height.",
+      "before_description": "Construction debris dumping ground with compacted alkaline soil, zero bird nesting activity, and severe PM10 dust emission into nearby neighborhoods.",
+      "after_description": "Decompacted soil with organic biomass, planted 42 native species at 3 plants/m² density. Self-sustaining multi-layered canopy reached 14 feet height with active biodiversity.",
       "quantified_outcomes": [
         {
           "label": "Native Trees Thriving",
@@ -2703,8 +2681,8 @@
       "cause": "Quality Education & Gender Equality",
       "before_image": "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80",
       "after_image": "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80",
-      "before_description": "Zero access to digital devices. Girls had to walk 9 km to nearest cyber cafe for scholarship and board exam forms.",
-      "after_description": "Established 20-workstation solar powered digital classroom with Python curriculum, robotics kits, and offline Wikipedia mirrors.",
+      "before_description": "Zero access to digital devices. Girls had to walk 9 km to nearest cyber cafe for scholarship and board exam forms, resulting in heavy female dropout rates.",
+      "after_description": "Established 20-workstation solar powered digital classroom with Python curriculum, robotics kits, and offline Wikipedia mirrors directly in the village school.",
       "quantified_outcomes": [
         {
           "label": "Girls Trained in Python",
@@ -2720,7 +2698,36 @@
         }
       ],
       "verification_status": "field_audited",
-      "auditor_name": "Barmer District Education Officer (Observer)",
+      "auditor_name": "Rajasthan State Education Outreach Officer",
+      "consent_verified": true,
+      "published_date": "2026-10-25"
+    },
+    {
+      "id": "story-4",
+      "project_id": "proj-3",
+      "ngo_name": "Arogya Rural Health Trust",
+      "title": "Mobile Telemedicine Clinic Delivering Preventative Healthcare Across 14 Tribal Hamlets",
+      "cause": "Healthcare & Preventative Medicine",
+      "before_image": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80",
+      "after_image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80",
+      "before_description": "Isolated villages situated 35 km away from the nearest sub-district hospital with zero prenatal diagnostic equipment or maternal health checkups.",
+      "after_description": "Deployed customized 4x4 diagnostic van equipped with portable sonography, ECG, automated biochemistry analyzers, and satellite broadband telemedicine.",
+      "quantified_outcomes": [
+        {
+          "label": "Free Consultations Delivered",
+          "value": "3,450 Patients"
+        },
+        {
+          "label": "High-Risk Pregnancies Managed",
+          "value": "112 Mothers"
+        },
+        {
+          "label": "Villages Reached On Schedule",
+          "value": "14 Hamlets Weekly"
+        }
+      ],
+      "verification_status": "field_audited",
+      "auditor_name": "National Health Mission District Quality Assessor",
       "consent_verified": true,
       "published_date": "2026-10-26"
     }

@@ -27,8 +27,8 @@ export default function ImpactStoriesPage({
   // Form State
   const [title, setTitle] = useState('');
   const [cause, setCause] = useState('Clean Water & Health');
-  const [beforeImage, setBeforeImage] = useState('https://images.unsplash.com/photo-1541252260730-0412e8e2108e?auto=format&fit=crop&w=800&q=80');
-  const [afterImage, setAfterImage] = useState('https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=800&q=80');
+  const [beforeImage, setBeforeImage] = useState('https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&w=800&q=80');
+  const [afterImage, setAfterImage] = useState('https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=800&q=80');
   const [beforeDescription, setBeforeDescription] = useState('');
   const [afterDescription, setAfterDescription] = useState('');
   const [metricLabel, setMetricLabel] = useState('Clean Water Generated');
@@ -166,8 +166,22 @@ export default function ImpactStoriesPage({
                       </span>
                     </div>
                     
-                    <div className="h-64 sm:h-72 w-full rounded-2xl overflow-hidden bg-slate-200 shadow-inner">
-                      <img src={st.before_image} alt="Before intervention" className="w-full h-full object-cover" />
+                    <div className="h-64 sm:h-72 w-full rounded-2xl overflow-hidden bg-slate-200 shadow-inner relative group">
+                      <img 
+                        src={st.before_image} 
+                        alt="Before intervention" 
+                        loading="lazy"
+                        crossOrigin="anonymous"
+                        referrerPolicy="no-referrer"
+                        onError={(e) => {
+                          e.target.onerror = null;
+                          e.target.src = 'https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&w=800&q=80';
+                        }}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                      />
+                      <div className="absolute bottom-2 left-2 px-2.5 py-1 rounded-lg bg-black/60 backdrop-blur-sm text-white text-[10px] font-bold">
+                        Baseline Condition
+                      </div>
                     </div>
 
                     <p className="text-xs text-slate-600 leading-relaxed">
@@ -183,8 +197,23 @@ export default function ImpactStoriesPage({
                       </span>
                     </div>
 
-                    <div className="h-64 sm:h-72 w-full rounded-2xl overflow-hidden bg-slate-200 shadow-inner">
-                      <img src={st.after_image} alt="After intervention" className="w-full h-full object-cover" />
+                    <div className="h-64 sm:h-72 w-full rounded-2xl overflow-hidden bg-slate-200 shadow-inner relative group">
+                      <img 
+                        src={st.after_image} 
+                        alt="After intervention" 
+                        loading="lazy"
+                        crossOrigin="anonymous"
+                        referrerPolicy="no-referrer"
+                        onError={(e) => {
+                          e.target.onerror = null;
+                          e.target.src = 'https://images.unsplash.com/photo-1559827291-72ee739d0d9a?auto=format&fit=crop&w=800&q=80';
+                        }}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                      />
+                      <div className="absolute bottom-2 left-2 px-2.5 py-1 rounded-lg bg-emerald-950/70 backdrop-blur-sm text-emerald-300 text-[10px] font-bold flex items-center space-x-1">
+                        <CheckCircle2 className="w-3 h-3 text-[#16A36A]" />
+                        <span>Delivered & Verified</span>
+                      </div>
                     </div>
 
                     <p className="text-xs text-slate-700 leading-relaxed font-medium">
