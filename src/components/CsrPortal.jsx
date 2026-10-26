@@ -257,15 +257,19 @@ export default function CsrPortal({
               <div key={proj.id} className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex flex-col justify-between hover:shadow-md transition">
                 <div>
                   <img
-                    src={proj.cover_image}
+                    src={proj.cover_image || proj.image || 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80'}
                     alt={proj.title}
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80';
+                    }}
                     className="w-full h-40 object-cover"
                   />
                   <div className="p-5">
                     <div className="flex items-center space-x-2 text-[11px] font-bold text-[#16A36A] mb-1">
-                      <span>{proj.cause_category.toUpperCase()}</span>
+                      <span>{(proj.cause_category || proj.cause || 'Community Impact').toUpperCase()}</span>
                       <span>•</span>
-                      <span className="text-slate-400">{proj.location_city}, {proj.location_country}</span>
+                      <span className="text-slate-400">{[proj.location_city || proj.city, proj.location_country || proj.country || 'Global'].filter(Boolean).join(', ')}</span>
                     </div>
                     <h3 className="text-base font-black text-slate-900 line-clamp-1">{proj.title}</h3>
                     <p className="text-xs text-slate-600 mt-1 line-clamp-2">{proj.description}</p>

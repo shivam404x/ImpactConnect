@@ -380,7 +380,7 @@ export default function SmartAvailabilityCalendar({
                   <div className="space-y-1.5">
                     <div className="flex items-center space-x-2">
                       <span className="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-[10px] font-bold uppercase">
-                        {com.status.toUpperCase()} CONFIRMATION
+                        {(com?.status || 'confirmed').toUpperCase()} CONFIRMATION
                       </span>
                       <span className="text-xs text-slate-400">• Reg ID: {com.id}</span>
                     </div>

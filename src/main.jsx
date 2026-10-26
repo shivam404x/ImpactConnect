@@ -14,28 +14,32 @@ class ErrorBoundary extends Component {
   }
 
   componentDidCatch(error, errorInfo) {
-    console.error('Vault Render Error:', error, errorInfo);
+    console.error('ImpactConnect Render Error:', error, errorInfo);
   }
 
   render() {
     if (this.state.hasError) {
       return (
-        <div style={{ minHeight: '100vh', background: '#020617', color: '#f8fafc', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '20px', fontFamily: 'sans-serif' }}>
-          <div style={{ maxWidth: '480px', width: '100%', background: '#0f172a', padding: '30px', borderRadius: '24px', border: '1px solid #334155', textAlign: 'center' }}>
-            <h2 style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '10px' }}>KRMU Vault Notice</h2>
-            <p style={{ fontSize: '13px', color: '#94a3b8', marginBottom: '20px' }}>An interface update took place. Click below to reload your question paper vault.</p>
+        <div style={{ minHeight: '100vh', background: '#F8FAFC', color: '#0F172A', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '24px', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+          <div style={{ maxWidth: '480px', width: '100%', background: '#FFFFFF', padding: '36px', borderRadius: '24px', border: '1px solid #E2E8F0', boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01)', textAlign: 'center' }}>
+            <div style={{ width: '48px', height: '48px', borderRadius: '16px', background: '#ECFDF5', color: '#16A36A', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px', fontSize: '24px' }}>
+              🌍
+            </div>
+            <h2 style={{ fontSize: '20px', fontWeight: '900', color: '#0F172A', marginBottom: '8px', letterSpacing: '-0.02em' }}>ImpactConnect Notice</h2>
+            <p style={{ fontSize: '13px', color: '#64748B', lineHeight: '1.5', marginBottom: '24px' }}>
+              An interface state update was synchronized. Click below to reload your impact workspace.
+            </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', alignItems: 'center' }}>
               <button
                 onClick={() => {
                   try {
-                    localStorage.removeItem('krmu_tab_violations');
                     sessionStorage.clear();
                   } catch (e) {}
                   window.location.reload();
                 }}
-                style={{ background: '#4f46e5', color: '#ffffff', border: 'none', padding: '10px 24px', borderRadius: '12px', fontWeight: 'bold', cursor: 'pointer', fontSize: '14px', width: '100%' }}
+                style={{ background: '#16A36A', color: '#FFFFFF', border: 'none', padding: '12px 24px', borderRadius: '14px', fontWeight: 'bold', cursor: 'pointer', fontSize: '13px', width: '100%', transition: 'all 0.2s' }}
               >
-                Reload Vault
+                Reload ImpactConnect
               </button>
               <button
                 onClick={() => {
@@ -45,15 +49,15 @@ class ErrorBoundary extends Component {
                   } catch (e) {}
                   window.location.reload();
                 }}
-                style={{ background: 'transparent', color: '#94a3b8', border: '1px solid #334155', padding: '8px 20px', borderRadius: '12px', fontWeight: '600', cursor: 'pointer', fontSize: '12px', width: '100%' }}
+                style={{ background: 'transparent', color: '#64748B', border: '1px solid #CBD5E1', padding: '10px 20px', borderRadius: '14px', fontWeight: '600', cursor: 'pointer', fontSize: '12px', width: '100%' }}
               >
-                Clear Cache &amp; Fresh Start
+                Clear Local Cache &amp; Fresh Start
               </button>
             </div>
             {this.state.error && (
-              <details style={{ marginTop: '16px', textAlign: 'left', fontSize: '11px', color: '#64748b' }}>
-                <summary style={{ cursor: 'pointer', color: '#94a3b8' }}>Technical details</summary>
-                <pre style={{ marginTop: '8px', overflow: 'auto', background: '#020617', padding: '8px', borderRadius: '8px', color: '#f43f5e' }}>
+              <details style={{ marginTop: '20px', textAlign: 'left', fontSize: '11px', color: '#94A3B8' }}>
+                <summary style={{ cursor: 'pointer', color: '#64748B', fontWeight: '600' }}>Technical details</summary>
+                <pre style={{ marginTop: '8px', overflow: 'auto', background: '#F1F5F9', padding: '12px', borderRadius: '12px', color: '#E11D48', fontFamily: 'monospace', fontSize: '11px' }}>
                   {this.state.error.message || String(this.state.error)}
                 </pre>
               </details>

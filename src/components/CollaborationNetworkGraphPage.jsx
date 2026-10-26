@@ -207,7 +207,7 @@ export default function CollaborationNetworkGraphPage({
                         fontWeight="bold"
                         className="pointer-events-none"
                       >
-                        {node.label.charAt(0).toUpperCase()}
+                        {(node?.label || 'P').charAt(0).toUpperCase()}
                       </text>
 
                       {/* Label Text below node */}

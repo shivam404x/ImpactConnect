@@ -125,7 +125,7 @@ export default function CollaborationWorkspaceModal({
             <div>
               <div className="flex items-center space-x-2">
                 <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">
-                  {partnership.status.toUpperCase()} COLLABORATION
+                  {(partnership?.status || 'active').toUpperCase()} COLLABORATION
                 </span>
                 <span className="text-xs text-slate-400">• ID: {partnership.id}</span>
               </div>

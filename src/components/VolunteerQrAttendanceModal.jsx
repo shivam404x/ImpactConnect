@@ -405,7 +405,7 @@ export default function VolunteerQrAttendanceModal({
                       <span>KIOSK CAMERA • ACTIVE</span>
                     </span>
                     <span className="font-mono text-slate-300">
-                      EVENT: {selectedEvent.id.toUpperCase()}
+                      EVENT: {(selectedEvent?.id || 'EV1').toUpperCase()}
                     </span>
                   </div>
 
