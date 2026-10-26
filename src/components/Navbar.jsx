@@ -11,7 +11,6 @@ import {
   Layers, 
   HeartHandshake, 
   Briefcase, 
-  Globe,
   Sparkles,
   Map,
   Camera,
@@ -61,12 +60,6 @@ export default function Navbar({
     setUserDropdownOpen(false);
     setRoleDropdownOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const toggleLanguage = () => {
-    if (setLanguage) {
-      setLanguage(language === 'en' ? 'hi' : 'en');
-    }
   };
 
   // Determine current active role label and destination dashboard
@@ -300,16 +293,6 @@ export default function Navbar({
               </button>
             )}
 
-            {/* Language Switcher */}
-            <button
-              onClick={toggleLanguage}
-              className="flex items-center space-x-1 px-2.5 py-1.5 rounded-xl border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-xs font-bold text-slate-700 transition"
-              title="Toggle English / Hindi (हिन्दी)"
-            >
-              <Globe className="w-3.5 h-3.5 text-[#16A36A]" />
-              <span>{language === 'en' ? 'हिन्दी' : 'EN'}</span>
-            </button>
-
             {/* Notification Bell */}
             <button
               onClick={onOpenNotifications}
@@ -394,12 +377,6 @@ export default function Navbar({
 
           {/* 4. MOBILE / TABLET CONTROLS */}
           <div className="flex lg:hidden items-center space-x-1.5">
-            <button
-              onClick={toggleLanguage}
-              className="px-2 py-1.5 rounded-lg border border-slate-200 text-xs font-bold text-slate-700"
-            >
-              {language === 'en' ? 'हिन्दी' : 'EN'}
-            </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition"
