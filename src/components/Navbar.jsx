@@ -42,8 +42,6 @@ export default function Navbar({
   onLogout,
   onOpenNotifications,
   unreadCount = 0,
-  language = 'en',
-  setLanguage,
   onSwitchRole,
   onOpenPostProject,
   onOpenNeedToAction,
@@ -58,7 +56,7 @@ export default function Navbar({
   const [roleDropdownOpen, setRoleDropdownOpen] = useState(false);
 
   const navRef = useRef(null);
-  const t = translations[language] || translations.en;
+  const t = translations.en;
 
   // Close dropdown on outside click
   useEffect(() => {

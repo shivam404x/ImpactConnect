@@ -314,8 +314,6 @@ export default function App() {
         onOpenCsrEvidence={() => setIsCsrEvidenceOpen(true)}
         onOpenNotifications={() => setIsNotificationCenterOpen(true)}
         unreadCount={unreadCount}
-        language={language}
-        setLanguage={setLanguage}
         onSwitchRole={handleSwitchRole}
         onOpenCompatibilityChecker={() => {
           setCompatibilityTargetNgo(ngos[0] || null);
