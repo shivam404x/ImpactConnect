@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="16" fill="#16A36A" />
+  <!-- Minimal connected heart and leaf emblem in white -->
+  <path d="M32 46.5L30.1 44.8C20.6 36.3 14.5 30.7 14.5 23.8C14.5 18.2 18.9 13.8 24.5 13.8C27.7 13.8 30.7 15.2 32 17.6C33.3 15.2 36.3 13.8 39.5 13.8C45.1 13.8 49.5 18.2 49.5 23.8C49.5 30.7 43.4 36.3 33.9 44.8L32 46.5Z" fill="white" />
+  <!-- Inner leaf vein / connection node -->
+  <path d="M32 23C32 23 35 28 35 32C35 34.5 33.5 36 32 37.5C30.5 36 29 34.5 29 32C29 28 32 23 32 23Z" fill="#16A36A" />
+  <circle cx="32" cy="21" r="2.5" fill="white" />
+</svg>

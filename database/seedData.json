@@ -1,0 +1,2827 @@
+{
+  "users": [
+    {
+      "id": "user-admin",
+      "name": "Sarah Mitchell",
+      "email": "admin@impactconnect.org",
+      "role": "admin",
+      "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&h=150&q=80",
+      "created_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "user-ngo-1",
+      "name": "Dr. Sunita Deshmukh",
+      "email": "contact@aashray-uplift.org",
+      "role": "ngo",
+      "ngo_id": "ngo-1",
+      "organization_name": "Aashray Rural & Slum Upliftment Trust",
+      "avatar": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=150&h=150&q=80",
+      "created_at": "2026-01-15T09:00:00Z"
+    },
+    {
+      "id": "user-ngo-2",
+      "name": "Amina Mwangi",
+      "email": "partnerships@brightpathliteracy.org",
+      "role": "ngo",
+      "ngo_id": "ngo-2",
+      "organization_name": "BrightPath Global Literacy Foundation",
+      "avatar": "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=150&h=150&q=80",
+      "created_at": "2026-02-10T11:30:00Z"
+    },
+    {
+      "id": "user-supp-1",
+      "name": "Marcus Chen",
+      "email": "marcus.chen@apextech.com",
+      "role": "corporate",
+      "supporter_type": "corporate_csr",
+      "organization_name": "Apex Global CSR Foundation",
+      "company_csr_budget": "$150,000 Annual Community Pool",
+      "skills": [
+        "CSR Grantmaking",
+        "Tech Hardware",
+        "ESG Auditing"
+      ],
+      "interests": [
+        "education",
+        "environment",
+        "poverty"
+      ],
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&h=150&q=80",
+      "favorites": [
+        "proj-1",
+        "proj-2"
+      ],
+      "created_at": "2026-02-01T00:00:00Z"
+    },
+    {
+      "id": "user-supp-2",
+      "name": "Dr. Ramesh Kulkarni",
+      "email": "dr.kulkarni@healthnet.org",
+      "role": "supporter",
+      "supporter_type": "skilled_professional",
+      "organization_name": "Apex Tele-Radiology Group",
+      "skills": [
+        "Ultrasound Sonography",
+        "Telemedicine",
+        "Maternal Health"
+      ],
+      "interests": [
+        "healthcare",
+        "disability"
+      ],
+      "avatar": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=150&h=150&q=80",
+      "favorites": [
+        "proj-3"
+      ],
+      "created_at": "2026-02-15T00:00:00Z"
+    },
+    {
+      "id": "user-supp-3",
+      "name": "Priya Sharma",
+      "email": "priya.sharma@earthguard.org",
+      "role": "supporter",
+      "supporter_type": "individual_volunteer",
+      "organization_name": "Youth Climate Action",
+      "skills": [
+        "Tree Planting",
+        "Community Mobilization",
+        "UI/UX Design"
+      ],
+      "interests": [
+        "environment",
+        "women_welfare"
+      ],
+      "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&h=150&q=80",
+      "favorites": [
+        "proj-4",
+        "proj-7"
+      ],
+      "created_at": "2026-03-01T00:00:00Z"
+    }
+  ],
+  "ngos": [
+    {
+      "id": "ngo-1",
+      "name": "Aashray Rural & Slum Upliftment Trust",
+      "slug": "aashray-trust",
+      "tagline": "Empowering underserved urban informal settlements with sustainable livelihoods and clean water",
+      "mission": "To eradicate extreme poverty and generational vulnerability through grassroots skill development, clean drinking water access, and community micro-enterprises.",
+      "description": "Founded in 2014, Aashray Trust works with over 35,000 families across 18 slum clusters. We operate mobile community centres, vocational tailoring and electrical repair hubs, and solar-powered community purification stations.",
+      "category": "poverty",
+      "sdg_focus": [
+        1,
+        6,
+        8
+      ],
+      "registration_number": "TRUST/MAH/2014/8912",
+      "tax_exempt_status": "80G & 12A Certified (India) / 501(c)(3) Equivalent",
+      "founded_year": 2014,
+      "website": "https://aashray-uplift.org",
+      "email": "contact@aashray-uplift.org",
+      "phone": "+91 98201 44510",
+      "address": "402 Seva Sadan, Dharavi Link Road",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "country": "India",
+      "latitude": 19.0434,
+      "longitude": 72.8567,
+      "is_verified": true,
+      "verification_tier": "Gold Verified",
+      "logo_url": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=200&h=200&q=80",
+      "banner_url": "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1200&h=400&q=80",
+      "leadership_contact": "Dr. Sunita Deshmukh, Executive Director",
+      "beneficiaries_served": 42000,
+      "created_at": "2026-01-15T09:00:00Z"
+    },
+    {
+      "id": "ngo-2",
+      "name": "BrightPath Global Literacy Foundation",
+      "slug": "brightpath-literacy",
+      "tagline": "Democratizing foundational literacy & STEM education for rural children and girls",
+      "mission": "Ensuring no child drops out of education due to poverty, lack of school infrastructure, or gender inequality by providing tech-enabled micro-libraries and scholarship sponsorships.",
+      "description": "BrightPath builds solar-powered digital classrooms in off-grid rural schools. Over 180 schools have been equipped with open-source offline digital encyclopedias, interactive mathematics software, and reading kits.",
+      "category": "education",
+      "sdg_focus": [
+        4,
+        5,
+        10
+      ],
+      "registration_number": "NGO-KE-2018-04192",
+      "tax_exempt_status": "East Africa PBO Certified & US 501(c)(3) Partner",
+      "founded_year": 2018,
+      "website": "https://brightpathliteracy.org",
+      "email": "partnerships@brightpathliteracy.org",
+      "phone": "+254 711 892015",
+      "address": "Kilimani Innovation Hub, Argwings Kodhek Rd",
+      "city": "Nairobi",
+      "state": "Nairobi County",
+      "country": "Kenya",
+      "latitude": -1.2921,
+      "longitude": 36.8219,
+      "is_verified": true,
+      "verification_tier": "Gold Verified",
+      "logo_url": "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=200&h=200&q=80",
+      "banner_url": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&h=400&q=80",
+      "leadership_contact": "Amina Mwangi, Founder & Lead Educator",
+      "beneficiaries_served": 68000,
+      "created_at": "2026-02-10T11:30:00Z"
+    },
+    {
+      "id": "ngo-3",
+      "name": "Arogya Community Health Initiative",
+      "slug": "arogya-health",
+      "tagline": "Bringing preventative healthcare, maternal wellness, and telemedicine to remote villages",
+      "mission": "Bridging rural healthcare deserts with mobile medical vans, trained frontline ASHA workers, telemedicine kiosks, and essential medicine drops.",
+      "description": "Operating across 94 villages in semi-arid and tribal districts, Arogya provides free maternal checkups, pediatric immunization tracking, and chronic disease management directly at doorsteps.",
+      "category": "healthcare",
+      "sdg_focus": [
+        3,
+        10
+      ],
+      "registration_number": "DEL/SOC/2016/5421",
+      "tax_exempt_status": "Registered Society & FCRA Cleared",
+      "founded_year": 2016,
+      "website": "https://arogyahealth.org",
+      "email": "info@arogyahealth.org",
+      "phone": "+91 11 2689 3301",
+      "address": "22 Institutional Area, Vasant Kunj",
+      "city": "New Delhi",
+      "state": "Delhi",
+      "country": "India",
+      "latitude": 28.5355,
+      "longitude": 77.1566,
+      "is_verified": true,
+      "verification_tier": "Gold Verified",
+      "logo_url": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=200&h=200&q=80",
+      "banner_url": "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=1200&h=400&q=80",
+      "leadership_contact": "Dr. Rajeshwar Sen, Chief Medical Officer",
+      "beneficiaries_served": 54000,
+      "created_at": "2026-02-20T14:15:00Z"
+    },
+    {
+      "id": "ngo-4",
+      "name": "GreenCanopy Urban Afforestation Guild",
+      "slug": "greencanopy-climate",
+      "tagline": "Restoring urban biodiversity, micro-forests, and community rainwater harvesting",
+      "mission": "Combating urban heat islands and groundwater depletion through Miyawaki mini-forests, lake rejuvenation, and citizen-led urban tree nurseries.",
+      "description": "GreenCanopy has planted over 140,000 native saplings with a 92% survival rate. We partner with schools, tech campuses, and municipal wards to turn barren wastelands into dense thriving biodiversity havens.",
+      "category": "environment",
+      "sdg_focus": [
+        11,
+        13,
+        15
+      ],
+      "registration_number": "KAR/ECO/2019/3310",
+      "tax_exempt_status": "Non-profit Section 8 Company",
+      "founded_year": 2019,
+      "website": "https://greencanopyguild.org",
+      "email": "connect@greencanopyguild.org",
+      "phone": "+91 80 4112 9084",
+      "address": "77 Eco-Habitat Way, Indiranagar",
+      "city": "Bangalore",
+      "state": "Karnataka",
+      "country": "India",
+      "latitude": 12.9716,
+      "longitude": 77.5946,
+      "is_verified": true,
+      "verification_tier": "Gold Verified",
+      "logo_url": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=200&h=200&q=80",
+      "banner_url": "https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1200&h=400&q=80",
+      "leadership_contact": "Kavita Rao, Environmental Scientist",
+      "beneficiaries_served": 125000,
+      "created_at": "2026-03-01T08:00:00Z"
+    },
+    {
+      "id": "ngo-5",
+      "name": "EqualAbilities Inclusion Network",
+      "slug": "equalabilities-inclusion",
+      "tagline": "Empowering youth with disabilities through assistive technology and digital careers",
+      "mission": "Creating an inclusive world where disability is never a barrier to high-income employment, independent living, and dignified community participation.",
+      "description": "EqualAbilities provides specialized screen-reader coding bootcamps, 3D-printed custom assistive prosthetic accessories, and corporate disability sensitization programs.",
+      "category": "disability",
+      "sdg_focus": [
+        8,
+        10,
+        4
+      ],
+      "registration_number": "US-IL-501C3-99214",
+      "tax_exempt_status": "501(c)(3) Federal Tax Exempt Status",
+      "founded_year": 2017,
+      "website": "https://equalabilities.org",
+      "email": "collaborate@equalabilities.org",
+      "phone": "+1 312 555 0194",
+      "address": "500 W Madison St, Suite 1900",
+      "city": "Chicago",
+      "state": "Illinois",
+      "country": "United States",
+      "latitude": 41.8781,
+      "longitude": -87.6298,
+      "is_verified": true,
+      "verification_tier": "Certified Partner",
+      "logo_url": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&h=200&q=80",
+      "banner_url": "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&h=400&q=80",
+      "leadership_contact": "Marcus Sterling, President & Accessibility Advocate",
+      "beneficiaries_served": 18500,
+      "created_at": "2026-03-12T10:00:00Z"
+    },
+    {
+      "id": "ngo-6",
+      "name": "NourishNation Hunger Project & Food Rescue",
+      "slug": "nourishnation-food",
+      "tagline": "Zero hunger through commercial food rescue and community nutrition hubs",
+      "mission": "Rescuing surplus food from hotels, corporate cafeterias, and farms to feed vulnerable migrant workers, shelters, and malnourished children.",
+      "description": "With a fleet of temperature-controlled vans, NourishNation redirects tons of edible food daily to registered community kitchens, saving landfill methane while serving warm, dignified meals.",
+      "category": "hunger",
+      "sdg_focus": [
+        2,
+        12,
+        1
+      ],
+      "registration_number": "US-TX-NONPROFIT-4819",
+      "tax_exempt_status": "501(c)(3) Public Charity",
+      "founded_year": 2020,
+      "website": "https://nourishnationrescue.org",
+      "email": "director@nourishnationrescue.org",
+      "phone": "+1 512 555 8321",
+      "address": "1204 East 7th Street",
+      "city": "Austin",
+      "state": "Texas",
+      "country": "United States",
+      "latitude": 30.2672,
+      "longitude": -97.7431,
+      "is_verified": false,
+      "verification_tier": "Pending Review",
+      "logo_url": "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=200&h=200&q=80",
+      "banner_url": "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=1200&h=400&q=80",
+      "leadership_contact": "Elena Vasquez, Program Director",
+      "beneficiaries_served": 95000,
+      "created_at": "2026-03-20T16:00:00Z"
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj-1",
+      "ngo_id": "ngo-1",
+      "title": "Clean Water Wells & Solar Micro-Grids for 5 Informal Settlements",
+      "tagline": "Bringing potable drinking water and reliable solar lighting to 12,000 residents",
+      "description": "Residents of these five peri-urban informal settlements spend up to 3 hours daily waiting in line for unsafe tanker water. This initiative installs 5 deep-bore solar community water filtration kiosks and 60 rooftop solar streetlamps, operated sustainably by women's self-help groups.",
+      "cause_category": "poverty",
+      "sdg_goals": [
+        1,
+        6,
+        7
+      ],
+      "location_city": "Mumbai",
+      "location_state": "Maharashtra",
+      "location_country": "India",
+      "latitude": 19.0434,
+      "longitude": 72.8567,
+      "is_remote": false,
+      "urgency": "high",
+      "status": "active",
+      "cover_image": "https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=800&q=80",
+      "start_date": "2026-11-01",
+      "end_date": "2027-04-30",
+      "impact_target": "Provide uninterrupted clean drinking water to 2,400 households and prevent waterborne disease.",
+      "verified_beneficiaries": 4800,
+      "estimated_beneficiaries": 12000,
+      "expense_breakdown": [
+        {
+          "category": "Solar RO Membrane & Pumps",
+          "percentage": 50,
+          "amount": 14000
+        },
+        {
+          "category": "5,000L Overhead Water Tanks",
+          "percentage": 25,
+          "amount": 7000
+        },
+        {
+          "category": "Community Water Quality Lab Kits",
+          "percentage": 15,
+          "amount": 4200
+        },
+        {
+          "category": "Installation Logistics & Field Technicians",
+          "percentage": 10,
+          "amount": 2800
+        }
+      ],
+      "created_at": "2026-10-01T10:00:00Z"
+    },
+    {
+      "id": "proj-2",
+      "ngo_id": "ngo-2",
+      "title": "Solar STEM Micro-Labs for 25 Rural Schools",
+      "tagline": "Equipping 6,000 rural students with offline digital tablets, science kits, and mentor sessions",
+      "description": "Rural primary and secondary schools in the Rift Valley lack electricity and internet access. This project delivers ruggedized, solar-rechargeable digital literacy kits packed with preloaded Khan Academy, Wikipedia, and Python playgrounds.",
+      "cause_category": "education",
+      "sdg_goals": [
+        4,
+        5,
+        9
+      ],
+      "location_city": "Nairobi",
+      "location_state": "Rift Valley Region",
+      "location_country": "Kenya",
+      "latitude": -1.2921,
+      "longitude": 36.8219,
+      "is_remote": true,
+      "urgency": "urgent",
+      "status": "active",
+      "cover_image": "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80",
+      "start_date": "2026-11-15",
+      "end_date": "2027-05-15",
+      "impact_target": "Boost math and scientific literacy by 45% among 6,000 students, with 55% girl participation.",
+      "verified_beneficiaries": 2400,
+      "estimated_beneficiaries": 6000,
+      "expense_breakdown": [
+        {
+          "category": "Ruggedized Android Tablets (150 units)",
+          "percentage": 60,
+          "amount": 11100
+        },
+        {
+          "category": "Solar Charging Inverters",
+          "percentage": 20,
+          "amount": 3700
+        },
+        {
+          "category": "Offline Raspberry Pi Content Servers",
+          "percentage": 12,
+          "amount": 2220
+        },
+        {
+          "category": "Teacher Training & Curriculum",
+          "percentage": 8,
+          "amount": 1480
+        }
+      ],
+      "created_at": "2026-10-05T12:00:00Z"
+    },
+    {
+      "id": "proj-3",
+      "ngo_id": "ngo-3",
+      "title": "Maternal Ultrasound & Telemedicine Van for Remote Tribal Hamlets",
+      "tagline": "Life-saving prenatal screening and specialist doctor tele-consults on wheels",
+      "description": "High maternal mortality in remote hilly villages is often caused by late detection of high-risk pregnancies and severe anemia. Our customized 4WD medical van travels to 22 remote villages every month.",
+      "cause_category": "healthcare",
+      "sdg_goals": [
+        3,
+        10
+      ],
+      "location_city": "New Delhi",
+      "location_state": "NCR & Uttarakhand Outskirts",
+      "location_country": "India",
+      "latitude": 28.5355,
+      "longitude": 77.1566,
+      "is_remote": false,
+      "urgency": "urgent",
+      "status": "active",
+      "cover_image": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80",
+      "start_date": "2026-10-20",
+      "end_date": "2027-10-20",
+      "impact_target": "Perform 3,200 prenatal scans, detect high-risk complications early, and distribute 15,000 iron & folic acid kits.",
+      "verified_beneficiaries": 1850,
+      "estimated_beneficiaries": 4500,
+      "expense_breakdown": [
+        {
+          "category": "Medical Van Modification & Satellite Dish",
+          "percentage": 45,
+          "amount": 15750
+        },
+        {
+          "category": "Portable AI Ultrasound Scanner",
+          "percentage": 30,
+          "amount": 10500
+        },
+        {
+          "category": "Prenatal Medicines & Diagnostic Strips",
+          "percentage": 15,
+          "amount": 5250
+        },
+        {
+          "category": "Fuel & Frontline Nurse Honorarium",
+          "percentage": 10,
+          "amount": 3500
+        }
+      ],
+      "created_at": "2026-10-08T09:30:00Z"
+    },
+    {
+      "id": "proj-4",
+      "ngo_id": "ngo-4",
+      "title": "Miyawaki Urban Forests & Lake Wetland Restoration",
+      "tagline": "Creating 10 native bio-diverse micro-forests to restore groundwater and cooling in urban heat corridors",
+      "description": "Rapid concrete expansion has caused groundwater levels to plummet. GreenCanopy is converting 5 acres of abandoned municipal dump yards into dense native Miyawaki micro-forests with 50+ indigenous tree species.",
+      "cause_category": "environment",
+      "sdg_goals": [
+        11,
+        13,
+        15
+      ],
+      "location_city": "Bangalore",
+      "location_state": "Karnataka",
+      "location_country": "India",
+      "latitude": 12.9716,
+      "longitude": 77.5946,
+      "is_remote": false,
+      "urgency": "medium",
+      "status": "active",
+      "cover_image": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80",
+      "start_date": "2026-11-01",
+      "end_date": "2027-08-30",
+      "impact_target": "Plant 35,000 native trees, sequester 450 metric tons of CO2 annually, and recharge 40 million litres of groundwater.",
+      "verified_beneficiaries": 28000,
+      "estimated_beneficiaries": 55000,
+      "expense_breakdown": [
+        {
+          "category": "Native Saplings & Soil Manure",
+          "percentage": 40,
+          "amount": 4800
+        },
+        {
+          "category": "Sub-Surface Drip Irrigation Piping",
+          "percentage": 35,
+          "amount": 4200
+        },
+        {
+          "category": "Earthmoving Machinery & Debris Clearing",
+          "percentage": 15,
+          "amount": 1800
+        },
+        {
+          "category": "Citizen Volunteer Tools & First Aid",
+          "percentage": 10,
+          "amount": 1200
+        }
+      ],
+      "created_at": "2026-10-10T14:00:00Z"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "req-1",
+      "project_id": "proj-1",
+      "type": "funding",
+      "title": "Capital Expenditure for 5 Deep-Bore Solar RO Filtration Plants",
+      "description": "Procurement of high-capacity reverse osmosis filtration systems and solar submersible pumps.",
+      "target_quantity": 28000,
+      "current_quantity": 18500,
+      "unit": "USD",
+      "skill_tags": [
+        "Grant Funding",
+        "CSR Sponsorship"
+      ],
+      "status": "in_progress"
+    },
+    {
+      "id": "req-2",
+      "project_id": "proj-1",
+      "type": "volunteers",
+      "title": "Community Water Quality Testing Volunteers",
+      "description": "On-ground volunteers to visit households and test domestic water samples using colorimetric kits.",
+      "target_quantity": 25,
+      "current_quantity": 16,
+      "unit": "volunteers",
+      "skill_tags": [
+        "Field Survey",
+        "Community Outreach"
+      ],
+      "status": "open"
+    },
+    {
+      "id": "req-3",
+      "project_id": "proj-2",
+      "type": "resources",
+      "title": "150 Refurbished Laptops or Ruggedized Android Tablets",
+      "description": "Tablets or laptops with minimum 4GB RAM to be preloaded with offline STEM curriculum.",
+      "target_quantity": 150,
+      "current_quantity": 90,
+      "unit": "devices",
+      "skill_tags": [
+        "Hardware Donation",
+        "Corporate E-Waste"
+      ],
+      "status": "in_progress"
+    },
+    {
+      "id": "req-4",
+      "project_id": "proj-2",
+      "type": "funding",
+      "title": "Solar Charging Stations & Offline Server Grant",
+      "description": "Grant for off-grid solar inverters and local micro-cloud servers.",
+      "target_quantity": 18500,
+      "current_quantity": 13500,
+      "unit": "USD",
+      "skill_tags": [
+        "Renewable Energy Grant",
+        "EdTech"
+      ],
+      "status": "in_progress"
+    },
+    {
+      "id": "req-5",
+      "project_id": "proj-3",
+      "type": "corporate_csr",
+      "title": "CSR Medical Van Chassis & Satellite Link",
+      "description": "Corporate CSR sponsorship for customized 4WD diagnostic van fabrication.",
+      "target_quantity": 35000,
+      "current_quantity": 22000,
+      "unit": "USD",
+      "skill_tags": [
+        "CSR Healthcare",
+        "Corporate Grant"
+      ],
+      "status": "open"
+    }
+  ],
+  "project_milestones": [
+    {
+      "id": "ms-1",
+      "project_id": "proj-1",
+      "title": "Hydrogeological Soil & Water Table Survey",
+      "description": "Completed underground water mapping across Dharavi settlements.",
+      "target_date": "2026-11-15",
+      "is_completed": true,
+      "verified_by_reviewer": true,
+      "evidence_url": "https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=600&q=80",
+      "evidence_notes": "Survey report signed off by Municipal Hydrology Dept. Clean recharge aquifer confirmed.",
+      "completed_at": "2026-11-12T14:00:00Z"
+    },
+    {
+      "id": "ms-2",
+      "project_id": "proj-1",
+      "title": "Solar RO Machinery Procurement & Civil Construction",
+      "description": "Installation of 5 filtration kiosks and overhead 5,000L tanks.",
+      "target_date": "2027-01-30",
+      "is_completed": true,
+      "verified_by_reviewer": false,
+      "evidence_url": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80",
+      "evidence_notes": "Kiosk 1 and 2 structural foundations completed. Solar arrays delivered.",
+      "completed_at": "2027-01-20T10:00:00Z"
+    },
+    {
+      "id": "ms-3",
+      "project_id": "proj-2",
+      "title": "Initial Batch of 50 Offline Tablets Configured",
+      "description": "Preloaded Khan Academy and Python curriculum deployed in 8 schools.",
+      "target_date": "2026-12-10",
+      "is_completed": true,
+      "verified_by_reviewer": true,
+      "evidence_url": "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80",
+      "evidence_notes": "Teacher orientation completed for 16 educators. Battery health certified.",
+      "completed_at": "2026-12-05T16:30:00Z"
+    }
+  ],
+  "volunteer_roles": [
+    {
+      "id": "role-1",
+      "project_id": "proj-2",
+      "ngo_id": "ngo-2",
+      "title": "Remote Python & Scratch Coding Mentor",
+      "cause_category": "education",
+      "commitment_hours": "3 hrs/week (Weekend Zoom)",
+      "skills_required": [
+        "Python",
+        "Scratch",
+        "Teaching"
+      ],
+      "location": "Remote / Virtual",
+      "is_remote": true,
+      "openings_count": 5,
+      "applications_count": 8,
+      "status": "open",
+      "description": "Mentor rural Kenyan secondary students in basic algorithms, loops, and building their first web projects."
+    },
+    {
+      "id": "role-2",
+      "project_id": "proj-3",
+      "ngo_id": "ngo-3",
+      "title": "Volunteer Tele-Radiology Sonographer",
+      "cause_category": "healthcare",
+      "commitment_hours": "4 hrs/week (Flexible)",
+      "skills_required": [
+        "Ultrasound Sonography",
+        "Obstetrics",
+        "Telemedicine"
+      ],
+      "location": "New Delhi / Remote",
+      "is_remote": true,
+      "openings_count": 3,
+      "applications_count": 4,
+      "status": "open",
+      "description": "Review second-trimester ultrasound scans uploaded from mobile medical vans and advise frontline ASHA nurses."
+    },
+    {
+      "id": "role-3",
+      "project_id": "proj-4",
+      "ngo_id": "ngo-4",
+      "title": "Weekend Miyawaki Forestry Cohort Lead",
+      "cause_category": "environment",
+      "commitment_hours": "Saturday Mornings (4 hrs)",
+      "skills_required": [
+        "Tree Planting",
+        "Team Leadership",
+        "Soil Prep"
+      ],
+      "location": "Bangalore, India",
+      "is_remote": false,
+      "openings_count": 10,
+      "applications_count": 14,
+      "status": "open",
+      "description": "Coordinate citizen volunteer groups for pit digging, mixing organic bio-mass, and planting indigenous saplings."
+    }
+  ],
+  "volunteer_applications": [
+    {
+      "id": "app-1",
+      "role_id": "role-1",
+      "project_id": "proj-2",
+      "ngo_id": "ngo-2",
+      "applicant_name": "Marcus Chen",
+      "applicant_email": "marcus.chen@apextech.com",
+      "applicant_phone": "+1 415 555 9012",
+      "skills": [
+        "Python",
+        "Scratch",
+        "Web Development"
+      ],
+      "availability": "4 hrs/week (Sat & Sun)",
+      "cover_note": "I have 6 years software engineering experience at Apex Global and previously taught STEM coding camps.",
+      "status": "accepted",
+      "created_at": "2026-10-22T10:00:00Z"
+    },
+    {
+      "id": "app-2",
+      "role_id": "role-3",
+      "project_id": "proj-4",
+      "ngo_id": "ngo-4",
+      "applicant_name": "Priya Sharma",
+      "applicant_email": "priya.sharma@earthguard.org",
+      "applicant_phone": "+91 97110 88291",
+      "skills": [
+        "Tree Planting",
+        "Community Mobilization"
+      ],
+      "availability": "Every Saturday Morning",
+      "cover_note": "Experienced in leading urban citizen climate drives in Bangalore. Can bring a squad of 15 youth volunteers.",
+      "status": "accepted",
+      "created_at": "2026-10-24T14:30:00Z"
+    }
+  ],
+  "partnership_requests": [
+    {
+      "id": "req-part-1",
+      "project_id": "proj-1",
+      "ngo_id": "ngo-1",
+      "supporter_id": "user-supp-1",
+      "supporter_name": "Marcus Chen (Apex Global CSR)",
+      "supporter_email": "marcus.chen@apextech.com",
+      "supporter_phone": "+1 415 555 9012",
+      "supporter_type": "corporate_csr",
+      "organization_name": "Apex Global Foundation",
+      "offer_type": "funding",
+      "offer_value": "$10,000 Matching Grant",
+      "message": "We want to sponsor the clean water kiosks in Dharavi as part of Apex Tech's annual ESG commitment.",
+      "timeline": "Immediate (Next 14 Days)",
+      "status": "accepted",
+      "ngo_response_note": "Accepted with gratitude! Onboarding alignment call scheduled for this Friday.",
+      "responded_at": "2026-10-22T14:30:00Z",
+      "created_at": "2026-10-21T08:30:00Z",
+      "updated_at": "2026-10-22T14:30:00Z"
+    },
+    {
+      "id": "req-part-2",
+      "project_id": "proj-2",
+      "ngo_id": "ngo-2",
+      "supporter_id": "user-supp-1",
+      "supporter_name": "Apex Global CSR Program",
+      "supporter_email": "marcus.chen@apextech.com",
+      "supporter_phone": "+1 415 555 9012",
+      "supporter_type": "corporate_csr",
+      "organization_name": "Apex Global Technologies",
+      "offer_type": "resource_donation",
+      "offer_value": "50 Enterprise Laptops & Cloud Credits",
+      "message": "Donating 50 certified refurbished Lenovo ThinkPads with custom solar sleeves for the rural micro-labs.",
+      "timeline": "Q4 2026",
+      "status": "pending",
+      "ngo_response_note": null,
+      "responded_at": null,
+      "created_at": "2026-10-24T18:00:00Z",
+      "updated_at": "2026-10-24T18:00:00Z"
+    }
+  ],
+  "collaboration_messages": [
+    {
+      "id": "msg-1",
+      "partnership_id": "req-part-1",
+      "sender_name": "Marcus Chen",
+      "sender_role": "corporate",
+      "message": "Hi Dr. Deshmukh! We have approved the first milestone disbursement of $5,000 for the water kiosks.",
+      "created_at": "2026-10-23T11:00:00Z"
+    },
+    {
+      "id": "msg-2",
+      "partnership_id": "req-part-1",
+      "sender_name": "Dr. Sunita Deshmukh",
+      "sender_role": "ngo",
+      "message": "Wonderful news, Marcus! The solar pump hardware has arrived on site. We will upload milestone photos shortly.",
+      "created_at": "2026-10-23T14:15:00Z"
+    }
+  ],
+  "csr_rfps": [
+    {
+      "id": "rfp-1",
+      "company_name": "Apex Global CSR Foundation",
+      "contact_email": "csr@apextech.com",
+      "title": "2026 Community Clean Water & Solar Innovation Grant Challenge",
+      "grant_budget": "$50,000 Grant Fund",
+      "target_sdgs": [
+        6,
+        7,
+        13
+      ],
+      "preferred_regions": [
+        "South Asia",
+        "East Africa"
+      ],
+      "description": "Seeking verified non-profit partners deploying renewable solar purification kiosks in off-grid settlements.",
+      "deadline": "2026-12-31",
+      "status": "open",
+      "created_at": "2026-10-15T09:00:00Z"
+    },
+    {
+      "id": "rfp-2",
+      "company_name": "Horizon Health Cares",
+      "contact_email": "grants@horizonhealth.org",
+      "title": "Maternal Ultrasound & Telemedicine Field Sponsorship",
+      "grant_budget": "$35,000 Grant",
+      "target_sdgs": [
+        3,
+        5,
+        10
+      ],
+      "preferred_regions": [
+        "India",
+        "Sub-Saharan Africa"
+      ],
+      "description": "Co-funding mobile clinical vans bringing antenatal care to remote tribal communities.",
+      "deadline": "2027-01-15",
+      "status": "open",
+      "created_at": "2026-10-18T11:30:00Z"
+    }
+  ],
+  "verification_requests": [
+    {
+      "id": "vr-1",
+      "ngo_id": "ngo-6",
+      "ngo_name": "NourishNation Hunger Project & Food Rescue",
+      "status": "pending",
+      "submitted_documents": [
+        {
+          "type": "501(c)(3) IRS Determination Letter",
+          "filename": "IRS_501c3_Determination_Letter.pdf",
+          "verified_format": true
+        },
+        {
+          "type": "Annual Audited Financials (2025)",
+          "filename": "Audited_Financials_FY25.pdf",
+          "verified_format": true
+        },
+        {
+          "type": "Board of Directors Roster",
+          "filename": "Board_Governance_Charter.pdf",
+          "verified_format": true
+        }
+      ],
+      "admin_notes": "Pending compliance cross-check with state non-profit registry database.",
+      "submitted_at": "2026-10-25T14:00:00Z",
+      "reviewed_at": null
+    }
+  ],
+  "reports": [
+    {
+      "id": "rep-1",
+      "target_type": "project",
+      "target_id": "proj-1",
+      "target_title": "Clean Water Wells & Solar Micro-Grids",
+      "reporter_email": "community_observer@verify.org",
+      "reason": "Clarification on Kiosk 4 installation timeline",
+      "details": "Requested updated site photography for the fourth borehole. Handled transparently by NGO.",
+      "status": "resolved",
+      "created_at": "2026-10-24T09:15:00Z"
+    }
+  ],
+  "contributions": [
+    {
+      "id": "contrib-1",
+      "project_id": "proj-1",
+      "donor_name": "Apex Global CSR Foundation",
+      "donor_type": "corporate_csr",
+      "contribution_type": "funding",
+      "amount_or_item": "$10,000 Milestone Grant",
+      "is_sample_demo": true,
+      "created_at": "2026-10-22T14:30:00Z"
+    },
+    {
+      "id": "contrib-2",
+      "project_id": "proj-1",
+      "donor_name": "Mehta Family Philanthropy",
+      "donor_type": "donor",
+      "contribution_type": "funding",
+      "amount_or_item": "$8,500 Direct Grant",
+      "is_sample_demo": true,
+      "created_at": "2026-10-18T10:00:00Z"
+    },
+    {
+      "id": "contrib-3",
+      "project_id": "proj-2",
+      "donor_name": "Horizon Tech Giving",
+      "donor_type": "corporate_csr",
+      "contribution_type": "resources",
+      "amount_or_item": "50 Lenovo Tablets",
+      "is_sample_demo": true,
+      "created_at": "2026-10-20T16:00:00Z"
+    }
+  ],
+  "activity_logs": [
+    {
+      "id": "act-1",
+      "event_type": "partnership_accepted",
+      "title": "Clean Water Milestone Grant Approved",
+      "description": "Apex Global CSR Foundation confirmed $10,000 matching grant for Aashray Rural Trust.",
+      "related_id": "proj-1",
+      "created_at": "2026-10-22T14:30:00Z"
+    },
+    {
+      "id": "act-2",
+      "event_type": "volunteer_joined",
+      "title": "Tele-Radiologist Specialist Joined Mobile Medical Van",
+      "description": "Dr. Ramesh Kulkarni volunteered 4 hours/week for Arogya Health Initiative.",
+      "related_id": "proj-3",
+      "created_at": "2026-10-24T11:00:00Z"
+    },
+    {
+      "id": "act-3",
+      "event_type": "milestone_completed",
+      "title": "Miyawaki Forest Soil Excavation Completed",
+      "description": "GreenCanopy urban forest prepared 5,000 pit sites with organic biomass.",
+      "related_id": "proj-4",
+      "created_at": "2026-10-25T16:00:00Z"
+    }
+  ],
+  "resource_items": [
+    {
+      "id": "res-1",
+      "type": "supply",
+      "title": "40 Refurbished Core-i5 Laptops for Coding Labs",
+      "category": "laptops",
+      "quantity": 40,
+      "unit": "laptops",
+      "condition": "refurbished",
+      "description": "Donated corporate laptops loaded with Ubuntu LTS and Python IDEs. Fully tested with working battery life.",
+      "location_city": "Austin",
+      "location_country": "United States",
+      "owner_type": "corporate",
+      "owner_id": "user-supp-1",
+      "owner_name": "Apex Global CSR Foundation",
+      "owner_email": "marcus.chen@apextech.com",
+      "status": "available",
+      "image_url": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=600&q=80",
+      "created_at": "2026-10-20T10:00:00Z"
+    },
+    {
+      "id": "res-2",
+      "type": "supply",
+      "title": "500 Illustrated STEM & Storybooks for Primary Grades",
+      "category": "books",
+      "quantity": 500,
+      "unit": "books",
+      "condition": "new",
+      "description": "Bilingual early-learning readers and introductory science picture books suitable for ages 6-12.",
+      "location_city": "Nairobi",
+      "location_country": "Kenya",
+      "owner_type": "supporter",
+      "owner_id": "user-supp-2",
+      "owner_name": "Dr. Ramesh Kulkarni",
+      "owner_email": "dr.kulkarni@healthnet.org",
+      "status": "available",
+      "image_url": "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=600&q=80",
+      "created_at": "2026-10-21T12:00:00Z"
+    },
+    {
+      "id": "res-3",
+      "type": "need",
+      "title": "20 Wheelchairs & Mobility Walkers for Rural Clinic",
+      "category": "medical",
+      "quantity": 20,
+      "unit": "units",
+      "condition": "gently_used",
+      "description": "Required for elderly and polio-affected patients attending free outpatient camps in Dharavi slums.",
+      "location_city": "Mumbai",
+      "location_country": "India",
+      "owner_type": "ngo",
+      "owner_id": "ngo-1",
+      "owner_name": "Aashray Rural & Slum Upliftment Trust",
+      "owner_email": "contact@aashray-uplift.org",
+      "status": "available",
+      "image_url": "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=600&q=80",
+      "created_at": "2026-10-22T08:30:00Z"
+    },
+    {
+      "id": "res-4",
+      "type": "supply",
+      "title": "150 Thermal Winter Blankets and Woolens",
+      "category": "clothes",
+      "quantity": 150,
+      "unit": "blankets",
+      "condition": "new",
+      "description": "Heavy-duty acrylic warm fleece blankets bundled in waterproof packaging for disaster/winter relief.",
+      "location_city": "New Delhi",
+      "location_country": "India",
+      "owner_type": "supporter",
+      "owner_id": "user-supp-1",
+      "owner_name": "Apex Global CSR Foundation",
+      "owner_email": "marcus.chen@apextech.com",
+      "status": "in_transit",
+      "image_url": "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=600&q=80",
+      "created_at": "2026-10-23T14:15:00Z"
+    },
+    {
+      "id": "res-5",
+      "type": "need",
+      "title": "30 Sturdy Wooden Classroom Desks & Benches",
+      "category": "furniture",
+      "quantity": 30,
+      "unit": "desks",
+      "condition": "gently_used",
+      "description": "To furnish two newly constructed tin-roof classrooms in Rift Valley village school.",
+      "location_city": "Nairobi",
+      "location_country": "Kenya",
+      "owner_type": "ngo",
+      "owner_id": "ngo-2",
+      "owner_name": "BrightPath Global Literacy Foundation",
+      "owner_email": "partnerships@brightpathliteracy.org",
+      "status": "available",
+      "image_url": "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=600&q=80",
+      "created_at": "2026-10-24T09:00:00Z"
+    }
+  ],
+  "resource_claims": [
+    {
+      "id": "claim-1",
+      "resource_id": "res-4",
+      "requester_id": "ngo-3",
+      "requester_name": "Arogya Community Health Initiative",
+      "requester_email": "info@arogyahealth.org",
+      "requester_type": "ngo",
+      "quantity_requested": 150,
+      "delivery_address": "22 Institutional Area, Vasant Kunj, New Delhi 110070",
+      "contact_phone": "+91 11 2689 3301",
+      "status": "in_transit",
+      "tracking_notes": "Dispatched via DTDC Express Courier. Tracking #DTDC-99214. Estimated delivery in 48 hours.",
+      "created_at": "2026-10-24T15:00:00Z"
+    }
+  ],
+  "urgent_needs": [
+    {
+      "id": "urgent-1",
+      "ngo_id": "ngo-1",
+      "ngo_name": "Aashray Rural & Slum Upliftment Trust",
+      "title": "Emergency Monsoon Flood Relief Food Packets & Water Purification Kits",
+      "description": "Heavy cloudburst has inundated 400 tenements in Dharavi 13th Compound. Urgent requirement for dry ration packets (rice, lentils, oil) and chlorine tablets to prevent waterborne epidemic.",
+      "cause_category": "disaster_relief",
+      "urgency_level": "critical",
+      "deadline": "2026-11-05",
+      "target_quantity": 400,
+      "current_quantity": 265,
+      "unit": "ration kits",
+      "location_city": "Mumbai",
+      "location_country": "India",
+      "contact_phone": "+91 98201 44510",
+      "is_verified": true,
+      "status": "active",
+      "pledges_count": 8,
+      "created_at": "2026-10-25T06:00:00Z"
+    },
+    {
+      "id": "urgent-2",
+      "ngo_id": "ngo-3",
+      "ngo_name": "Arogya Community Health Initiative",
+      "title": "Immediate Blood Pressure Monitors & Pulse Oximeters for Mobile Clinic",
+      "description": "Our mobile diagnostic van lost equipment during regional flash floods. Needs 15 calibrated digital BP monitors to resume daily village visits.",
+      "cause_category": "healthcare",
+      "urgency_level": "urgent",
+      "deadline": "2026-11-10",
+      "target_quantity": 15,
+      "current_quantity": 9,
+      "unit": "monitors",
+      "location_city": "New Delhi",
+      "location_country": "India",
+      "contact_phone": "+91 11 2689 3301",
+      "is_verified": true,
+      "status": "active",
+      "pledges_count": 3,
+      "created_at": "2026-10-24T18:00:00Z"
+    },
+    {
+      "id": "urgent-3",
+      "ngo_id": "ngo-2",
+      "ngo_name": "BrightPath Global Literacy Foundation",
+      "title": "Emergency Solar Lanterns for Refugee Camp Night Reading Classes",
+      "description": "Grid power outage in Kakuma camp settlement. 80 solar rechargeable study lamps required for children preparing for national examinations.",
+      "cause_category": "education",
+      "urgency_level": "urgent",
+      "deadline": "2026-11-12",
+      "target_quantity": 80,
+      "current_quantity": 50,
+      "unit": "solar lamps",
+      "location_city": "Nairobi",
+      "location_country": "Kenya",
+      "contact_phone": "+254 20 892 441",
+      "is_verified": true,
+      "status": "active",
+      "pledges_count": 5,
+      "created_at": "2026-10-23T11:00:00Z"
+    }
+  ],
+  "urgent_pledges": [
+    {
+      "id": "pledge-1",
+      "urgent_need_id": "urgent-1",
+      "supporter_name": "Apex Global CSR Foundation",
+      "supporter_email": "marcus.chen@apextech.com",
+      "pledged_quantity": 100,
+      "notes": "Emergency grant released for 100 ration kits dispatched to ground coordinator.",
+      "created_at": "2026-10-25T08:30:00Z"
+    },
+    {
+      "id": "pledge-2",
+      "urgent_need_id": "urgent-1",
+      "supporter_name": "Dr. Ramesh Kulkarni",
+      "supporter_email": "dr.kulkarni@healthnet.org",
+      "pledged_quantity": 50,
+      "notes": "Coordinating chlorine water purification packets from regional health clinic.",
+      "created_at": "2026-10-25T12:00:00Z"
+    }
+  ],
+  "partnership_reviews": [
+    {
+      "id": "rev-1",
+      "partnership_id": "part-1",
+      "project_id": "proj-1",
+      "reviewer_id": "user-supp-1",
+      "reviewer_name": "Marcus Chen (Apex Global CSR)",
+      "reviewer_role": "corporate",
+      "rating": 5,
+      "communication_rating": 5,
+      "timeliness_rating": 5,
+      "milestone_quality_rating": 5,
+      "review_text": "Exceptional field execution by Aashray Trust. Borewell geo-surveys were uploaded with exact coordinates and municipal clearances. Beneficiary metrics were 100% verified.",
+      "created_at": "2026-10-21T15:00:00Z"
+    },
+    {
+      "id": "rev-2",
+      "partnership_id": "part-1",
+      "project_id": "proj-1",
+      "reviewer_id": "user-ngo-1",
+      "reviewer_name": "Dr. Sunita Deshmukh (Aashray Trust)",
+      "reviewer_role": "ngo",
+      "rating": 5,
+      "communication_rating": 5,
+      "timeliness_rating": 5,
+      "milestone_quality_rating": 5,
+      "review_text": "Apex Tech's philanthropic foundation provided timely milestone disbursements and connected us with water engineering consultants. A model CSR partnership!",
+      "created_at": "2026-10-22T09:00:00Z"
+    }
+  ],
+  "grants_directory": [
+    {
+      "id": "grant-1",
+      "title": "Google.org Global Digital Inclusion Accelerator 2026",
+      "funder_name": "Google.org Philanthropic Fund",
+      "funder_type": "corporate_csr",
+      "grant_amount": 100000,
+      "grant_amount_formatted": "$100,000 USD",
+      "cause_categories": [
+        "education",
+        "poverty"
+      ],
+      "eligibility_criteria": "Registered 501(c)(3) or 80G non-profits deploying AI, digital literacy, or vocational computing to marginalized communities.",
+      "deadline": "2026-12-15",
+      "location_scope": "Global (South Asia, Sub-Saharan Africa, Latin America)",
+      "official_link": "https://www.google.org",
+      "is_verified": true,
+      "verification_tier": "Gold Verified",
+      "created_at": "2026-10-15T00:00:00Z"
+    },
+    {
+      "id": "grant-2",
+      "title": "Tata Trusts Community Water Sustainability Challenge",
+      "funder_name": "Tata Community Trusts",
+      "funder_type": "philanthropic_foundation",
+      "grant_amount": 60000,
+      "grant_amount_formatted": "$60,000 / ₹50,00,000 INR",
+      "cause_categories": [
+        "environment",
+        "healthcare"
+      ],
+      "eligibility_criteria": "Community organizations in India working on decentralized rainwater harvesting, fluoride filtration, and aquifer recharge.",
+      "deadline": "2026-11-30",
+      "location_scope": "India (Semi-arid and tribal priority districts)",
+      "official_link": "https://www.tatatrusts.org",
+      "is_verified": true,
+      "verification_tier": "Gold Verified",
+      "created_at": "2026-10-18T00:00:00Z"
+    },
+    {
+      "id": "grant-3",
+      "title": "USAID & Climate Resilience Grassroots Fund",
+      "funder_name": "United States Agency for International Development",
+      "funder_type": "government",
+      "grant_amount": 150000,
+      "grant_amount_formatted": "$150,000 USD",
+      "cause_categories": [
+        "environment",
+        "disaster_relief"
+      ],
+      "eligibility_criteria": "Accredited non-governmental entities promoting agroforestry, drought-resistant crops, and coastal mangal restoration.",
+      "deadline": "2026-12-31",
+      "location_scope": "Global South",
+      "official_link": "https://www.usaid.gov",
+      "is_verified": true,
+      "verification_tier": "Gold Verified",
+      "created_at": "2026-10-20T00:00:00Z"
+    },
+    {
+      "id": "grant-4",
+      "title": "Azim Premji Foundation Rural Teacher Mentorship Grant",
+      "funder_name": "Azim Premji Philanthropic Initiatives",
+      "funder_type": "philanthropic_foundation",
+      "grant_amount": 40000,
+      "grant_amount_formatted": "$40,000 / ₹35,00,000 INR",
+      "cause_categories": [
+        "education"
+      ],
+      "eligibility_criteria": "Grassroots organizations strengthening public school pedagogy, teacher workshops, and primary school libraries.",
+      "deadline": "2026-11-20",
+      "location_scope": "India",
+      "official_link": "https://azimpremjifoundation.org",
+      "is_verified": true,
+      "verification_tier": "Gold Verified",
+      "created_at": "2026-10-22T00:00:00Z"
+    }
+  ],
+  "volunteer_attendance": [
+    {
+      "id": "att-1",
+      "event_id": "event-1",
+      "project_id": "proj-1",
+      "project_title": "Clean Water Wells & Solar Micro-Grids",
+      "volunteer_id": "user-supp-2",
+      "volunteer_name": "Dr. Ramesh Kulkarni",
+      "volunteer_email": "dr.kulkarni@healthnet.org",
+      "qr_token": "QR-IC-EVT1-VOL2-8841",
+      "check_in_time": "2026-10-24T09:15:00Z",
+      "hours_logged": 5,
+      "status": "verified",
+      "verified_by": "Dr. Sunita Deshmukh",
+      "created_at": "2026-10-24T09:15:00Z"
+    },
+    {
+      "id": "att-2",
+      "event_id": "event-2",
+      "project_id": "proj-4",
+      "project_title": "Urban Micro-Forests & Miyawaki Afforestation",
+      "volunteer_id": "user-supp-1",
+      "volunteer_name": "Marcus Chen",
+      "volunteer_email": "marcus.chen@apextech.com",
+      "qr_token": "QR-IC-EVT2-VOL1-9923",
+      "check_in_time": "2026-10-25T08:00:00Z",
+      "hours_logged": 4.5,
+      "status": "verified",
+      "verified_by": "GreenCanopy Coordinator",
+      "created_at": "2026-10-25T08:00:00Z"
+    }
+  ],
+  "project_follows": [
+    {
+      "id": "fol-1",
+      "user_id": "user-supp-1",
+      "project_id": "proj-1",
+      "created_at": "2026-10-20T10:00:00Z"
+    },
+    {
+      "id": "fol-2",
+      "user_id": "user-supp-1",
+      "project_id": "proj-2",
+      "created_at": "2026-10-20T10:05:00Z"
+    }
+  ],
+  "activity_feed": [
+    {
+      "id": "feed-1",
+      "type": "partnership_accepted",
+      "title": "Corporate CSR Partnership Confirmed",
+      "description": "Apex Global CSR Foundation committed $10,000 matching grant for Clean Water Wells in Dharavi.",
+      "actor_name": "Marcus Chen",
+      "actor_role": "corporate_csr",
+      "project_id": "proj-1",
+      "project_title": "Clean Water Wells & Solar Micro-Grids",
+      "timestamp": "2026-10-25T14:30:00Z"
+    },
+    {
+      "id": "feed-2",
+      "type": "resource_delivered",
+      "title": "Medical Supply Kits Dispatched",
+      "description": "150 thermal fleece blankets and hygiene kits were delivered to rural transit clinic.",
+      "actor_name": "Arogya Community Health",
+      "actor_role": "ngo",
+      "project_id": "proj-3",
+      "project_title": "Mobile Healthcare Van & Telemedicine Hub",
+      "timestamp": "2026-10-25T11:15:00Z"
+    },
+    {
+      "id": "feed-3",
+      "type": "milestone_completed",
+      "title": "Hydrogeological Survey Milestone Achieved",
+      "description": "Field surveyors confirmed ground water table depth at 120ft across 5 target borewell locations.",
+      "actor_name": "Aashray Rural Trust",
+      "actor_role": "ngo",
+      "project_id": "proj-1",
+      "project_title": "Clean Water Wells & Solar Micro-Grids",
+      "timestamp": "2026-10-24T16:00:00Z"
+    },
+    {
+      "id": "feed-4",
+      "type": "urgent_pledged",
+      "title": "Emergency Flood Relief Pledged",
+      "description": "100 emergency dry ration kits pledged for families affected by monsoon inundation.",
+      "actor_name": "Apex Global CSR",
+      "actor_role": "corporate_csr",
+      "project_id": "proj-1",
+      "project_title": "Emergency Monsoon Flood Relief",
+      "timestamp": "2026-10-24T08:45:00Z"
+    },
+    {
+      "id": "feed-5",
+      "type": "volunteer_checked_in",
+      "title": "Volunteer Event QR Attendance Verified",
+      "description": "Marcus Chen completed 4.5 field volunteering hours for Miyawaki Afforestation drive.",
+      "actor_name": "GreenCanopy Guild",
+      "actor_role": "ngo",
+      "project_id": "proj-4",
+      "project_title": "Urban Micro-Forests & Miyawaki Afforestation",
+      "timestamp": "2026-10-23T12:00:00Z"
+    }
+  ],
+  "saved_projects": [
+    {
+      "id": "sav-1",
+      "user_id": "user-supp-1",
+      "project_id": "proj-1",
+      "notes": "Solar telemetry co-financing priority for Q4 CSR budget.",
+      "created_at": "2026-10-22T10:00:00Z"
+    },
+    {
+      "id": "sav-2",
+      "user_id": "user-supp-1",
+      "project_id": "proj-4",
+      "notes": "Urban greening initiative matching corporate net-zero pledges.",
+      "created_at": "2026-10-23T11:30:00Z"
+    },
+    {
+      "id": "sav-3",
+      "user_id": "user-supp-2",
+      "project_id": "proj-3",
+      "notes": "Telemedicine ultrasound screening diagnostic camp.",
+      "created_at": "2026-10-24T09:15:00Z"
+    }
+  ],
+  "volunteer_shifts": [
+    {
+      "id": "shift-1",
+      "ngo_id": "ngo-2",
+      "ngo_name": "BrightPath Global Literacy Foundation",
+      "project_id": "proj-2",
+      "project_title": "Digital Literacy & STEM Learning Centers for 1,200 Underprivileged Children",
+      "title": "Weekend STEM Tablet Mentorship & Coding Clinic",
+      "description": "Facilitate hands-on visual programming and mathematics games with 35 middle school students in Dharavi community lab.",
+      "shift_date": "2026-11-08",
+      "start_time": "09:30 AM",
+      "end_time": "01:00 PM",
+      "location": "BrightPath Community Center, 90 Feet Road, Dharavi, Mumbai",
+      "capacity": 12,
+      "registered_count": 8,
+      "required_skills": [
+        "Teaching",
+        "STEM",
+        "Basic Coding",
+        "Mentoring"
+      ],
+      "category": "education",
+      "status": "open",
+      "created_at": "2026-10-20T08:00:00Z"
+    },
+    {
+      "id": "shift-2",
+      "ngo_id": "ngo-4",
+      "ngo_name": "GreenCanopy Urban Afforestation Guild",
+      "project_id": "proj-4",
+      "project_title": "Urban Micro-Forests & Native Biodiversity Revival Across 12 Industrial Corridors",
+      "title": "Miyawaki Sapling Plantation & Organic Mulch Spreading",
+      "description": "Join our field team in preparing soil beds, tagging 300 native saplings, and laying organic coconut coir mulch.",
+      "shift_date": "2026-11-14",
+      "start_time": "07:00 AM",
+      "end_time": "11:30 AM",
+      "location": "Whitefield Ecological Wetland Corridor, Bengaluru",
+      "capacity": 25,
+      "registered_count": 18,
+      "required_skills": [
+        "Plantation",
+        "Outdoor Physical",
+        "Gardening"
+      ],
+      "category": "environment",
+      "status": "open",
+      "created_at": "2026-10-21T09:00:00Z"
+    },
+    {
+      "id": "shift-3",
+      "ngo_id": "ngo-3",
+      "ngo_name": "Arogya Community Health & Preventative Care Network",
+      "project_id": "proj-3",
+      "project_title": "Mobile Healthcare Van & Telemedicine Diagnostic Units for Remote Villages",
+      "title": "Rural Geriatric & Pediatric Health Camp Screening",
+      "description": "Assist doctors with vital signs triage (blood pressure, glucose testing, pulse oximetry) and patient intake registration.",
+      "shift_date": "2026-11-20",
+      "start_time": "08:30 AM",
+      "end_time": "02:00 PM",
+      "location": "Bhavnagar Taluka Health Pavilion, Gujarat",
+      "capacity": 10,
+      "registered_count": 7,
+      "required_skills": [
+        "Healthcare",
+        "Nursing",
+        "Vital Signs",
+        "Data Entry"
+      ],
+      "category": "healthcare",
+      "status": "open",
+      "created_at": "2026-10-22T10:00:00Z"
+    },
+    {
+      "id": "shift-4",
+      "ngo_id": "ngo-1",
+      "ngo_name": "Aashray Rural & Slum Upliftment Trust",
+      "project_id": "proj-1",
+      "project_title": "Clean Water Wells & Solar Micro-Grids for 5 Informal Settlements",
+      "title": "Solar Reverse Osmosis Telemetry Filter Replacement",
+      "description": "Technical field shift replacing RO pre-filter cartridges and testing IoT solar pump telemetry sensors.",
+      "shift_date": "2026-11-22",
+      "start_time": "10:00 AM",
+      "end_time": "03:00 PM",
+      "location": "Kalyan Rural Settlement Water Kiosk #3, Maharashtra",
+      "capacity": 5,
+      "registered_count": 5,
+      "required_skills": [
+        "Electrical",
+        "Plumbing",
+        "Hardware Telemetry"
+      ],
+      "category": "clean_water",
+      "status": "filled",
+      "created_at": "2026-10-23T11:00:00Z"
+    }
+  ],
+  "shift_registrations": [
+    {
+      "id": "sreg-1",
+      "shift_id": "shift-1",
+      "volunteer_id": "user-supp-1",
+      "volunteer_name": "Marcus Chen",
+      "volunteer_email": "marcus.chen@apextech.com",
+      "volunteer_phone": "+91 98200 12345",
+      "selected_skills": [
+        "STEM",
+        "Basic Coding"
+      ],
+      "notes": "Bringing 5 sample tablets for coding practice.",
+      "status": "confirmed",
+      "created_at": "2026-10-22T14:00:00Z"
+    },
+    {
+      "id": "sreg-2",
+      "shift_id": "shift-2",
+      "volunteer_id": "user-supp-1",
+      "volunteer_name": "Marcus Chen",
+      "volunteer_email": "marcus.chen@apextech.com",
+      "volunteer_phone": "+91 98200 12345",
+      "selected_skills": [
+        "Plantation"
+      ],
+      "notes": "Participating as part of corporate employee volunteer day.",
+      "status": "confirmed",
+      "created_at": "2026-10-23T09:00:00Z"
+    },
+    {
+      "id": "sreg-3",
+      "shift_id": "shift-3",
+      "volunteer_id": "user-supp-2",
+      "volunteer_name": "Dr. Ramesh Kulkarni",
+      "volunteer_email": "dr.kulkarni@healthnet.org",
+      "volunteer_phone": "+91 98330 54321",
+      "selected_skills": [
+        "Healthcare",
+        "Vital Signs"
+      ],
+      "notes": "Will perform non-invasive ultrasound checkups.",
+      "status": "confirmed",
+      "created_at": "2026-10-24T12:00:00Z"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "notif-1",
+      "user_id": "user-supp-1",
+      "recipient_email": "marcus.chen@apextech.com",
+      "type": "match_opportunity",
+      "title": "New High-Match Project in Mumbai",
+      "message": "BrightPath Literacy published a STEM tutoring project with a 94% alignment to your CSR preferences.",
+      "target_page": "explore",
+      "target_id": "proj-2",
+      "is_read": false,
+      "created_at": "2026-10-26T15:30:00Z"
+    },
+    {
+      "id": "notif-2",
+      "user_id": "user-supp-1",
+      "recipient_email": "marcus.chen@apextech.com",
+      "type": "partnership_update",
+      "title": "Partnership Proposal Accepted",
+      "message": "Aashray Rural Trust accepted your $10,000 corporate matching grant proposal for Clean Water Wells.",
+      "target_page": "supporter-dashboard",
+      "target_id": "part-1",
+      "is_read": true,
+      "created_at": "2026-10-25T14:30:00Z"
+    },
+    {
+      "id": "notif-3",
+      "user_id": "user-supp-1",
+      "recipient_email": "marcus.chen@apextech.com",
+      "type": "shift_confirmed",
+      "title": "Volunteering Shift Confirmed",
+      "message": "You are confirmed for 'Weekend STEM Tablet Mentorship' on Nov 8 (09:30 AM) in Dharavi.",
+      "target_page": "calendar",
+      "target_id": "shift-1",
+      "is_read": false,
+      "created_at": "2026-10-24T10:00:00Z"
+    },
+    {
+      "id": "notif-4",
+      "user_id": "user-supp-1",
+      "recipient_email": "marcus.chen@apextech.com",
+      "type": "milestone_reached",
+      "title": "Project Milestone Verified",
+      "message": "Clean Water Wells achieved 'Hydrogeological Survey' with verified groundwater depth proof.",
+      "target_page": "feed",
+      "target_id": "proj-1",
+      "is_read": false,
+      "created_at": "2026-10-24T16:05:00Z"
+    },
+    {
+      "id": "notif-5",
+      "user_id": "user-ngo-1",
+      "recipient_email": "contact@aashray-uplift.org",
+      "type": "partnership_update",
+      "title": "Draft Agreement Generated",
+      "message": "A new operational partnership draft agreement (AGR-2026-001) is ready for your review.",
+      "target_page": "ngo-dashboard",
+      "target_id": "part-1",
+      "is_read": false,
+      "created_at": "2026-10-26T17:00:00Z"
+    }
+  ],
+  "notification_preferences": [
+    {
+      "id": "pref-1",
+      "user_id": "user-supp-1",
+      "email_alerts_enabled": true,
+      "in_app_enabled": true,
+      "match_alerts": true,
+      "partnership_alerts": true,
+      "event_reminders": true,
+      "updated_at": "2026-10-20T00:00:00Z"
+    }
+  ],
+  "partnership_agreements": [
+    {
+      "id": "agr-part-1",
+      "partnership_id": "part-1",
+      "project_id": "proj-1",
+      "ngo_id": "ngo-1",
+      "ngo_name": "Aashray Rural & Slum Upliftment Trust",
+      "supporter_name": "Marcus Chen",
+      "supporter_organization": "Apex Global CSR Foundation",
+      "agreement_title": "Collaborative Grant & Technical Telemetry Agreement",
+      "scope_summary": "Joint operational initiative to install 5 deep-bore solar reverse-osmosis purification kiosks and IoT telemetry monitors for 5,000 residents across informal urban settlements.",
+      "ngo_responsibilities": "1. Secure municipal clearance and land approvals.\n2. Supervise geological well drilling and contractor logistics.\n3. Implement monthly water quality bacterial lab testing.\n4. Submit digital photographic milestone proof to ImpactConnect workspace.",
+      "partner_responsibilities": "1. Disburse $10,000 milestone-based corporate CSR grant.\n2. Supply 5 IoT solar telemetry sensors and technical installation schematics.\n3. Conduct quarterly volunteer engagement field visits.",
+      "deliverables_timeline": [
+        {
+          "milestone": "Hydrogeological Survey & Water Table Depth",
+          "target_date": "2026-10-25",
+          "status": "verified"
+        },
+        {
+          "milestone": "Drilling & Solar RO Membrane Installation",
+          "target_date": "2026-11-25",
+          "status": "in_progress"
+        },
+        {
+          "milestone": "Community Water Quality Audit & Official Handover",
+          "target_date": "2026-12-20",
+          "status": "upcoming"
+        }
+      ],
+      "status": "both_acknowledged",
+      "ngo_acknowledged_at": "2026-10-25T15:00:00Z",
+      "partner_acknowledged_at": "2026-10-25T15:45:00Z",
+      "is_legal_disclaimer_accepted": true,
+      "created_at": "2026-10-25T14:45:00Z",
+      "updated_at": "2026-10-25T15:45:00Z"
+    }
+  ],
+  "project_transparency_events": [
+    {
+      "id": "te-1",
+      "project_id": "proj-1",
+      "event_type": "publication",
+      "title": "Project Formally Published on ImpactConnect",
+      "description": "Initiative launched by Dr. Sunita Deshmukh following compliance review. Target set for 5 clean water borewells.",
+      "actor_name": "Dr. Sunita Deshmukh",
+      "actor_role": "ngo",
+      "actor_id": "user-ngo-1",
+      "evidence_url": null,
+      "is_verified": true,
+      "timestamp": "2026-03-01T10:00:00Z"
+    },
+    {
+      "id": "te-2",
+      "project_id": "proj-1",
+      "event_type": "partnership_accepted",
+      "title": "Corporate CSR Partnership Ratified",
+      "description": "Apex Global CSR committed $10,000 capital and 5 IoT telemetry monitors under transparent milestone governance.",
+      "actor_name": "Marcus Chen",
+      "actor_role": "corporate_csr",
+      "actor_id": "user-supp-1",
+      "evidence_url": null,
+      "is_verified": true,
+      "timestamp": "2026-10-25T14:30:00Z"
+    },
+    {
+      "id": "te-3",
+      "project_id": "proj-1",
+      "event_type": "milestone_completed",
+      "title": "Hydrogeological Survey Completed & Validated",
+      "description": "Ground water table confirmed at 120ft depth across 5 locations with laboratory certified mineral composition.",
+      "actor_name": "Aashray Rural Trust Field Team",
+      "actor_role": "ngo",
+      "actor_id": "user-ngo-1",
+      "evidence_url": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
+      "is_verified": true,
+      "timestamp": "2026-10-25T16:00:00Z"
+    },
+    {
+      "id": "te-4",
+      "project_id": "proj-1",
+      "event_type": "compliance_verified",
+      "title": "Independent Reviewer Verification Logged",
+      "description": "Third-party platform auditor verified milestone evidence and confirmed compliance with Section 8 non-profit standards.",
+      "actor_name": "Sarah Mitchell (Compliance Officer)",
+      "actor_role": "admin",
+      "actor_id": "user-admin",
+      "evidence_url": null,
+      "is_verified": true,
+      "timestamp": "2026-10-25T17:00:00Z"
+    },
+    {
+      "id": "te-5",
+      "project_id": "proj-2",
+      "event_type": "publication",
+      "title": "STEM Center Initiative Published",
+      "description": "BrightPath Foundation registered requirement for 50 student tablets and 3 volunteer mentors in Dharavi.",
+      "actor_name": "Amina Mwangi",
+      "actor_role": "ngo",
+      "actor_id": "user-ngo-2",
+      "evidence_url": null,
+      "is_verified": true,
+      "timestamp": "2026-03-10T11:00:00Z"
+    },
+    {
+      "id": "te-6",
+      "project_id": "proj-3",
+      "event_type": "resource_delivered",
+      "title": "Portable Diagnostic Kits Delivered",
+      "description": "150 clinical checkup kits and telemedicine telemetry transmitters successfully delivered to Bhavnagar transit clinic.",
+      "actor_name": "Arogya Field Dispatch",
+      "actor_role": "ngo",
+      "actor_id": "ngo-3",
+      "evidence_url": "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=600&q=80",
+      "is_verified": true,
+      "timestamp": "2026-10-24T12:00:00Z"
+    }
+  ],
+  "collective_campaigns": [
+    {
+      "id": "col-1",
+      "title": "Rural Solar Water Purification Stations (5 Gram Panchayats)",
+      "ngo_id": "ngo-1",
+      "ngo_name": "Jal Jeevan Mission Trust",
+      "cause": "Clean Water & Sanitation",
+      "sdg_number": 6,
+      "location": "Darbhanga, Bihar",
+      "target_amount": 350000,
+      "pledged_amount": 245000,
+      "confirmed_amount": 195000,
+      "resource_targets": [
+        {
+          "item": "Solar Inverters (5kVA)",
+          "target": 5,
+          "pledged": 4,
+          "confirmed": 3,
+          "unit": "units"
+        },
+        {
+          "item": "Industrial RO Membranes",
+          "target": 20,
+          "pledged": 20,
+          "confirmed": 15,
+          "unit": "sets"
+        },
+        {
+          "item": "Water Quality Testing Kits",
+          "target": 50,
+          "pledged": 42,
+          "confirmed": 30,
+          "unit": "kits"
+        }
+      ],
+      "beneficiary_count": 8200,
+      "deadline": "2026-11-30",
+      "status": "active",
+      "image_url": "https://images.unsplash.com/photo-1541252260730-0412e8e2108e?auto=format&fit=crop&w=800&q=80",
+      "story": "Pooling resources across 5 villages to replace high-arsenic tube wells with community solar RO filtration stations."
+    },
+    {
+      "id": "col-2",
+      "title": "Community Digital Classrooms & STEM Coding Labs",
+      "ngo_id": "ngo-2",
+      "ngo_name": "Vidya Foundation India",
+      "cause": "Quality Education",
+      "sdg_number": 4,
+      "location": "Barmer, Rajasthan",
+      "target_amount": 420000,
+      "pledged_amount": 310000,
+      "confirmed_amount": 260000,
+      "resource_targets": [
+        {
+          "item": "Refurbished Laptops / Desktops",
+          "target": 40,
+          "pledged": 32,
+          "confirmed": 25,
+          "unit": "units"
+        },
+        {
+          "item": "High-Speed 4G Wi-Fi Dongles",
+          "target": 10,
+          "pledged": 10,
+          "confirmed": 8,
+          "unit": "devices"
+        },
+        {
+          "item": "STEM Robotic Experiment Kits",
+          "target": 30,
+          "pledged": 22,
+          "confirmed": 15,
+          "unit": "kits"
+        }
+      ],
+      "beneficiary_count": 650,
+      "deadline": "2026-12-15",
+      "status": "active",
+      "image_url": "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80",
+      "story": "Setting up high-speed solar-connected computer labs so children in border districts learn coding, mathematics, and science."
+    },
+    {
+      "id": "col-3",
+      "title": "10,000 Native Miyawaki Forest Expansion",
+      "ngo_id": "ngo-4",
+      "ngo_name": "GreenCanopy Bio-Diversity Initiative",
+      "cause": "Climate Action",
+      "sdg_number": 13,
+      "location": "South Delhi, NCR",
+      "target_amount": 180000,
+      "pledged_amount": 165000,
+      "confirmed_amount": 150000,
+      "resource_targets": [
+        {
+          "item": "Indigenous Saplings (Neem, Peepal, Jamun)",
+          "target": 10000,
+          "pledged": 9200,
+          "confirmed": 8500,
+          "unit": "saplings"
+        },
+        {
+          "item": "Organic Compost & Vermicompost",
+          "target": 120,
+          "pledged": 120,
+          "confirmed": 100,
+          "unit": "bags (50kg)"
+        },
+        {
+          "item": "Drip Irrigation Pipe Rolls",
+          "target": 25,
+          "pledged": 20,
+          "confirmed": 18,
+          "unit": "rolls"
+        }
+      ],
+      "beneficiary_count": 25000,
+      "deadline": "2026-11-20",
+      "status": "active",
+      "image_url": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80",
+      "story": "Converting barren civic land into high-density native forest absorbing 32 metric tons of carbon dioxide per year."
+    }
+  ],
+  "collective_pledges": [
+    {
+      "id": "cpledge-1",
+      "campaign_id": "col-1",
+      "backer_name": "Marcus Chen",
+      "backer_email": "marcus.chen@apextech.com",
+      "pledge_type": "monetary",
+      "amount": 50000,
+      "item_name": null,
+      "quantity": 0,
+      "status": "confirmed",
+      "notes": "Apex Tech CSR Corporate Matching Grant",
+      "created_at": "2026-10-22T10:00:00Z"
+    },
+    {
+      "id": "cpledge-2",
+      "campaign_id": "col-1",
+      "backer_name": "Dr. Ramesh Kulkarni",
+      "backer_email": "dr.kulkarni@healthnet.org",
+      "pledge_type": "goods",
+      "amount": 0,
+      "item_name": "Water Quality Testing Kits",
+      "quantity": 15,
+      "status": "confirmed",
+      "notes": "Dispatched certified lab test kits",
+      "created_at": "2026-10-23T14:30:00Z"
+    },
+    {
+      "id": "cpledge-3",
+      "campaign_id": "col-2",
+      "backer_name": "Priya Sharma",
+      "backer_email": "priya.sharma@earthguard.in",
+      "pledge_type": "goods",
+      "amount": 0,
+      "item_name": "Refurbished Laptops / Desktops",
+      "quantity": 10,
+      "status": "pledged",
+      "notes": "Hardware testing completed, shipping next week",
+      "created_at": "2026-10-25T11:20:00Z"
+    }
+  ],
+  "employee_volunteering_programs": [
+    {
+      "id": "evp-1",
+      "company_name": "Apex Technologies",
+      "company_domain": "apextech.com",
+      "company_logo": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=120&q=80",
+      "title": "Apex Tech Code4Good: Youth STEM & AI Mentorship",
+      "partner_ngo": "Vidya Foundation India",
+      "partner_ngo_id": "ngo-2",
+      "cause": "Quality Education",
+      "location": "Bangalore & Hybrid Remote",
+      "date": "2026-11-14",
+      "timing": "10:00 AM - 03:00 PM IST",
+      "total_slots": 25,
+      "registered_count": 18,
+      "required_skills": [
+        "Python",
+        "Scratch Coding",
+        "Mathematics Mentoring",
+        "Public Speaking"
+      ],
+      "hours_per_slot": 5,
+      "description": "Spend a Saturday guiding high school students through building real-world Python web apps and interactive science simulations.",
+      "coordinator_email": "csr.lead@apextech.com"
+    },
+    {
+      "id": "evp-2",
+      "company_name": "Tata Consultancy CSR",
+      "company_domain": "tcs.com",
+      "company_logo": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=120&q=80",
+      "title": "TCS Green Roots: Micro-Forest Bio-Mapping Drive",
+      "partner_ngo": "GreenCanopy Bio-Diversity Initiative",
+      "partner_ngo_id": "ngo-4",
+      "cause": "Climate Action",
+      "location": "Aravalli Biodiversity Park, Gurgaon",
+      "date": "2026-11-21",
+      "timing": "07:30 AM - 12:30 PM IST",
+      "total_slots": 40,
+      "registered_count": 34,
+      "required_skills": [
+        "Field Survey",
+        "Sapling Planting",
+        "Tree Tagging",
+        "First Aid"
+      ],
+      "hours_per_slot": 5,
+      "description": "Hands-on field plantation and geo-tagging 1,200 native saplings using the mobile forest registry app.",
+      "coordinator_email": "sustainability@tcs.com"
+    },
+    {
+      "id": "evp-3",
+      "company_name": "Infosys Foundation",
+      "company_domain": "infosys.com",
+      "company_logo": "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=120&q=80",
+      "title": "Digital Financial Literacy Kiosks for Self-Help Groups",
+      "partner_ngo": "Rural Empowerment Collective",
+      "partner_ngo_id": "ngo-1",
+      "cause": "Reduced Inequalities",
+      "location": "Mysuru Rural Hub, Karnataka",
+      "date": "2026-12-05",
+      "timing": "09:30 AM - 02:00 PM IST",
+      "total_slots": 20,
+      "registered_count": 12,
+      "required_skills": [
+        "UPI Banking Guide",
+        "Basic Accounting",
+        "Hindi / Kannada Fluency"
+      ],
+      "hours_per_slot": 4.5,
+      "description": "Conduct hands-on cyber-safe digital payment training for 180 women artisans and micro-entrepreneurs.",
+      "coordinator_email": "csr@infosys.com"
+    }
+  ],
+  "employee_volunteering_registrations": [
+    {
+      "id": "evpreg-1",
+      "program_id": "evp-1",
+      "employee_name": "Marcus Chen",
+      "employee_email": "marcus.chen@apextech.com",
+      "employee_id": "AT-8812",
+      "department": "Cloud Solutions Engineering",
+      "selected_skill": "Python & Cloud Mentoring",
+      "status": "confirmed",
+      "attendance_verified": true,
+      "registered_at": "2026-10-23T12:00:00Z"
+    }
+  ],
+  "donation_deliveries": [
+    {
+      "id": "del-1",
+      "item_name": "Refurbished ThinkPad Laptops (Core i5, 8GB)",
+      "quantity": 15,
+      "category": "electronics",
+      "donor_name": "Marcus Chen",
+      "donor_email": "marcus.chen@apextech.com",
+      "donor_organization": "Apex Technologies",
+      "recipient_ngo_id": "ngo-2",
+      "recipient_ngo_name": "Vidya Foundation India",
+      "project_id": "proj-2",
+      "destination_address": "Vidya Learning Center, Near Post Office, Barmer, Rajasthan 344001",
+      "current_status": "dispatched",
+      "tracking_code": "BLUEDART-EXP-9921448",
+      "carrier": "BlueDart Surface Express",
+      "evidence_url": "https://images.unsplash.com/photo-1588702547923-7093a6c3ba33?auto=format&fit=crop&w=400&q=80",
+      "status_history": [
+        {
+          "status": "pledged",
+          "timestamp": "2026-10-20T09:00:00Z",
+          "actor": "Marcus Chen",
+          "note": "Pledged 15 laptops from office hardware upgrade cycle."
+        },
+        {
+          "status": "approved",
+          "timestamp": "2026-10-21T11:30:00Z",
+          "actor": "Ananya Roy (Vidya Cares)",
+          "note": "Accepted donation for Barmer Digital Lab. Sent packing guidelines."
+        },
+        {
+          "status": "dispatched",
+          "timestamp": "2026-10-24T15:00:00Z",
+          "actor": "Marcus Chen",
+          "note": "Dispatched via BlueDart. Tracking: BLUEDART-EXP-9921448."
+        }
+      ]
+    },
+    {
+      "id": "del-2",
+      "item_name": "Solar-Powered Water Quality Field Testing Kits",
+      "quantity": 12,
+      "category": "water_purification",
+      "donor_name": "Dr. Ramesh Kulkarni",
+      "donor_email": "dr.kulkarni@healthnet.org",
+      "donor_organization": "HealthNet Global",
+      "recipient_ngo_id": "ngo-1",
+      "recipient_ngo_name": "Jal Jeevan Mission Trust",
+      "project_id": "proj-1",
+      "destination_address": "Panchayat Bhawan, Block B, Darbhanga, Bihar 846004",
+      "current_status": "confirmed",
+      "tracking_code": "DTDC-PLUS-554190",
+      "carrier": "DTDC Priority Cargo",
+      "evidence_url": "https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=400&q=80",
+      "status_history": [
+        {
+          "status": "pledged",
+          "timestamp": "2026-10-18T10:00:00Z",
+          "actor": "Dr. Ramesh Kulkarni",
+          "note": "Donating 12 multi-parameter chemical testing kits."
+        },
+        {
+          "status": "approved",
+          "timestamp": "2026-10-18T14:20:00Z",
+          "actor": "Dr. Sunita Deshmukh",
+          "note": "Approved urgently for flood-prone wards."
+        },
+        {
+          "status": "dispatched",
+          "timestamp": "2026-10-20T08:00:00Z",
+          "actor": "Dr. Ramesh Kulkarni",
+          "note": "Shipped from Mumbai warehouse."
+        },
+        {
+          "status": "received",
+          "timestamp": "2026-10-23T11:15:00Z",
+          "actor": "Rajesh Kumar (Field Officer)",
+          "note": "Package received intact at Panchayat office."
+        },
+        {
+          "status": "confirmed",
+          "timestamp": "2026-10-24T16:00:00Z",
+          "actor": "Dr. Sunita Deshmukh",
+          "note": "All 12 units calibrated and verified in active field use."
+        }
+      ]
+    },
+    {
+      "id": "del-3",
+      "item_name": "Pediatric Nutrition Kits & Therapeutic Pastes",
+      "quantity": 50,
+      "category": "medical",
+      "donor_name": "Priya Sharma",
+      "donor_email": "priya.sharma@earthguard.in",
+      "donor_organization": "EarthGuard Alliance",
+      "recipient_ngo_id": "ngo-3",
+      "recipient_ngo_name": "Aarogya Seva Trust",
+      "project_id": "proj-5",
+      "destination_address": "Sub-District Hospital compound, Nashik, Maharashtra 422001",
+      "current_status": "approved",
+      "tracking_code": "SHIP-PENDING-9941",
+      "carrier": "Pending Courier Booking",
+      "evidence_url": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=400&q=80",
+      "status_history": [
+        {
+          "status": "pledged",
+          "timestamp": "2026-10-24T14:00:00Z",
+          "actor": "Priya Sharma",
+          "note": "Supplying 50 certified child nutritional paste cartons."
+        },
+        {
+          "status": "approved",
+          "timestamp": "2026-10-25T09:30:00Z",
+          "actor": "Aarogya Seva Coordinator",
+          "note": "Approved. Cold shipping required."
+        }
+      ]
+    }
+  ],
+  "expert_mentors": [
+    {
+      "id": "mentor-1",
+      "name": "Adv. Vikram Malhotra",
+      "title": "Senior Legal Counsel & Non-Profit Governance Specialist",
+      "organization": "LexImpact Advisory",
+      "expertise_areas": [
+        "FCRA 2020 Compliance",
+        "80G & 12A Certification",
+        "CSR Section 135 Audits",
+        "NGO Bylaws Drafting"
+      ],
+      "hourly_rate": "Pro-Bono (0 INR)",
+      "rating": 4.95,
+      "completed_consultations": 38,
+      "availability": "Tuesdays & Thursdays, 4:00 PM - 6:00 PM IST",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&h=200&q=80",
+      "bio": "14+ years advising international and Indian grassroots non-profits on statutory governance, FCRA renewals, and compliant CSR fund absorption."
+    },
+    {
+      "id": "mentor-2",
+      "name": "Meera Krishnan, CA",
+      "title": "Financial Architect & Institutional Grant Strategist",
+      "organization": "Krishnan & Associates (Chartered Accountants)",
+      "expertise_areas": [
+        "CSR Budget Modeling",
+        "Donor Financial Transparency",
+        "MCA-21 CSR-1 Filings",
+        "Statutory Audit Prep"
+      ],
+      "hourly_rate": "Pro-Bono (0 INR)",
+      "rating": 4.92,
+      "completed_consultations": 44,
+      "availability": "Wednesdays & Saturdays, 10:00 AM - 1:00 PM IST",
+      "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&h=200&q=80",
+      "bio": "Helped 30+ grassroots NGOs scale from ₹10 Lakhs to ₹3+ Crores in compliant CSR funding pipelines with institutional financial documentation."
+    },
+    {
+      "id": "mentor-3",
+      "name": "Dr. Sandeep Banerjee",
+      "title": "Public Health Epidemiologist & WASH Logistics",
+      "organization": "All India Institute of Hygiene & Public Health",
+      "expertise_areas": [
+        "Community Health Camps",
+        "Cold-Chain Vaccine Logistics",
+        "Nutrition Surveys",
+        "WASH Protocol"
+      ],
+      "hourly_rate": "Pro-Bono (0 INR)",
+      "rating": 4.98,
+      "completed_consultations": 29,
+      "availability": "Fridays, 3:00 PM - 6:00 PM IST",
+      "avatar": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=200&h=200&q=80",
+      "bio": "Former WHO consultant specialized in designing low-cost diagnostic screening camps and clean drinking water surveillance in tribal districts."
+    },
+    {
+      "id": "mentor-4",
+      "name": "Rajeshwari Sen",
+      "title": "Head of Social Tech Architecture & M&E Analytics",
+      "organization": "TechForBharat Labs",
+      "expertise_areas": [
+        "Data Collection Apps",
+        "Offline Mobile Survey Tech",
+        "Impact Dashboard Setup",
+        "GIS Mapping"
+      ],
+      "hourly_rate": "Pro-Bono (0 INR)",
+      "rating": 4.9,
+      "completed_consultations": 22,
+      "availability": "Mondays & Thursdays, 5:00 PM - 7:00 PM IST",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&h=200&q=80",
+      "bio": "Ex-Google engineer helping social impact initiatives build open-source data pipelines, verifiable mobile surveys, and automated impact tracking."
+    }
+  ],
+  "mentorship_sessions": [
+    {
+      "id": "msess-1",
+      "mentor_id": "mentor-1",
+      "mentor_name": "Adv. Vikram Malhotra",
+      "ngo_id": "ngo-1",
+      "ngo_name": "Jal Jeevan Mission Trust",
+      "topic": "FCRA Prior Permission & CSR Section 135 Co-Funding Review",
+      "scheduled_date": "2026-10-29",
+      "time_slot": "04:30 PM - 05:15 PM IST",
+      "status": "confirmed",
+      "notes": "Reviewing statutory compliance documentation for upcoming 5-village solar water purification grant.",
+      "meeting_link": "https://meet.jit.si/ImpactConnect-AdvMalhotra-JalJeevan"
+    },
+    {
+      "id": "msess-2",
+      "mentor_id": "mentor-2",
+      "mentor_name": "Meera Krishnan, CA",
+      "ngo_id": "ngo-2",
+      "ngo_name": "Vidya Foundation India",
+      "topic": "CSR-1 Project Cost Allocation & Depreciation Accounting for Laptops",
+      "scheduled_date": "2026-10-24",
+      "time_slot": "11:00 AM - 11:45 AM IST",
+      "status": "completed",
+      "notes": "Successfully drafted itemized capital equipment schedule for corporate sponsor audit compliance.",
+      "meeting_link": "https://meet.jit.si/ImpactConnect-MeeraCA-VidyaFoundation"
+    }
+  ],
+  "impact_stories": [
+    {
+      "id": "story-1",
+      "project_id": "proj-1",
+      "ngo_name": "Jal Jeevan Mission Trust",
+      "title": "From Toxic Arsenic Groundwater to Safe Solar RO: Darbhanga Ward 12 Transformation",
+      "cause": "Clean Water & Public Health",
+      "before_image": "https://images.unsplash.com/photo-1541252260730-0412e8e2108e?auto=format&fit=crop&w=800&q=80",
+      "after_image": "https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=800&q=80",
+      "before_description": "High turbidity open wells with arsenic levels 3.8x above WHO safety limit. Children suffered from frequent gastrointestinal infections.",
+      "after_description": "Installed 5,000 LPD solar-powered reverse osmosis station with automated mineral remineralization and 24/7 smart RFID water dispensing.",
+      "quantified_outcomes": [
+        {
+          "label": "Clean Water Dispensed",
+          "value": "45,000 Liters / Month"
+        },
+        {
+          "label": "Waterborne Illness Reduction",
+          "value": "78% in 6 Months"
+        },
+        {
+          "label": "Beneficiary Families",
+          "value": "620 Households"
+        }
+      ],
+      "verification_status": "field_audited",
+      "auditor_name": "Dr. Ramesh Kulkarni (HealthNet Lead Auditor)",
+      "consent_verified": true,
+      "published_date": "2026-10-24"
+    },
+    {
+      "id": "story-2",
+      "project_id": "proj-4",
+      "ngo_name": "GreenCanopy Bio-Diversity Initiative",
+      "title": "Reviving Delhi NCR Urban Wasteland into a 12,000-Tree Dense Native Miyawaki Forest",
+      "cause": "Climate Action & Bio-Diversity",
+      "before_image": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=800&q=80",
+      "after_image": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80",
+      "before_description": "Construction debris dumping ground with compacted alkaline soil, zero bird nesting activity, and severe PM10 dust emission.",
+      "after_description": "Decompacted soil with organic biomass, planted 42 native species at 3 plants/m² density. Self-sustaining canopy reached 14 feet height.",
+      "quantified_outcomes": [
+        {
+          "label": "Native Trees Thriving",
+          "value": "11,840 Trees (98.6% Survival)"
+        },
+        {
+          "label": "Carbon Sequestration",
+          "value": "32 Tons CO₂ / Year"
+        },
+        {
+          "label": "Bird & Pollinator Species",
+          "value": "34 Documented Species"
+        }
+      ],
+      "verification_status": "field_audited",
+      "auditor_name": "Delhi State Biodiversity Board Observer",
+      "consent_verified": true,
+      "published_date": "2026-10-25"
+    },
+    {
+      "id": "story-3",
+      "project_id": "proj-2",
+      "ngo_name": "Vidya Foundation India",
+      "title": "Mobile Computer Lab Bringing Coding & STEM to 420 Village Girls in Barmer",
+      "cause": "Quality Education & Gender Equality",
+      "before_image": "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80",
+      "after_image": "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80",
+      "before_description": "Zero access to digital devices. Girls had to walk 9 km to nearest cyber cafe for scholarship and board exam forms.",
+      "after_description": "Established 20-workstation solar powered digital classroom with Python curriculum, robotics kits, and offline Wikipedia mirrors.",
+      "quantified_outcomes": [
+        {
+          "label": "Girls Trained in Python",
+          "value": "420 Students"
+        },
+        {
+          "label": "Scholarships Secured",
+          "value": "88 High Schoolers"
+        },
+        {
+          "label": "Computer Lab Uptime",
+          "value": "99.4% (Solar Microgrid)"
+        }
+      ],
+      "verification_status": "field_audited",
+      "auditor_name": "Barmer District Education Officer (Observer)",
+      "consent_verified": true,
+      "published_date": "2026-10-26"
+    }
+  ],
+  "risk_alerts": [
+    {
+      "id": "risk-1",
+      "project_id": "proj-3",
+      "project_title": "Emergency Flood Relief & Food Supply Distribution",
+      "ngo_name": "Assam Flood Relief Taskforce",
+      "severity": "high",
+      "alert_type": "resource_shortage",
+      "title": "Water Purification Tablets & Baby Food Shortfall (> 65% unmet)",
+      "description": "Project distribution drive begins in 4 days. Only 35% of requested emergency survival kits have been pledged. Monsoon rainfall expected to intensify.",
+      "suggested_action": "Trigger urgent community notification and escalate to CSR corporate matching pool.",
+      "is_resolved": false,
+      "created_at": "2026-10-26T06:00:00Z"
+    },
+    {
+      "id": "risk-2",
+      "project_id": "proj-2",
+      "project_title": "Rural Digital Literacy & Tech Camp",
+      "ngo_name": "Vidya Foundation India",
+      "severity": "medium",
+      "alert_type": "volunteer_shortfall",
+      "title": "Volunteer Trainer Capacity at 40% (6 of 15 trainers signed up)",
+      "description": "Batch 2 starts in 10 days in Barmer. Additional Python and computer literacy volunteer trainers needed.",
+      "suggested_action": "Broadcast to Employee Volunteering Portal partner corporate tech employees.",
+      "is_resolved": false,
+      "created_at": "2026-10-25T14:00:00Z"
+    },
+    {
+      "id": "risk-3",
+      "project_id": "proj-1",
+      "project_title": "Clean Water Wells & Solar Micro-Grids",
+      "ngo_name": "Jal Jeevan Mission Trust",
+      "severity": "low",
+      "alert_type": "approaching_deadline",
+      "title": "Milestone 3 Audit Report Due in 7 Days",
+      "description": "Physical inspection of 5 RO units must be countersigned by Gram Panchayat head before releasing second tranche of CSR funds.",
+      "suggested_action": "Schedule on-site video verification with authorized field engineer.",
+      "is_resolved": false,
+      "created_at": "2026-10-24T18:00:00Z"
+    }
+  ],
+  "community_need_reports": [
+    {
+      "id": "heat-1",
+      "cause": "Clean Water & Sanitation",
+      "title": "Arsenic Contamination in Shallow Wells",
+      "district": "Darbhanga",
+      "state": "Bihar",
+      "lat": 26.15,
+      "lng": 85.9,
+      "urgency": "high",
+      "status": "verified",
+      "verified_by": "Jal Jeevan Mission Trust (Field Audit)",
+      "reporter_role": "ngo",
+      "affected_population": 4200,
+      "privacy_protected": true,
+      "description": "Shallow tube wells tested 3.2x above safe arsenic threshold. Immediate community solar RO unit needed.",
+      "created_at": "2026-10-21T08:30:00Z"
+    },
+    {
+      "id": "heat-2",
+      "cause": "Quality Education",
+      "title": "No Digital Devices in Border Schools",
+      "district": "Barmer",
+      "state": "Rajasthan",
+      "lat": 25.75,
+      "lng": 71.4,
+      "urgency": "medium",
+      "status": "verified",
+      "verified_by": "Vidya Foundation District Observer",
+      "reporter_role": "ngo",
+      "affected_population": 650,
+      "privacy_protected": true,
+      "description": "Secondary school girls walk 11 km to access computers for higher secondary vocational training.",
+      "created_at": "2026-10-22T11:00:00Z"
+    },
+    {
+      "id": "heat-3",
+      "cause": "Climate Action",
+      "title": "Severe Dust & Soil Degradation in Civic Belt",
+      "district": "South Delhi",
+      "state": "Delhi NCR",
+      "lat": 28.53,
+      "lng": 77.2,
+      "urgency": "medium",
+      "status": "verified",
+      "verified_by": "GreenCanopy Taskforce",
+      "reporter_role": "ngo",
+      "affected_population": 28000,
+      "privacy_protected": true,
+      "description": "Unprotected barren civic land causing acute PM10 particulate pollution. High potential for Miyawaki forestation.",
+      "created_at": "2026-10-23T14:15:00Z"
+    },
+    {
+      "id": "heat-4",
+      "cause": "Good Health & Well-being",
+      "title": "Malnutrition Screening Shortage in Tribal Pockets",
+      "district": "Nashik",
+      "state": "Maharashtra",
+      "lat": 20,
+      "lng": 73.78,
+      "urgency": "high",
+      "status": "verified",
+      "verified_by": "Aarogya Seva Trust",
+      "reporter_role": "ngo",
+      "affected_population": 1800,
+      "privacy_protected": true,
+      "description": "Children in 3 tribal hamlets require urgent therapeutic nutrition screening and multi-vitamin supplementation.",
+      "created_at": "2026-10-24T09:40:00Z"
+    },
+    {
+      "id": "heat-5",
+      "cause": "Disaster Relief & Hunger",
+      "title": "Monsoon Flash Inundation in Low-Lying Wards",
+      "district": "Dhubri",
+      "state": "Assam",
+      "lat": 26.02,
+      "lng": 89.98,
+      "urgency": "critical",
+      "status": "unverified",
+      "verified_by": "Pending Field Verification",
+      "reporter_role": "citizen_supporter",
+      "affected_population": 3100,
+      "privacy_protected": true,
+      "description": "River water entered 4 riverside villages. Dry rations, halogen water tablets, and emergency tarps reported needed.",
+      "created_at": "2026-10-25T16:20:00Z"
+    }
+  ],
+  "micro_tasks": [
+    {
+      "id": "mtask-1",
+      "ngo_id": "ngo-2",
+      "ngo_name": "Vidya Foundation India",
+      "title": "Translate 3 STEM Science Worksheets into Hindi",
+      "cause": "Quality Education",
+      "estimated_hours": 2,
+      "required_skills": [
+        "Hindi Translation",
+        "Basic Physics",
+        "Content Proofreading"
+      ],
+      "deadline": "2026-11-05",
+      "is_remote": true,
+      "reward_points": 150,
+      "completion_criteria": "Accurate translation of 15 science concepts with cultural relevance for Class 8 rural students.",
+      "status": "open",
+      "applicants_count": 3,
+      "submissions_count": 1
+    },
+    {
+      "id": "mtask-2",
+      "ngo_id": "ngo-1",
+      "ngo_name": "Jal Jeevan Mission Trust",
+      "title": "Digitize 50 Handwritten Water Quality Field Logsheets",
+      "cause": "Clean Water & Sanitation",
+      "estimated_hours": 1.5,
+      "required_skills": [
+        "Data Entry",
+        "Excel / CSV",
+        "Detail Orientation"
+      ],
+      "deadline": "2026-11-03",
+      "is_remote": true,
+      "reward_points": 120,
+      "completion_criteria": "Accurate entry of pH, arsenic, and turbidity values into standardized CSV template from uploaded photos.",
+      "status": "open",
+      "applicants_count": 5,
+      "submissions_count": 2
+    },
+    {
+      "id": "mtask-3",
+      "ngo_id": "ngo-4",
+      "ngo_name": "GreenCanopy Bio-Diversity Initiative",
+      "title": "Native Sapling Geo-Tagging & Photo Verification (South Delhi)",
+      "cause": "Climate Action",
+      "estimated_hours": 3,
+      "required_skills": [
+        "Smartphone GPS",
+        "Photography",
+        "Field Walk"
+      ],
+      "deadline": "2026-11-08",
+      "is_remote": false,
+      "location": "Aravalli Biodiversity Buffer, South Delhi",
+      "reward_points": 250,
+      "completion_criteria": "Visit site and upload geotagged photos of 40 marked Neem & Peepal saplings using mobile camera.",
+      "status": "open",
+      "applicants_count": 4,
+      "submissions_count": 1
+    },
+    {
+      "id": "mtask-4",
+      "ngo_id": "ngo-3",
+      "ngo_name": "Aarogya Seva Trust",
+      "title": "Design an Infographic Poster on Child Nutrition Guidelines",
+      "cause": "Good Health & Well-being",
+      "estimated_hours": 2.5,
+      "required_skills": [
+        "Graphic Design",
+        "Canva / Figma",
+        "Health Communication"
+      ],
+      "deadline": "2026-11-06",
+      "is_remote": true,
+      "reward_points": 200,
+      "completion_criteria": "Create single-page print-ready A4 poster showing balanced local diets for mothers in tribal blocks.",
+      "status": "open",
+      "applicants_count": 6,
+      "submissions_count": 3
+    }
+  ],
+  "milestone_sponsorships": [
+    {
+      "id": "mspon-1",
+      "project_id": "proj-1",
+      "milestone_id": "ms-1-1",
+      "milestone_title": "Phase 1 Hydrogeological Survey & Core Boring",
+      "target_amount": 50000,
+      "pledged_amount": 50000,
+      "confirmed_amount": 50000,
+      "sponsor_name": "Apex Technologies CSR",
+      "sponsor_email": "marcus.chen@apextech.com",
+      "status": "confirmed",
+      "receipt_id": "REC-APEX-2026-081",
+      "evidence_submitted": true,
+      "reviewer_approved": true,
+      "reviewed_by": "Dr. Sunita Deshmukh",
+      "notes": "Tranche released upon receipt of certified borehole water depth report."
+    },
+    {
+      "id": "mspon-2",
+      "project_id": "proj-1",
+      "milestone_id": "ms-1-2",
+      "milestone_title": "Solar RO Plant Civil Structure & Pipeline Laying",
+      "target_amount": 80000,
+      "pledged_amount": 80000,
+      "confirmed_amount": 60000,
+      "sponsor_name": "Tata Consultancy CSR",
+      "sponsor_email": "sustainability@tcs.com",
+      "status": "in_progress",
+      "receipt_id": "REC-TCS-2026-042",
+      "evidence_submitted": true,
+      "reviewer_approved": false,
+      "reviewed_by": "Pending Final Inspection",
+      "notes": "75% advance disbursed. Remaining 25% due upon water pump test."
+    },
+    {
+      "id": "mspon-3",
+      "project_id": "proj-2",
+      "milestone_id": "ms-2-1",
+      "milestone_title": "Procurement & Testing of 20 Refurbished Laptops",
+      "target_amount": 90000,
+      "pledged_amount": 90000,
+      "confirmed_amount": 90000,
+      "sponsor_name": "Infosys Foundation",
+      "sponsor_email": "csr@infosys.com",
+      "status": "confirmed",
+      "receipt_id": "REC-INFY-2026-119",
+      "evidence_submitted": true,
+      "reviewer_approved": true,
+      "reviewed_by": "Ananya Roy (Vidya Cares)",
+      "notes": "100% fulfilled. Hardware serial numbers verified on ground."
+    }
+  ],
+  "volunteer_passports": [
+    {
+      "id": "pass-user-supp-1",
+      "user_id": "user-supp-1",
+      "volunteer_name": "Marcus Chen",
+      "email": "marcus.chen@apextech.com",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&h=200&q=80",
+      "privacy_level": "public",
+      "verified_hours": 24.5,
+      "completed_tasks_count": 6,
+      "projects_supported_count": 4,
+      "skills_endorsed": [
+        "Python Mentoring",
+        "Solar Field Survey",
+        "Hardware Testing",
+        "CSR Architecture"
+      ],
+      "badges": [
+        {
+          "id": "b-1",
+          "title": "Top Corporate Mentor 2026",
+          "issued_by": "Vidya Foundation India",
+          "date": "2026-10-15"
+        },
+        {
+          "id": "b-2",
+          "title": "Verified Field Contributor",
+          "issued_by": "Jal Jeevan Mission Trust",
+          "date": "2026-10-24"
+        },
+        {
+          "id": "b-3",
+          "title": "Clean Water Champion",
+          "issued_by": "ImpactConnect Network",
+          "date": "2026-10-25"
+        }
+      ]
+    },
+    {
+      "id": "pass-user-supp-2",
+      "user_id": "user-supp-2",
+      "volunteer_name": "Dr. Ramesh Kulkarni",
+      "email": "dr.kulkarni@healthnet.org",
+      "avatar": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=200&h=200&q=80",
+      "privacy_level": "public",
+      "verified_hours": 38,
+      "completed_tasks_count": 9,
+      "projects_supported_count": 5,
+      "skills_endorsed": [
+        "Water Quality Testing",
+        "Epidemiology",
+        "Health Logistics",
+        "First Aid"
+      ],
+      "badges": [
+        {
+          "id": "b-4",
+          "title": "Master Field Health Auditor",
+          "issued_by": "HealthNet Global",
+          "date": "2026-10-10"
+        },
+        {
+          "id": "b-5",
+          "title": "Disaster Relief Vanguard",
+          "issued_by": "ImpactConnect Alliance",
+          "date": "2026-10-23"
+        }
+      ]
+    }
+  ],
+  "ngo_compliance_documents": [
+    {
+      "id": "doc-1",
+      "ngo_id": "ngo-1",
+      "doc_type": "CSR-1 Registration",
+      "title": "Ministry of Corporate Affairs Form CSR-1",
+      "file_name": "CSR1_JalJeevan_2024.pdf",
+      "status": "verified",
+      "uploaded_at": "2026-08-14T10:00:00Z",
+      "expiry_date": "2028-08-14",
+      "verified_by": "Admin Compliance Team",
+      "notes": "Registration number CSR00018842 validated on MCA21 portal."
+    },
+    {
+      "id": "doc-2",
+      "ngo_id": "ngo-1",
+      "doc_type": "Section 80G Certificate",
+      "title": "Income Tax Exemption Under Section 80G",
+      "file_name": "80G_Certificate_JalJeevan.pdf",
+      "status": "verified",
+      "uploaded_at": "2026-07-10T11:30:00Z",
+      "expiry_date": "2029-03-31",
+      "verified_by": "Senior Legal Reviewer",
+      "notes": "Perpetual registration under new IT Act rules verified."
+    },
+    {
+      "id": "doc-3",
+      "ngo_id": "ngo-1",
+      "doc_type": "Annual Audited Balance Sheet (FY 24-25)",
+      "title": "Chartered Accountant Audited Financial Statements",
+      "file_name": "Audit_Report_FY2425_Signed.pdf",
+      "status": "verified",
+      "uploaded_at": "2026-09-20T15:00:00Z",
+      "expiry_date": "2027-09-30",
+      "verified_by": "Financial Auditor",
+      "notes": "Unqualified clean audit report with UDIN stamp."
+    },
+    {
+      "id": "doc-4",
+      "ngo_id": "ngo-1",
+      "doc_type": "FCRA Registration",
+      "title": "Foreign Contribution Regulation Act Prior Approval",
+      "file_name": "FCRA_Renewal_Letter.pdf",
+      "status": "pending_review",
+      "uploaded_at": "2026-10-22T14:00:00Z",
+      "expiry_date": "2027-12-31",
+      "verified_by": "Under Review",
+      "notes": "Renewal acknowledgment under scrutiny by legal counsel."
+    },
+    {
+      "id": "doc-5",
+      "ngo_id": "ngo-2",
+      "doc_type": "CSR-1 Registration",
+      "title": "MCA Form CSR-1 Registration",
+      "file_name": "VidyaFoundation_CSR1.pdf",
+      "status": "verified",
+      "uploaded_at": "2026-06-18T09:00:00Z",
+      "expiry_date": "2028-06-18",
+      "verified_by": "Admin Compliance Team",
+      "notes": "Valid certificate matching Darpan registration."
+    },
+    {
+      "id": "doc-6",
+      "ngo_id": "ngo-2",
+      "doc_type": "Section 12A Registration",
+      "title": "Income Tax Section 12A Trust Registration",
+      "file_name": "12A_Order_Vidya.pdf",
+      "status": "verified",
+      "uploaded_at": "2026-05-12T12:00:00Z",
+      "expiry_date": "2029-03-31",
+      "verified_by": "Senior Legal Reviewer",
+      "notes": "Active Section 12AB order."
+    }
+  ],
+  "cross_ngo_rooms": [
+    {
+      "id": "room-1",
+      "title": "Clean Water & Nutrition Joint Coalition (Bihar - Bengal)",
+      "lead_ngo_id": "ngo-1",
+      "lead_ngo_name": "Jal Jeevan Mission Trust",
+      "partner_ngo_ids": [
+        "ngo-3"
+      ],
+      "partner_ngo_names": [
+        "Aarogya Seva Trust"
+      ],
+      "shared_cause": "Clean Water & Public Health",
+      "joint_goal": "Deliver integrated solar RO water purification and pediatric therapeutic nutrition camps across 12 flood-prone Gram Panchayats.",
+      "shared_resources": [
+        {
+          "item": "Mobile Testing Vans",
+          "quantity": 2,
+          "contributed_by": "Aarogya Seva"
+        },
+        {
+          "item": "Solar RO Engineers",
+          "quantity": 4,
+          "contributed_by": "Jal Jeevan"
+        },
+        {
+          "item": "Nutrition Paste Cartons",
+          "quantity": 120,
+          "contributed_by": "Joint CSR Pool"
+        }
+      ],
+      "shared_volunteers_count": 28,
+      "status": "active",
+      "joint_milestones": [
+        {
+          "id": "jm-1",
+          "title": "Joint Baseline Survey of 12 Villages",
+          "is_completed": true,
+          "completed_date": "2026-10-18"
+        },
+        {
+          "id": "jm-2",
+          "title": "Setup 4 Solar Water Stations & Health Screening Kiosks",
+          "is_completed": true,
+          "completed_date": "2026-10-25"
+        },
+        {
+          "id": "jm-3",
+          "title": "Post-Distribution Health Checkup at Day 90",
+          "is_completed": false,
+          "due_date": "2026-12-15"
+        }
+      ],
+      "activity_log": [
+        {
+          "date": "2026-10-14",
+          "text": "Joint collaboration room chartered by Jal Jeevan Trust & Aarogya Seva."
+        },
+        {
+          "date": "2026-10-18",
+          "text": "Baseline survey completed covering 2,400 households."
+        },
+        {
+          "date": "2026-10-25",
+          "text": "Milestone 2 certified by joint inspection panel."
+        }
+      ]
+    },
+    {
+      "id": "room-2",
+      "title": "Border Belt Digital & STEM Skill Alliance (Rajasthan)",
+      "lead_ngo_id": "ngo-2",
+      "lead_ngo_name": "Vidya Foundation India",
+      "partner_ngo_ids": [
+        "ngo-4"
+      ],
+      "partner_ngo_names": [
+        "GreenCanopy Bio-Diversity Initiative"
+      ],
+      "shared_cause": "Quality Education & Environment",
+      "joint_goal": "Equip rural schools with solar powered computer labs and student-managed native seed nurseries.",
+      "shared_resources": [
+        {
+          "item": "Solar Inverters & Desktops",
+          "quantity": 20,
+          "contributed_by": "Vidya Foundation"
+        },
+        {
+          "item": "Native Seedling Packs & Nursery Tools",
+          "quantity": 500,
+          "contributed_by": "GreenCanopy"
+        }
+      ],
+      "shared_volunteers_count": 18,
+      "status": "active",
+      "joint_milestones": [
+        {
+          "id": "jm-21",
+          "title": "Solar Classroom Installation at Barmer High School",
+          "is_completed": true,
+          "completed_date": "2026-10-22"
+        },
+        {
+          "id": "jm-22",
+          "title": "Student Green Club & Nursery Plantation",
+          "is_completed": false,
+          "due_date": "2026-11-12"
+        }
+      ],
+      "activity_log": [
+        {
+          "date": "2026-10-19",
+          "text": "Partnership room created for border district youth."
+        },
+        {
+          "date": "2026-10-22",
+          "text": "Solar microgrid installed with 99% battery health."
+        }
+      ]
+    }
+  ],
+  "long_term_followups": [
+    {
+      "id": "ltf-1",
+      "project_id": "proj-1",
+      "project_title": "Clean Water Wells & Solar Micro-Grids",
+      "ngo_name": "Jal Jeevan Mission Trust",
+      "interval_days": 90,
+      "due_date": "2026-11-15",
+      "status": "verified",
+      "outcome_type": "independent_audit",
+      "auditor_name": "HealthNet Global Quality Laboratory",
+      "survival_rate_or_uptime": "99.2% Plant Uptime",
+      "beneficiary_satisfaction_score": 94,
+      "measured_metrics": [
+        {
+          "label": "Water Turbidity",
+          "value": "0.4 NTU (WHO standard < 1.0)"
+        },
+        {
+          "label": "Total Liters Dispensed in 90 Days",
+          "value": "142,000 Liters"
+        },
+        {
+          "label": "Gastroenteritis Cases",
+          "value": "Reduced by 81%"
+        }
+      ],
+      "beneficiary_feedback": "Gram Panchayat reported uninterrupted drinking water even during power cuts due to the solar battery storage.",
+      "evidence_photo_url": "https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=600&q=80",
+      "last_updated": "2026-10-24T12:00:00Z"
+    },
+    {
+      "id": "ltf-2",
+      "project_id": "proj-4",
+      "project_title": "Urban Micro-Forests & Miyawaki Afforestation",
+      "ngo_name": "GreenCanopy Bio-Diversity Initiative",
+      "interval_days": 180,
+      "due_date": "2026-12-01",
+      "status": "submitted",
+      "outcome_type": "ngo_self_reported",
+      "auditor_name": "Internal Forestry Monitoring Team (Third-party audit scheduled)",
+      "survival_rate_or_uptime": "96.4% Sapling Survival Rate",
+      "beneficiary_satisfaction_score": 91,
+      "measured_metrics": [
+        {
+          "label": "Living Trees Counted",
+          "value": "11,568 of 12,000"
+        },
+        {
+          "label": "Average Canopy Height",
+          "value": "11.8 Feet"
+        },
+        {
+          "label": "Insect & Bird Species Documented",
+          "value": "28 Species"
+        }
+      ],
+      "beneficiary_feedback": "Resident Welfare Association noted noticeable drop in surface ambient temperature and dust settling near the boundary.",
+      "evidence_photo_url": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80",
+      "last_updated": "2026-10-25T15:30:00Z"
+    }
+  ]
+}
