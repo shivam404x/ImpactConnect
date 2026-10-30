@@ -35,7 +35,7 @@ export const CAUSE_CATEGORIES = [
 
 export const REQUIREMENT_TYPES = [
   { id: "all", label: "All Needs" },
-  { id: "funding", label: "Funding & Grants", icon: "DollarSign" },
+  { id: "funding", label: "Funding & Grants", icon: "IndianRupee" },
   { id: "volunteers", label: "Volunteers Needed", icon: "Users" },
   { id: "resources", label: "Goods & Supplies", icon: "Package" },
   { id: "skills", label: "Skilled Professionals", icon: "Briefcase" },

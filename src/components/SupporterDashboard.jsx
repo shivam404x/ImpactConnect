@@ -8,7 +8,7 @@ import {
   CheckCircle2, 
   XCircle, 
   MapPin, 
-  DollarSign, 
+  IndianRupee, 
   Building2, 
   ArrowRight,
   RefreshCw,

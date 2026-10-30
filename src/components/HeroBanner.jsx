@@ -5,7 +5,7 @@ import {
   ShieldCheck, 
   TrendingUp, 
   Users, 
-  DollarSign, 
+  IndianRupee, 
   Building2,
   ArrowRight
 } from 'lucide-react';
@@ -96,12 +96,12 @@ export default function HeroBanner({
             <div className="p-3.5 rounded-xl bg-slate-800/60 border border-slate-700/60 backdrop-blur-sm">
               <div className="flex items-center justify-between text-slate-400 text-xs mb-1">
                 <span>Funding Pledged</span>
-                <DollarSign className="w-3.5 h-3.5 text-amber-400" />
+                <IndianRupee className="w-3.5 h-3.5 text-amber-400" />
               </div>
               <div className="text-2xl font-bold text-white">
-                ${(stats?.totalFundingRaised || 57000).toLocaleString()}
+                ₹{(stats?.totalFundingRaised || 57000).toLocaleString('en-IN')}
               </div>
-              <div className="text-[11px] text-amber-400 mt-0.5">Target: ${(stats?.totalFundingTarget || 93500).toLocaleString()}</div>
+              <div className="text-[11px] text-amber-400 mt-0.5">Target: ₹{(stats?.totalFundingTarget || 93500).toLocaleString('en-IN')}</div>
             </div>
 
             <div className="p-3.5 rounded-xl bg-slate-800/60 border border-slate-700/60 backdrop-blur-sm">

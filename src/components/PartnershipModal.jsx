@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { 
   X, 
   HeartHandshake, 
-  DollarSign, 
+  IndianRupee, 
   Users, 
   Package, 
   Briefcase, 
@@ -19,7 +19,7 @@ export default function PartnershipModal({ project, currentPersona, onClose, onS
 
   // Simplified choice: 'funds', 'volunteer', 'supplies'
   const [supportMode, setSupportMode] = useState('funds');
-  const [amountChoice, setAmountChoice] = useState('$50');
+  const [amountChoice, setAmountChoice] = useState('₹2,500');
   const [volunteerTimeChoice, setVolunteerTimeChoice] = useState('4 hrs/week');
   const [customValue, setCustomValue] = useState('');
   
@@ -50,7 +50,7 @@ export default function PartnershipModal({ project, currentPersona, onClose, onS
       offerType = 'resource_donation';
       offerVal = customValue || 'Supplies / Equipment Donation';
     } else {
-      offerVal = customValue ? `$${customValue.replace('$', '')}` : amountChoice;
+      offerVal = customValue ? (customValue.startsWith('₹') ? customValue : `₹${customValue.replace(/[$₹, ]/g, '')}`) : amountChoice;
     }
 
     try {
@@ -155,7 +155,7 @@ export default function PartnershipModal({ project, currentPersona, onClose, onS
                       : 'bg-slate-800 border-slate-700 text-slate-300 hover:bg-slate-700'
                   }`}
                 >
-                  <DollarSign className="w-5 h-5 text-amber-400" />
+                  <IndianRupee className="w-5 h-5 text-amber-400" />
                   <span className="text-xs">Donate Funds</span>
                 </button>
 
@@ -192,7 +192,7 @@ export default function PartnershipModal({ project, currentPersona, onClose, onS
               <div>
                 <label className="block text-xs font-semibold text-slate-400 mb-1.5">Select Amount:</label>
                 <div className="flex flex-wrap gap-2">
-                  {['$25', '$50', '$100', '$250', '$500'].map((amt) => (
+                  {['₹1,000', '₹2,500', '₹5,000', '₹10,000', '₹25,000'].map((amt) => (
                     <button
                       key={amt}
                       type="button"
@@ -210,7 +210,7 @@ export default function PartnershipModal({ project, currentPersona, onClose, onS
                     type="text"
                     value={customValue}
                     onChange={(e) => setCustomValue(e.target.value)}
-                    placeholder="Other $"
+                    placeholder="Other ₹"
                     className="w-24 px-2 py-1 rounded-xl bg-slate-800 border border-slate-700 text-xs text-white"
                   />
                 </div>

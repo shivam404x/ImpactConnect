@@ -8,7 +8,7 @@ import {
   XCircle, 
   Clock, 
   Users, 
-  DollarSign, 
+  IndianRupee, 
   Edit3, 
   Trash2, 
   Save, 

@@ -7,7 +7,7 @@ import {
   ArrowRight, 
   MapPin, 
   Calendar, 
-  DollarSign, 
+  IndianRupee, 
   Package, 
   Users, 
   ShieldCheck, 
@@ -247,7 +247,7 @@ export default function NeedToActionModal({
                     <div key={i} className="p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-1">
                       <div className="flex items-center justify-between">
                         <span className="font-bold text-slate-900 flex items-center space-x-1">
-                          {res.type === 'funding' && <DollarSign className="w-3 h-3 text-[#16A36A]" />}
+                          {res.type === 'funding' && <IndianRupee className="w-3 h-3 text-[#16A36A]" />}
                           {res.type === 'goods' && <Package className="w-3 h-3 text-blue-600" />}
                           {res.type === 'volunteers' && <Users className="w-3 h-3 text-purple-600" />}
                           <span>{res.name}</span>

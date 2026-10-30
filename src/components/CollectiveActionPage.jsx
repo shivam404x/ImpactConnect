@@ -6,7 +6,7 @@ import {
   Clock, 
   HeartHandshake, 
   Package, 
-  DollarSign, 
+  IndianRupee, 
   MapPin, 
   Calendar, 
   AlertCircle, 
@@ -362,7 +362,7 @@ export default function CollectiveActionPage({
                         : 'border-slate-200 text-slate-600 hover:bg-slate-50'
                     }`}
                   >
-                    <DollarSign className="w-3.5 h-3.5" />
+                    <IndianRupee className="w-3.5 h-3.5" />
                     <span>Monetary Pool</span>
                   </button>
 

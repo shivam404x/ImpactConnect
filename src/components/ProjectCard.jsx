@@ -2,7 +2,7 @@ import React from 'react';
 import { 
   MapPin, 
   CheckCircle2, 
-  DollarSign, 
+  IndianRupee, 
   Users, 
   Package, 
   Briefcase, 
@@ -121,11 +121,11 @@ export default function ProjectCard({
               <div>
                 <div className="flex items-center justify-between text-xs mb-1">
                   <span className="text-slate-500 flex items-center space-x-1">
-                    <DollarSign className="w-3.5 h-3.5 text-amber-600" />
+                    <IndianRupee className="w-3.5 h-3.5 text-amber-600" />
                     <span>Funding Raised</span>
                   </span>
                   <span className="font-bold text-slate-900">
-                    ${Number(fundingReq.current_quantity).toLocaleString()} / ${Number(fundingReq.target_quantity).toLocaleString()}
+                    ₹{Number(fundingReq.current_quantity).toLocaleString('en-IN')} / ₹{Number(fundingReq.target_quantity).toLocaleString('en-IN')}
                   </span>
                 </div>
                 <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">

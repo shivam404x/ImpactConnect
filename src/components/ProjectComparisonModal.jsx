@@ -7,7 +7,7 @@ import {
   Building2, 
   ShieldCheck, 
   Calendar, 
-  DollarSign, 
+  IndianRupee, 
   Users, 
   Package, 
   Printer, 
@@ -185,8 +185,8 @@ export default function ProjectComparisonModal({
                   return (
                     <td key={p.id} className="p-4">
                       <div className="flex items-center justify-between text-xs font-bold mb-1">
-                        <span className="text-[#16A36A]">${current.toLocaleString()}</span>
-                        <span className="text-slate-400">of ${target.toLocaleString()}</span>
+                        <span className="text-[#16A36A]">₹{current.toLocaleString('en-IN')}</span>
+                        <span className="text-slate-400">of ₹{target.toLocaleString('en-IN')}</span>
                       </div>
                       <div className="w-full bg-slate-100 rounded-full h-2 overflow-hidden mb-1">
                         <div className="bg-[#16A36A] h-2 rounded-full" style={{ width: `${pct}%` }} />

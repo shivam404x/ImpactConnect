@@ -35,7 +35,7 @@
       "role": "corporate",
       "supporter_type": "corporate_csr",
       "organization_name": "Apex Global CSR Foundation",
-      "company_csr_budget": "$150,000 Annual Community Pool",
+      "company_csr_budget": "₹1,50,00,000 Annual Community Pool",
       "skills": [
         "CSR Grantmaking",
         "Tech Hardware",
@@ -300,85 +300,6 @@
   ],
   "projects": [
     {
-      "id": "proj-1793043035891",
-      "status": "active",
-      "urgency": "urgent",
-      "cover_image": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80",
-      "verified_beneficiaries": 0,
-      "estimated_beneficiaries": 2000,
-      "expense_breakdown": [
-        {
-          "category": "Equipment & Hardware",
-          "percentage": 55,
-          "amount": 8000
-        },
-        {
-          "category": "Community Field Outreach",
-          "percentage": 30,
-          "amount": 4500
-        },
-        {
-          "category": "Operational Logistics",
-          "percentage": 15,
-          "amount": 2500
-        }
-      ],
-      "created_at": "2026-10-26T19:30:35.891Z",
-      "updated_at": "2026-10-26T19:30:35.891Z",
-      "ngo_id": "ngo-1",
-      "title": "Audit Test: Clean Drinking Kiosk Project",
-      "cause_category": "water_sanitation",
-      "description": "Providing clean filtered water to 500 slum households.",
-      "location_city": "Mumbai",
-      "location_country": "India",
-      "target_funding": 50000,
-      "sdg_goals": [
-        6
-      ]
-    },
-    {
-      "id": "proj-1793042260756",
-      "title": "Clean Water Initiative in Darbhanga",
-      "ngo_id": "ngo-1",
-      "ngo_name": "Verified Community NGO",
-      "cause": "Clean Water & Sanitation",
-      "sdg": 6,
-      "location": "Darbhanga",
-      "status": "active",
-      "urgency": "high",
-      "funding_goal": 85000,
-      "funding_received": 0,
-      "volunteers_needed": 5,
-      "volunteers_registered": 0,
-      "deadline": "2026-11-09",
-      "summary": "Flash floods damaged 4 primary school buildings in Darbhanga, Bihar. Around 350 rural school children urgently need 350 notebook study kits, 20 refurbished laptops for teachers, and ₹1,20,000 for roof repair and clean drinking water purification before the semester starts in 2 weeks.",
-      "image_url": "https://images.unsplash.com/photo-1541252260730-0412e8e2108e?auto=format&fit=crop&w=800&q=80",
-      "verified_status": "verified",
-      "is_published_by_converter": true,
-      "created_at": "2026-10-26T19:17:40.756Z"
-    },
-    {
-      "id": "proj-1793041313975",
-      "title": "Quality Education Initiative in Darbhanga",
-      "ngo_id": "ngo-1",
-      "ngo_name": "Jal Jeevan",
-      "cause": "Quality Education",
-      "sdg": 4,
-      "location": "Darbhanga",
-      "status": "active",
-      "urgency": "medium",
-      "funding_goal": 150000,
-      "funding_received": 0,
-      "volunteers_needed": 5,
-      "volunteers_registered": 0,
-      "deadline": "2026-11-09",
-      "summary": "Floods in Darbhanga destroyed primary school roof. 300 children need 300 books, 15 laptops and Rs 150000 for repair by next week.",
-      "image_url": "https://images.unsplash.com/photo-1541252260730-0412e8e2108e?auto=format&fit=crop&w=800&q=80",
-      "verified_status": "verified",
-      "is_published_by_converter": true,
-      "created_at": "2026-10-26T19:01:53.975Z"
-    },
-    {
       "id": "proj-1",
       "ngo_id": "ngo-1",
       "title": "Clean Water Wells & Solar Micro-Grids for 5 Informal Settlements",
@@ -587,7 +508,7 @@
       "description": "Procurement of high-capacity reverse osmosis filtration systems and solar submersible pumps.",
       "target_quantity": 28000,
       "current_quantity": 18500,
-      "unit": "USD",
+      "unit": "INR",
       "skill_tags": [
         "Grant Funding",
         "CSR Sponsorship"
@@ -632,7 +553,7 @@
       "description": "Grant for off-grid solar inverters and local micro-cloud servers.",
       "target_quantity": 18500,
       "current_quantity": 13500,
-      "unit": "USD",
+      "unit": "INR",
       "skill_tags": [
         "Renewable Energy Grant",
         "EdTech"
@@ -647,7 +568,7 @@
       "description": "Corporate CSR sponsorship for customized 4WD diagnostic van fabrication.",
       "target_quantity": 35000,
       "current_quantity": 22000,
-      "unit": "USD",
+      "unit": "INR",
       "skill_tags": [
         "CSR Healthcare",
         "Corporate Grant"
@@ -691,15 +612,6 @@
       "evidence_url": "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80",
       "evidence_notes": "Teacher orientation completed for 16 educators. Battery health certified.",
       "completed_at": "2026-12-05T16:30:00Z"
-    },
-    {
-      "id": "ms-1793043035891-1",
-      "project_id": "proj-1793043035891",
-      "title": "Community Baseline Survey & Partner Kickoff",
-      "description": "Initial mobilization and household vulnerability assessment.",
-      "target_date": "2026-12-15",
-      "is_completed": false,
-      "verified_by_reviewer": false
     }
   ],
   "volunteer_roles": [
@@ -800,22 +712,6 @@
   ],
   "partnership_requests": [
     {
-      "id": "req-part-1793043035898",
-      "status": "accepted",
-      "ngo_response_note": null,
-      "responded_at": "2026-10-26T19:30:35.903Z",
-      "created_at": "2026-10-26T19:30:35.898Z",
-      "updated_at": "2026-10-26T19:30:35.903Z",
-      "project_id": "proj-1793043035891",
-      "ngo_id": "ngo-1",
-      "supporter_name": "Marcus Chen",
-      "supporter_email": "marcus.chen@apextech.com",
-      "offer_type": "Grant Funding",
-      "offer_value": "INR 50,000 Milestone Grant",
-      "message": "We are eager to co-fund this water purification station.",
-      "timeline": "Immediate"
-    },
-    {
       "id": "req-part-1",
       "project_id": "proj-1",
       "ngo_id": "ngo-1",
@@ -826,7 +722,7 @@
       "supporter_type": "corporate_csr",
       "organization_name": "Apex Global Foundation",
       "offer_type": "funding",
-      "offer_value": "$10,000 Matching Grant",
+      "offer_value": "₹10,00,000 Matching Grant",
       "message": "We want to sponsor the clean water kiosks in Dharavi as part of Apex Tech's annual ESG commitment.",
       "timeline": "Immediate (Next 14 Days)",
       "status": "accepted",
@@ -862,7 +758,7 @@
       "partnership_id": "req-part-1",
       "sender_name": "Marcus Chen",
       "sender_role": "corporate",
-      "message": "Hi Dr. Deshmukh! We have approved the first milestone disbursement of $5,000 for the water kiosks.",
+      "message": "Hi Dr. Deshmukh! We have approved the first milestone disbursement of ₹5,00,000 for the water kiosks.",
       "created_at": "2026-10-23T11:00:00Z"
     },
     {
@@ -880,7 +776,7 @@
       "company_name": "Apex Global CSR Foundation",
       "contact_email": "csr@apextech.com",
       "title": "2026 Community Clean Water & Solar Innovation Grant Challenge",
-      "grant_budget": "$50,000 Grant Fund",
+      "grant_budget": "₹50,00,000 Grant Fund",
       "target_sdgs": [
         6,
         7,
@@ -900,7 +796,7 @@
       "company_name": "Horizon Health Cares",
       "contact_email": "grants@horizonhealth.org",
       "title": "Maternal Ultrasound & Telemedicine Field Sponsorship",
-      "grant_budget": "$35,000 Grant",
+      "grant_budget": "₹35,00,000 Grant",
       "target_sdgs": [
         3,
         5,
@@ -959,21 +855,12 @@
   ],
   "contributions": [
     {
-      "id": "contrib-1793043035898",
-      "project_id": "proj-1793043035891",
-      "donor_name": "Marcus Chen",
-      "contribution_type": "Grant Funding",
-      "amount_or_item": "INR 50,000 Milestone Grant",
-      "is_sample_demo": true,
-      "created_at": "2026-10-26T19:30:35.898Z"
-    },
-    {
       "id": "contrib-1",
       "project_id": "proj-1",
       "donor_name": "Apex Global CSR Foundation",
       "donor_type": "corporate_csr",
       "contribution_type": "funding",
-      "amount_or_item": "$10,000 Milestone Grant",
+      "amount_or_item": "₹10,00,000 Milestone Grant",
       "is_sample_demo": true,
       "created_at": "2026-10-22T14:30:00Z"
     },
@@ -983,7 +870,7 @@
       "donor_name": "Mehta Family Philanthropy",
       "donor_type": "donor",
       "contribution_type": "funding",
-      "amount_or_item": "$8,500 Direct Grant",
+      "amount_or_item": "₹8,50,000 Direct Grant",
       "is_sample_demo": true,
       "created_at": "2026-10-18T10:00:00Z"
     },
@@ -1000,64 +887,10 @@
   ],
   "activity_logs": [
     {
-      "id": "act-1793042260757",
-      "event_type": "campaign_created",
-      "title": "New Campaign Created via Need-to-Action Converter",
-      "description": "\"Clean Water Initiative in Darbhanga\" has been reviewed, confirmed and published to active live drives.",
-      "related_id": "proj-1793042260756",
-      "created_at": "2026-10-26T19:17:40.757Z"
-    },
-    {
-      "id": "act-1793041527097",
-      "event_type": "volunteer_checked_in",
-      "title": "Volunteer Check-In Verified via QR",
-      "description": "Marcus Chen recorded 4.5 volunteering hours for \"Clean Water Wells & Solar Micro-Grids Fieldwork\".",
-      "related_id": "proj-1",
-      "created_at": "2026-10-26T19:05:27.097Z"
-    },
-    {
-      "id": "act-1793041314009",
-      "event_type": "impact_story_published",
-      "title": "New Before-and-After Impact Story Published",
-      "description": "\"Solar RO Pure Water Transformation\" published by Verified NGO with verified visual proof.",
-      "created_at": "2026-10-26T19:01:54.009Z"
-    },
-    {
-      "id": "act-1793041313997",
-      "event_type": "collective_pledge",
-      "title": "Pledge Received for \"Quality Education Initiative in Darbhanga\"",
-      "description": "Test Backer pledged ₹10,000.",
-      "created_at": "2026-10-26T19:01:53.997Z"
-    },
-    {
-      "id": "act-1793041313975",
-      "event_type": "campaign_created",
-      "title": "New Campaign Created via Need-to-Action Converter",
-      "description": "\"Quality Education Initiative in Darbhanga\" has been reviewed, confirmed and published to active live drives.",
-      "related_id": "proj-1793041313975",
-      "created_at": "2026-10-26T19:01:53.975Z"
-    },
-    {
-      "id": "act-1793040777828",
-      "event_type": "volunteer_checked_in",
-      "title": "Volunteer Check-In Verified via QR",
-      "description": "Marcus Chen recorded 4.5 volunteering hours for \"Clean Water Wells & Solar Micro-Grids Fieldwork\".",
-      "related_id": "proj-1",
-      "created_at": "2026-10-26T18:52:57.828Z"
-    },
-    {
-      "id": "act-1793040763228",
-      "event_type": "volunteer_checked_in",
-      "title": "Volunteer Check-In Verified via QR",
-      "description": "Marcus Chen recorded 4.5 volunteering hours for \"Clean Water Wells & Solar Micro-Grids Fieldwork\".",
-      "related_id": "proj-1",
-      "created_at": "2026-10-26T18:52:43.228Z"
-    },
-    {
       "id": "act-1",
       "event_type": "partnership_accepted",
       "title": "Clean Water Milestone Grant Approved",
-      "description": "Apex Global CSR Foundation confirmed $10,000 matching grant for Aashray Rural Trust.",
+      "description": "Apex Global CSR Foundation confirmed ₹10,00,000 matching grant for Aashray Rural Trust.",
       "related_id": "proj-1",
       "created_at": "2026-10-22T14:30:00Z"
     },
@@ -1310,7 +1143,7 @@
       "funder_name": "Google.org Philanthropic Fund",
       "funder_type": "corporate_csr",
       "grant_amount": 100000,
-      "grant_amount_formatted": "$100,000 USD",
+      "grant_amount_formatted": "₹85,00,000 INR",
       "cause_categories": [
         "education",
         "poverty"
@@ -1329,7 +1162,7 @@
       "funder_name": "Tata Community Trusts",
       "funder_type": "philanthropic_foundation",
       "grant_amount": 60000,
-      "grant_amount_formatted": "$60,000 / ₹50,00,000 INR",
+      "grant_amount_formatted": "₹50,00,000 INR",
       "cause_categories": [
         "environment",
         "healthcare"
@@ -1348,7 +1181,7 @@
       "funder_name": "United States Agency for International Development",
       "funder_type": "government",
       "grant_amount": 150000,
-      "grant_amount_formatted": "$150,000 USD",
+      "grant_amount_formatted": "₹1,25,00,000 INR",
       "cause_categories": [
         "environment",
         "disaster_relief"
@@ -1367,7 +1200,7 @@
       "funder_name": "Azim Premji Philanthropic Initiatives",
       "funder_type": "philanthropic_foundation",
       "grant_amount": 40000,
-      "grant_amount_formatted": "$40,000 / ₹35,00,000 INR",
+      "grant_amount_formatted": "₹35,00,000 INR",
       "cause_categories": [
         "education"
       ],
@@ -1381,48 +1214,6 @@
     }
   ],
   "volunteer_attendance": [
-    {
-      "id": "att-1793041527096",
-      "check_in_time": "2026-10-26T19:05:27.096Z",
-      "hours_logged": 4.5,
-      "status": "verified",
-      "created_at": "2026-10-26T19:05:27.097Z",
-      "event_id": "event-1-session-680",
-      "project_id": "proj-1",
-      "project_title": "Clean Water Wells & Solar Micro-Grids Fieldwork",
-      "volunteer_name": "Marcus Chen",
-      "volunteer_email": "marcus.chen@apextech.com",
-      "qr_token": "QR-IC-2026-MC8812",
-      "verified_by": "Authorized Field Coordinator"
-    },
-    {
-      "id": "att-1793040777827",
-      "check_in_time": "2026-10-26T18:52:57.827Z",
-      "hours_logged": 4.5,
-      "status": "verified",
-      "created_at": "2026-10-26T18:52:57.828Z",
-      "event_id": "event-1-session-023",
-      "project_id": "proj-1",
-      "project_title": "Clean Water Wells & Solar Micro-Grids Fieldwork",
-      "volunteer_name": "Marcus Chen",
-      "volunteer_email": "marcus.chen@apextech.com",
-      "qr_token": "QR-IC-2026-MC8812",
-      "verified_by": "Authorized Field Coordinator"
-    },
-    {
-      "id": "att-1793040763228",
-      "check_in_time": "2026-10-26T18:52:43.228Z",
-      "hours_logged": 4.5,
-      "status": "verified",
-      "created_at": "2026-10-26T18:52:43.228Z",
-      "event_id": "event-1-2026-10-26",
-      "project_id": "proj-1",
-      "project_title": "Clean Water Wells & Solar Micro-Grids Fieldwork",
-      "volunteer_name": "Marcus Chen",
-      "volunteer_email": "marcus.chen@apextech.com",
-      "qr_token": "QR-IC-2026-MC8812",
-      "verified_by": "Authorized Field Coordinator"
-    },
     {
       "id": "att-1",
       "event_id": "event-1",
@@ -1470,84 +1261,10 @@
   ],
   "activity_feed": [
     {
-      "id": "feed-1793042260756-900",
-      "timestamp": "2026-10-26T19:17:40.756Z",
-      "type": "campaign_created",
-      "title": "New Campaign Created via Need-to-Action Converter",
-      "description": "\"Clean Water Initiative in Darbhanga\" has been reviewed, confirmed and published to active live drives.",
-      "actor_name": "Verified Community NGO",
-      "actor_role": "ngo",
-      "project_id": "proj-1793042260756",
-      "project_title": "Clean Water Initiative in Darbhanga"
-    },
-    {
-      "id": "feed-1793041527097-539",
-      "timestamp": "2026-10-26T19:05:27.097Z",
-      "type": "volunteer_checked_in",
-      "title": "Volunteer Check-In Verified via QR",
-      "description": "Marcus Chen recorded 4.5 volunteering hours for \"Clean Water Wells & Solar Micro-Grids Fieldwork\".",
-      "actor_name": "Marcus Chen",
-      "actor_role": "supporter",
-      "project_id": "proj-1",
-      "project_title": "Clean Water Wells & Solar Micro-Grids Fieldwork"
-    },
-    {
-      "id": "feed-1793041314009-596",
-      "timestamp": "2026-10-26T19:01:54.009Z",
-      "type": "impact_story_published",
-      "title": "New Before-and-After Impact Story Published",
-      "description": "\"Solar RO Pure Water Transformation\" published by Verified NGO with verified visual proof.",
-      "actor_name": "Verified NGO",
-      "actor_role": "ngo"
-    },
-    {
-      "id": "feed-1793041313996-477",
-      "timestamp": "2026-10-26T19:01:53.996Z",
-      "type": "collective_pledge",
-      "title": "Pledge Received for \"Quality Education Initiative in Darbhanga\"",
-      "description": "Test Backer pledged ₹10,000.",
-      "actor_name": "Test Backer",
-      "actor_role": "supporter",
-      "project_title": "Quality Education Initiative in Darbhanga"
-    },
-    {
-      "id": "feed-1793041313975-741",
-      "timestamp": "2026-10-26T19:01:53.975Z",
-      "type": "campaign_created",
-      "title": "New Campaign Created via Need-to-Action Converter",
-      "description": "\"Quality Education Initiative in Darbhanga\" has been reviewed, confirmed and published to active live drives.",
-      "actor_name": "Jal Jeevan",
-      "actor_role": "ngo",
-      "project_id": "proj-1793041313975",
-      "project_title": "Quality Education Initiative in Darbhanga"
-    },
-    {
-      "id": "feed-1793040777828-90",
-      "timestamp": "2026-10-26T18:52:57.828Z",
-      "type": "volunteer_checked_in",
-      "title": "Volunteer Check-In Verified via QR",
-      "description": "Marcus Chen recorded 4.5 volunteering hours for \"Clean Water Wells & Solar Micro-Grids Fieldwork\".",
-      "actor_name": "Marcus Chen",
-      "actor_role": "supporter",
-      "project_id": "proj-1",
-      "project_title": "Clean Water Wells & Solar Micro-Grids Fieldwork"
-    },
-    {
-      "id": "feed-1793040763228-276",
-      "timestamp": "2026-10-26T18:52:43.228Z",
-      "type": "volunteer_checked_in",
-      "title": "Volunteer Check-In Verified via QR",
-      "description": "Marcus Chen recorded 4.5 volunteering hours for \"Clean Water Wells & Solar Micro-Grids Fieldwork\".",
-      "actor_name": "Marcus Chen",
-      "actor_role": "supporter",
-      "project_id": "proj-1",
-      "project_title": "Clean Water Wells & Solar Micro-Grids Fieldwork"
-    },
-    {
       "id": "feed-1",
       "type": "partnership_accepted",
       "title": "Corporate CSR Partnership Confirmed",
-      "description": "Apex Global CSR Foundation committed $10,000 matching grant for Clean Water Wells in Dharavi.",
+      "description": "Apex Global CSR Foundation committed ₹10,00,000 matching grant for Clean Water Wells in Dharavi.",
       "actor_name": "Marcus Chen",
       "actor_role": "corporate_csr",
       "project_id": "proj-1",
@@ -1766,66 +1483,6 @@
   ],
   "notifications": [
     {
-      "id": "notif-1793041623626-zmoa",
-      "is_read": true,
-      "created_at": "2026-10-26T19:07:03.626Z",
-      "recipient_email": "marcus.chen@apextech.com",
-      "type": "delivery_update",
-      "title": "Donation Delivery Update: CONFIRMED",
-      "message": "Your donation of 15x Refurbished ThinkPad Laptops (Core i5, 8GB) is now confirmed. Advanced status to confirmed",
-      "action_url": "/deliveries"
-    },
-    {
-      "id": "notif-1793041620520-dpq0",
-      "is_read": true,
-      "created_at": "2026-10-26T19:07:00.520Z",
-      "recipient_email": "marcus.chen@apextech.com",
-      "type": "delivery_update",
-      "title": "Donation Delivery Update: CONFIRMED",
-      "message": "Your donation of 15x Refurbished ThinkPad Laptops (Core i5, 8GB) is now confirmed. Advanced status to confirmed",
-      "action_url": "/deliveries"
-    },
-    {
-      "id": "notif-1793041617939-w4g8",
-      "is_read": true,
-      "created_at": "2026-10-26T19:06:57.939Z",
-      "recipient_email": "marcus.chen@apextech.com",
-      "type": "delivery_update",
-      "title": "Donation Delivery Update: CONFIRMED",
-      "message": "Your donation of 15x Refurbished ThinkPad Laptops (Core i5, 8GB) is now confirmed. Advanced status to confirmed",
-      "action_url": "/deliveries"
-    },
-    {
-      "id": "notif-1793041609750-1vb0",
-      "is_read": false,
-      "created_at": "2026-10-26T19:06:49.750Z",
-      "recipient_email": "dr.kulkarni@healthnet.org",
-      "type": "delivery_update",
-      "title": "Donation Delivery Update: CONFIRMED",
-      "message": "Your donation of 12x Solar-Powered Water Quality Field Testing Kits is now confirmed. Advanced status to confirmed",
-      "action_url": "/deliveries"
-    },
-    {
-      "id": "notif-1793041606580-qo2e",
-      "is_read": false,
-      "created_at": "2026-10-26T19:06:46.580Z",
-      "recipient_email": "priya.sharma@earthguard.in",
-      "type": "delivery_update",
-      "title": "Donation Delivery Update: DISPATCHED",
-      "message": "Your donation of 50x Pediatric Nutrition Kits & Therapeutic Pastes is now dispatched. Advanced status to dispatched",
-      "action_url": "/deliveries"
-    },
-    {
-      "id": "notif-1793041314004-ohn5",
-      "is_read": true,
-      "created_at": "2026-10-26T19:01:54.004Z",
-      "recipient_email": "marcus.chen@apextech.com",
-      "type": "delivery_update",
-      "title": "Donation Delivery Update: RECEIVED",
-      "message": "Your donation of 15x Refurbished ThinkPad Laptops (Core i5, 8GB) is now received. Package arrived at Darbhanga depot",
-      "action_url": "/deliveries"
-    },
-    {
       "id": "notif-1",
       "user_id": "user-supp-1",
       "recipient_email": "marcus.chen@apextech.com",
@@ -1834,7 +1491,7 @@
       "message": "BrightPath Literacy published a STEM tutoring project with a 94% alignment to your CSR preferences.",
       "target_page": "explore",
       "target_id": "proj-2",
-      "is_read": true,
+      "is_read": false,
       "created_at": "2026-10-26T15:30:00Z"
     },
     {
@@ -1843,7 +1500,7 @@
       "recipient_email": "marcus.chen@apextech.com",
       "type": "partnership_update",
       "title": "Partnership Proposal Accepted",
-      "message": "Aashray Rural Trust accepted your $10,000 corporate matching grant proposal for Clean Water Wells.",
+      "message": "Aashray Rural Trust accepted your ₹10,00,000 corporate matching grant proposal for Clean Water Wells.",
       "target_page": "supporter-dashboard",
       "target_id": "part-1",
       "is_read": true,
@@ -1858,7 +1515,7 @@
       "message": "You are confirmed for 'Weekend STEM Tablet Mentorship' on Nov 8 (09:30 AM) in Dharavi.",
       "target_page": "calendar",
       "target_id": "shift-1",
-      "is_read": true,
+      "is_read": false,
       "created_at": "2026-10-24T10:00:00Z"
     },
     {
@@ -1870,7 +1527,7 @@
       "message": "Clean Water Wells achieved 'Hydrogeological Survey' with verified groundwater depth proof.",
       "target_page": "feed",
       "target_id": "proj-1",
-      "is_read": true,
+      "is_read": false,
       "created_at": "2026-10-24T16:05:00Z"
     },
     {
@@ -1882,7 +1539,7 @@
       "message": "A new operational partnership draft agreement (AGR-2026-001) is ready for your review.",
       "target_page": "ngo-dashboard",
       "target_id": "part-1",
-      "is_read": true,
+      "is_read": false,
       "created_at": "2026-10-26T17:00:00Z"
     }
   ],
@@ -1910,7 +1567,7 @@
       "agreement_title": "Collaborative Grant & Technical Telemetry Agreement",
       "scope_summary": "Joint operational initiative to install 5 deep-bore solar reverse-osmosis purification kiosks and IoT telemetry monitors for 5,000 residents across informal urban settlements.",
       "ngo_responsibilities": "1. Secure municipal clearance and land approvals.\n2. Supervise geological well drilling and contractor logistics.\n3. Implement monthly water quality bacterial lab testing.\n4. Submit digital photographic milestone proof to ImpactConnect workspace.",
-      "partner_responsibilities": "1. Disburse $10,000 milestone-based corporate CSR grant.\n2. Supply 5 IoT solar telemetry sensors and technical installation schematics.\n3. Conduct quarterly volunteer engagement field visits.",
+      "partner_responsibilities": "1. Disburse ₹10,00,000 milestone-based corporate CSR grant.\n2. Supply 5 IoT solar telemetry sensors and technical installation schematics.\n3. Conduct quarterly volunteer engagement field visits.",
       "deliverables_timeline": [
         {
           "milestone": "Hydrogeological Survey & Water Table Depth",
@@ -1955,7 +1612,7 @@
       "project_id": "proj-1",
       "event_type": "partnership_accepted",
       "title": "Corporate CSR Partnership Ratified",
-      "description": "Apex Global CSR committed $10,000 capital and 5 IoT telemetry monitors under transparent milestone governance.",
+      "description": "Apex Global CSR committed ₹10,00,000 capital and 5 IoT telemetry monitors under transparent milestone governance.",
       "actor_name": "Marcus Chen",
       "actor_role": "corporate_csr",
       "actor_id": "user-supp-1",
@@ -2017,57 +1674,6 @@
     }
   ],
   "collective_campaigns": [
-    {
-      "id": "col-proj-1793042260756",
-      "title": "Clean Water Initiative in Darbhanga",
-      "ngo_id": "ngo-1",
-      "ngo_name": "Verified Community NGO",
-      "cause": "Clean Water & Sanitation",
-      "sdg_number": 6,
-      "location": "Darbhanga",
-      "target_amount": 85000,
-      "pledged_amount": 0,
-      "confirmed_amount": 0,
-      "resource_targets": [],
-      "beneficiary_count": 500,
-      "deadline": "2026-11-09",
-      "status": "active",
-      "image_url": "https://images.unsplash.com/photo-1541252260730-0412e8e2108e?auto=format&fit=crop&w=800&q=80",
-      "story": "Flash floods damaged 4 primary school buildings in Darbhanga, Bihar. Around 350 rural school children urgently need 350 notebook study kits, 20 refurbished laptops for teachers, and ₹1,20,000 for roof repair and clean drinking water purification before the semester starts in 2 weeks."
-    },
-    {
-      "id": "col-proj-1793041313975",
-      "title": "Quality Education Initiative in Darbhanga",
-      "ngo_id": "ngo-1",
-      "ngo_name": "Jal Jeevan",
-      "cause": "Quality Education",
-      "sdg_number": 4,
-      "location": "Darbhanga",
-      "target_amount": 150000,
-      "pledged_amount": 10000,
-      "confirmed_amount": 10000,
-      "resource_targets": [
-        {
-          "item": "Books",
-          "target": 300,
-          "pledged": 0,
-          "confirmed": 0,
-          "unit": "units"
-        },
-        {
-          "item": "Laptops",
-          "target": 15,
-          "pledged": 0,
-          "confirmed": 0,
-          "unit": "units"
-        }
-      ],
-      "beneficiary_count": 500,
-      "deadline": "2026-11-09",
-      "status": "active",
-      "image_url": "https://images.unsplash.com/photo-1541252260730-0412e8e2108e?auto=format&fit=crop&w=800&q=80",
-      "story": "Floods in Darbhanga destroyed primary school roof. 300 children need 300 books, 15 laptops and Rs 150000 for repair by next week."
-    },
     {
       "id": "col-1",
       "title": "Rural Solar Water Purification Stations (5 Gram Panchayats)",
@@ -2191,20 +1797,6 @@
   ],
   "collective_pledges": [
     {
-      "id": "cpledge-1793041313980",
-      "campaign_id": "col-proj-1793041313975",
-      "backer_name": "Test Backer",
-      "backer_email": "test.backer@impact.org",
-      "pledge_type": "monetary",
-      "amount": 10000,
-      "item_name": null,
-      "quantity": 0,
-      "status": "confirmed",
-      "notes": "Test pledge",
-      "created_at": "2026-10-26T19:01:53.980Z",
-      "confirmed_at": "2026-10-26T19:01:54.000Z"
-    },
-    {
       "id": "cpledge-1",
       "campaign_id": "col-1",
       "backer_name": "Marcus Chen",
@@ -2258,7 +1850,7 @@
       "date": "2026-11-14",
       "timing": "10:00 AM - 03:00 PM IST",
       "total_slots": 25,
-      "registered_count": 19,
+      "registered_count": 18,
       "required_skills": [
         "Python",
         "Scratch Coding",
@@ -2319,18 +1911,6 @@
   ],
   "employee_volunteering_registrations": [
     {
-      "id": "evpreg-1793041314002",
-      "program_id": "evp-1",
-      "employee_name": "Aman Verma",
-      "employee_email": "aman.verma@apextech.com",
-      "employee_id": "EMP-4002",
-      "department": "Backend Engineering",
-      "selected_skill": "Python",
-      "status": "confirmed",
-      "attendance_verified": false,
-      "registered_at": "2026-10-26T19:01:54.002Z"
-    },
-    {
       "id": "evpreg-1",
       "program_id": "evp-1",
       "employee_name": "Marcus Chen",
@@ -2356,7 +1936,7 @@
       "recipient_ngo_name": "Vidya Foundation India",
       "project_id": "proj-2",
       "destination_address": "Vidya Learning Center, Near Post Office, Barmer, Rajasthan 344001",
-      "current_status": "confirmed",
+      "current_status": "dispatched",
       "tracking_code": "BLUEDART-EXP-9921448",
       "carrier": "BlueDart Surface Express",
       "evidence_url": "https://images.unsplash.com/photo-1588702547923-7093a6c3ba33?auto=format&fit=crop&w=400&q=80",
@@ -2378,30 +1958,6 @@
           "timestamp": "2026-10-24T15:00:00Z",
           "actor": "Marcus Chen",
           "note": "Dispatched via BlueDart. Tracking: BLUEDART-EXP-9921448."
-        },
-        {
-          "status": "received",
-          "timestamp": "2026-10-26T19:01:54.004Z",
-          "actor": "Field Inspector",
-          "note": "Package arrived at Darbhanga depot"
-        },
-        {
-          "status": "confirmed",
-          "timestamp": "2026-10-26T19:06:57.939Z",
-          "actor": "Field Officer",
-          "note": "Advanced status to confirmed"
-        },
-        {
-          "status": "confirmed",
-          "timestamp": "2026-10-26T19:07:00.520Z",
-          "actor": "Field Officer",
-          "note": "Advanced status to confirmed"
-        },
-        {
-          "status": "confirmed",
-          "timestamp": "2026-10-26T19:07:03.626Z",
-          "actor": "Field Officer",
-          "note": "Advanced status to confirmed"
         }
       ]
     },
@@ -2451,12 +2007,6 @@
           "timestamp": "2026-10-24T16:00:00Z",
           "actor": "Dr. Sunita Deshmukh",
           "note": "All 12 units calibrated and verified in active field use."
-        },
-        {
-          "status": "confirmed",
-          "timestamp": "2026-10-26T19:06:49.750Z",
-          "actor": "Field Officer",
-          "note": "Advanced status to confirmed"
         }
       ]
     },
@@ -2472,7 +2022,7 @@
       "recipient_ngo_name": "Aarogya Seva Trust",
       "project_id": "proj-5",
       "destination_address": "Sub-District Hospital compound, Nashik, Maharashtra 422001",
-      "current_status": "dispatched",
+      "current_status": "approved",
       "tracking_code": "SHIP-PENDING-9941",
       "carrier": "Pending Courier Booking",
       "evidence_url": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=400&q=80",
@@ -2488,12 +2038,6 @@
           "timestamp": "2026-10-25T09:30:00Z",
           "actor": "Aarogya Seva Coordinator",
           "note": "Approved. Cold shipping required."
-        },
-        {
-          "status": "dispatched",
-          "timestamp": "2026-10-26T19:06:46.580Z",
-          "actor": "Field Officer",
-          "note": "Advanced status to dispatched"
         }
       ]
     }
@@ -2512,7 +2056,7 @@
       ],
       "hourly_rate": "Pro-Bono (0 INR)",
       "rating": 4.95,
-      "completed_consultations": 39,
+      "completed_consultations": 38,
       "availability": "Tuesdays & Thursdays, 4:00 PM - 6:00 PM IST",
       "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&h=200&q=80",
       "bio": "14+ years advising international and Indian grassroots non-profits on statutory governance, FCRA renewals, and compliant CSR fund absorption."
@@ -2573,20 +2117,6 @@
     }
   ],
   "mentorship_sessions": [
-    {
-      "id": "msess-1793041314007",
-      "mentor_id": "mentor-1",
-      "mentor_name": "Adv. Vikram Malhotra",
-      "ngo_id": "ngo-1",
-      "ngo_name": "Jal Jeevan",
-      "topic": "FCRA Compliance Audit",
-      "scheduled_date": "2026-10-29",
-      "time_slot": "05:00 PM IST",
-      "status": "confirmed",
-      "notes": "",
-      "meeting_link": "https://meet.jit.si/ImpactConnect-mentor-1-4007",
-      "created_at": "2026-10-26T19:01:54.007Z"
-    },
     {
       "id": "msess-1",
       "mentor_id": "mentor-1",
@@ -2743,11 +2273,8 @@
       "title": "Water Purification Tablets & Baby Food Shortfall (> 65% unmet)",
       "description": "Project distribution drive begins in 4 days. Only 35% of requested emergency survival kits have been pledged. Monsoon rainfall expected to intensify.",
       "suggested_action": "Trigger urgent community notification and escalate to CSR corporate matching pool.",
-      "is_resolved": true,
-      "created_at": "2026-10-26T06:00:00Z",
-      "resolved_at": "2026-10-26T19:01:54.012Z",
-      "resolution_notes": "Mitigated with CSR bridge loan",
-      "resolved_by": "Marcus Chen"
+      "is_resolved": false,
+      "created_at": "2026-10-26T06:00:00Z"
     },
     {
       "id": "risk-2",
@@ -2759,11 +2286,8 @@
       "title": "Volunteer Trainer Capacity at 40% (6 of 15 trainers signed up)",
       "description": "Batch 2 starts in 10 days in Barmer. Additional Python and computer literacy volunteer trainers needed.",
       "suggested_action": "Broadcast to Employee Volunteering Portal partner corporate tech employees.",
-      "is_resolved": true,
-      "created_at": "2026-10-25T14:00:00Z",
-      "resolved_at": "2026-10-26T19:05:40.315Z",
-      "resolution_notes": "Risk mitigated via operational intervention.",
-      "resolved_by": "Project Coordinator"
+      "is_resolved": false,
+      "created_at": "2026-10-25T14:00:00Z"
     },
     {
       "id": "risk-3",
@@ -3074,21 +2598,6 @@
   ],
   "ngo_compliance_documents": [
     {
-      "id": "doc-1793042494983",
-      "ngo_id": "ngo-1",
-      "doc_type": "Section 12A Registration",
-      "title": "gjgjgjggjg",
-      "file_name": "nnmbm",
-      "file_url": "https://impactconnect.org/docs/mock_certificate.pdf",
-      "status": "verified",
-      "uploaded_at": "2026-10-26T19:21:34.983Z",
-      "expiry_date": "2026-09-30",
-      "verified_by": "Authorized Senior Compliance Reviewer",
-      "notes": "gjhgjj",
-      "reviewed_at": "2026-10-26T19:21:41.489Z",
-      "review_notes": ""
-    },
-    {
       "id": "doc-1",
       "ngo_id": "ngo-1",
       "doc_type": "CSR-1 Registration",
@@ -3097,10 +2606,8 @@
       "status": "verified",
       "uploaded_at": "2026-08-14T10:00:00Z",
       "expiry_date": "2028-08-14",
-      "verified_by": "Authorized Senior Compliance Reviewer",
-      "notes": "Registration number CSR00018842 validated on MCA21 portal.",
-      "reviewed_at": "2026-10-26T19:20:59.894Z",
-      "review_notes": ""
+      "verified_by": "Admin Compliance Team",
+      "notes": "Registration number CSR00018842 validated on MCA21 portal."
     },
     {
       "id": "doc-2",

@@ -9,7 +9,7 @@ import {
   MapPin, 
   Users, 
   Package, 
-  DollarSign, 
+  IndianRupee, 
   HeartHandshake,
   Bot,
   RefreshCw,
@@ -20,7 +20,7 @@ import { parseNgoRequirement, createProject } from '../utils/api';
 const SAMPLE_PROMPTS = [
   "We need three volunteer teachers and 50 books in Darbhanga.",
   "Urgent requirement for 20 wheelchairs and first-aid kits for rural clinic in Mumbai.",
-  "Seeking corporate CSR grant of $15,000 and 40 laptops for digital literacy center in Nairobi."
+  "Seeking corporate CSR grant of ₹15,00,000 and 40 laptops for digital literacy center in Pune."
 ];
 
 export default function ImpactAiAssistantModal({

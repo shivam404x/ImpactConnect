@@ -3,7 +3,7 @@ import {
   Target, 
   X, 
   CheckCircle2, 
-  DollarSign, 
+  IndianRupee, 
   Clock, 
   ShieldCheck, 
   AlertCircle, 

@@ -77,7 +77,7 @@ export default function AboutUsPage({ onExploreClick, onRegisterNgoClick }) {
               </div>
               <h4 className="font-bold text-slate-900 text-sm mb-1.5">Radical Accessibility</h4>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Whether you have $25 to donate, 2 hours a week to mentor, or 50 laptops to recycle, everyone has something valuable to contribute.
+                Whether you have ₹500 to donate, 2 hours a week to mentor, or 50 laptops to recycle, everyone has something valuable to contribute.
               </p>
             </div>
 

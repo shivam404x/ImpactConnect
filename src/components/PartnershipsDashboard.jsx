@@ -8,7 +8,7 @@ import {
   Phone, 
   Building2, 
   Users, 
-  DollarSign, 
+  IndianRupee, 
   Briefcase, 
   Package, 
   MessageSquare, 
@@ -113,7 +113,7 @@ export default function PartnershipsDashboard({ currentPersona }) {
 
   const getOfferIcon = (type) => {
     switch (type) {
-      case 'funding': return <DollarSign className="w-4 h-4 text-amber-400" />;
+      case 'funding': return <IndianRupee className="w-4 h-4 text-amber-400" />;
       case 'volunteering': return <Users className="w-4 h-4 text-emerald-400" />;
       case 'resource_donation': return <Package className="w-4 h-4 text-sky-400" />;
       case 'skill_pro_bono': return <Briefcase className="w-4 h-4 text-purple-400" />;

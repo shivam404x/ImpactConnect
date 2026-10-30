@@ -3,7 +3,7 @@ import {
   BarChart3, 
   TrendingUp, 
   Users, 
-  DollarSign, 
+  IndianRupee, 
   Building2, 
   Handshake, 
   Globe2, 
@@ -86,13 +86,13 @@ export default function ImpactAnalyticsView() {
         <div className="p-5 rounded-2xl bg-slate-900 border border-slate-800 shadow-xl relative overflow-hidden">
           <div className="flex items-center justify-between text-slate-400 text-xs mb-2">
             <span>Philanthropic Capital</span>
-            <DollarSign className="w-4 h-4 text-amber-400" />
+            <IndianRupee className="w-4 h-4 text-amber-400" />
           </div>
           <div className="text-3xl font-black text-white">
-            ${(stats?.totalFundingRaised || 57000).toLocaleString()}
+            ₹{(stats?.totalFundingRaised || 57000).toLocaleString('en-IN')}
           </div>
           <div className="text-xs text-amber-400 mt-1">
-            Target: ${(stats?.totalFundingTarget || 93500).toLocaleString()} ({fundingPct}%)
+            Target: ₹{(stats?.totalFundingTarget || 93500).toLocaleString('en-IN')} ({fundingPct}%)
           </div>
           <div className="w-full h-1.5 bg-slate-800 rounded-full mt-3 overflow-hidden">
             <div className="h-full bg-amber-400 rounded-full" style={{ width: `${fundingPct}%` }}></div>

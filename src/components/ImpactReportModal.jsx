@@ -8,7 +8,7 @@ import {
   Calendar, 
   MapPin, 
   CheckCircle2, 
-  DollarSign, 
+  IndianRupee, 
   Users, 
   Package, 
   Award,
@@ -149,7 +149,7 @@ export default function ImpactReportModal({
               <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200">
                 <span className="text-[10px] font-bold text-slate-500 uppercase block">Capital Deployed</span>
                 <span className="text-2xl font-black text-[#16A36A] mt-1 block">
-                  $18,500
+                  ₹18,500
                 </span>
                 <span className="text-[10px] text-slate-400">Zero Leakage Assurance</span>
               </div>
@@ -171,7 +171,7 @@ export default function ImpactReportModal({
                 <div key={idx} className="space-y-1">
                   <div className="flex justify-between font-bold">
                     <span className="text-slate-800">{exp.category}</span>
-                    <span className="text-slate-900">{exp.percentage}% (${Number(exp.amount || 5000).toLocaleString()})</span>
+                    <span className="text-slate-900">{exp.percentage}% (₹{Number(exp.amount || 5000).toLocaleString('en-IN')})</span>
                   </div>
                   <div className="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden">
                     <div className="bg-[#16A36A] h-1.5 rounded-full" style={{ width: `${exp.percentage}%` }}></div>

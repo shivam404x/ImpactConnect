@@ -9,7 +9,7 @@ import {
   Building2, 
   Calendar, 
   MapPin, 
-  DollarSign, 
+  IndianRupee, 
   Package, 
   AlertCircle,
   RefreshCw

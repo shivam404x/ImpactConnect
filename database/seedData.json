@@ -35,7 +35,7 @@
       "role": "corporate",
       "supporter_type": "corporate_csr",
       "organization_name": "Apex Global CSR Foundation",
-      "company_csr_budget": "$150,000 Annual Community Pool",
+      "company_csr_budget": "₹1,50,00,000 Annual Community Pool",
       "skills": [
         "CSR Grantmaking",
         "Tech Hardware",
@@ -508,7 +508,7 @@
       "description": "Procurement of high-capacity reverse osmosis filtration systems and solar submersible pumps.",
       "target_quantity": 28000,
       "current_quantity": 18500,
-      "unit": "USD",
+      "unit": "INR",
       "skill_tags": [
         "Grant Funding",
         "CSR Sponsorship"
@@ -553,7 +553,7 @@
       "description": "Grant for off-grid solar inverters and local micro-cloud servers.",
       "target_quantity": 18500,
       "current_quantity": 13500,
-      "unit": "USD",
+      "unit": "INR",
       "skill_tags": [
         "Renewable Energy Grant",
         "EdTech"
@@ -568,7 +568,7 @@
       "description": "Corporate CSR sponsorship for customized 4WD diagnostic van fabrication.",
       "target_quantity": 35000,
       "current_quantity": 22000,
-      "unit": "USD",
+      "unit": "INR",
       "skill_tags": [
         "CSR Healthcare",
         "Corporate Grant"
@@ -722,7 +722,7 @@
       "supporter_type": "corporate_csr",
       "organization_name": "Apex Global Foundation",
       "offer_type": "funding",
-      "offer_value": "$10,000 Matching Grant",
+      "offer_value": "₹10,00,000 Matching Grant",
       "message": "We want to sponsor the clean water kiosks in Dharavi as part of Apex Tech's annual ESG commitment.",
       "timeline": "Immediate (Next 14 Days)",
       "status": "accepted",
@@ -758,7 +758,7 @@
       "partnership_id": "req-part-1",
       "sender_name": "Marcus Chen",
       "sender_role": "corporate",
-      "message": "Hi Dr. Deshmukh! We have approved the first milestone disbursement of $5,000 for the water kiosks.",
+      "message": "Hi Dr. Deshmukh! We have approved the first milestone disbursement of ₹5,00,000 for the water kiosks.",
       "created_at": "2026-10-23T11:00:00Z"
     },
     {
@@ -776,7 +776,7 @@
       "company_name": "Apex Global CSR Foundation",
       "contact_email": "csr@apextech.com",
       "title": "2026 Community Clean Water & Solar Innovation Grant Challenge",
-      "grant_budget": "$50,000 Grant Fund",
+      "grant_budget": "₹50,00,000 Grant Fund",
       "target_sdgs": [
         6,
         7,
@@ -796,7 +796,7 @@
       "company_name": "Horizon Health Cares",
       "contact_email": "grants@horizonhealth.org",
       "title": "Maternal Ultrasound & Telemedicine Field Sponsorship",
-      "grant_budget": "$35,000 Grant",
+      "grant_budget": "₹35,00,000 Grant",
       "target_sdgs": [
         3,
         5,
@@ -860,7 +860,7 @@
       "donor_name": "Apex Global CSR Foundation",
       "donor_type": "corporate_csr",
       "contribution_type": "funding",
-      "amount_or_item": "$10,000 Milestone Grant",
+      "amount_or_item": "₹10,00,000 Milestone Grant",
       "is_sample_demo": true,
       "created_at": "2026-10-22T14:30:00Z"
     },
@@ -870,7 +870,7 @@
       "donor_name": "Mehta Family Philanthropy",
       "donor_type": "donor",
       "contribution_type": "funding",
-      "amount_or_item": "$8,500 Direct Grant",
+      "amount_or_item": "₹8,50,000 Direct Grant",
       "is_sample_demo": true,
       "created_at": "2026-10-18T10:00:00Z"
     },
@@ -890,7 +890,7 @@
       "id": "act-1",
       "event_type": "partnership_accepted",
       "title": "Clean Water Milestone Grant Approved",
-      "description": "Apex Global CSR Foundation confirmed $10,000 matching grant for Aashray Rural Trust.",
+      "description": "Apex Global CSR Foundation confirmed ₹10,00,000 matching grant for Aashray Rural Trust.",
       "related_id": "proj-1",
       "created_at": "2026-10-22T14:30:00Z"
     },
@@ -1143,7 +1143,7 @@
       "funder_name": "Google.org Philanthropic Fund",
       "funder_type": "corporate_csr",
       "grant_amount": 100000,
-      "grant_amount_formatted": "$100,000 USD",
+      "grant_amount_formatted": "₹85,00,000 INR",
       "cause_categories": [
         "education",
         "poverty"
@@ -1162,7 +1162,7 @@
       "funder_name": "Tata Community Trusts",
       "funder_type": "philanthropic_foundation",
       "grant_amount": 60000,
-      "grant_amount_formatted": "$60,000 / ₹50,00,000 INR",
+      "grant_amount_formatted": "₹50,00,000 INR",
       "cause_categories": [
         "environment",
         "healthcare"
@@ -1181,7 +1181,7 @@
       "funder_name": "United States Agency for International Development",
       "funder_type": "government",
       "grant_amount": 150000,
-      "grant_amount_formatted": "$150,000 USD",
+      "grant_amount_formatted": "₹1,25,00,000 INR",
       "cause_categories": [
         "environment",
         "disaster_relief"
@@ -1200,7 +1200,7 @@
       "funder_name": "Azim Premji Philanthropic Initiatives",
       "funder_type": "philanthropic_foundation",
       "grant_amount": 40000,
-      "grant_amount_formatted": "$40,000 / ₹35,00,000 INR",
+      "grant_amount_formatted": "₹35,00,000 INR",
       "cause_categories": [
         "education"
       ],
@@ -1264,7 +1264,7 @@
       "id": "feed-1",
       "type": "partnership_accepted",
       "title": "Corporate CSR Partnership Confirmed",
-      "description": "Apex Global CSR Foundation committed $10,000 matching grant for Clean Water Wells in Dharavi.",
+      "description": "Apex Global CSR Foundation committed ₹10,00,000 matching grant for Clean Water Wells in Dharavi.",
       "actor_name": "Marcus Chen",
       "actor_role": "corporate_csr",
       "project_id": "proj-1",
@@ -1500,7 +1500,7 @@
       "recipient_email": "marcus.chen@apextech.com",
       "type": "partnership_update",
       "title": "Partnership Proposal Accepted",
-      "message": "Aashray Rural Trust accepted your $10,000 corporate matching grant proposal for Clean Water Wells.",
+      "message": "Aashray Rural Trust accepted your ₹10,00,000 corporate matching grant proposal for Clean Water Wells.",
       "target_page": "supporter-dashboard",
       "target_id": "part-1",
       "is_read": true,
@@ -1567,7 +1567,7 @@
       "agreement_title": "Collaborative Grant & Technical Telemetry Agreement",
       "scope_summary": "Joint operational initiative to install 5 deep-bore solar reverse-osmosis purification kiosks and IoT telemetry monitors for 5,000 residents across informal urban settlements.",
       "ngo_responsibilities": "1. Secure municipal clearance and land approvals.\n2. Supervise geological well drilling and contractor logistics.\n3. Implement monthly water quality bacterial lab testing.\n4. Submit digital photographic milestone proof to ImpactConnect workspace.",
-      "partner_responsibilities": "1. Disburse $10,000 milestone-based corporate CSR grant.\n2. Supply 5 IoT solar telemetry sensors and technical installation schematics.\n3. Conduct quarterly volunteer engagement field visits.",
+      "partner_responsibilities": "1. Disburse ₹10,00,000 milestone-based corporate CSR grant.\n2. Supply 5 IoT solar telemetry sensors and technical installation schematics.\n3. Conduct quarterly volunteer engagement field visits.",
       "deliverables_timeline": [
         {
           "milestone": "Hydrogeological Survey & Water Table Depth",
@@ -1612,7 +1612,7 @@
       "project_id": "proj-1",
       "event_type": "partnership_accepted",
       "title": "Corporate CSR Partnership Ratified",
-      "description": "Apex Global CSR committed $10,000 capital and 5 IoT telemetry monitors under transparent milestone governance.",
+      "description": "Apex Global CSR committed ₹10,00,000 capital and 5 IoT telemetry monitors under transparent milestone governance.",
       "actor_name": "Marcus Chen",
       "actor_role": "corporate_csr",
       "actor_id": "user-supp-1",

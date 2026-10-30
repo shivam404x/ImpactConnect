@@ -6,7 +6,7 @@ import {
   TrendingUp, 
   CheckCircle2, 
   Users, 
-  DollarSign, 
+  IndianRupee, 
   ArrowRight, 
   Sparkles, 
   ExternalLink,
@@ -207,7 +207,7 @@ export default function SdgMappingAnalytics({
                       <div className="p-3 bg-slate-50 rounded-2xl border border-slate-100 text-xs">
                         <span className="text-slate-400 block text-[10px] uppercase font-bold">Funding Needed / Raised</span>
                         <span className="font-black text-[#16A36A]">
-                          ${(data.totalFundingRaised || 0).toLocaleString()} / ${(data.totalFundingTarget || 0).toLocaleString()}
+                          ₹{(data.totalFundingRaised || 0).toLocaleString('en-IN')} / ₹{(data.totalFundingTarget || 0).toLocaleString('en-IN')}
                         </span>
                       </div>
                     </div>

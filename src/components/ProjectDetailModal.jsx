@@ -5,7 +5,7 @@ import {
   Calendar, 
   Building2, 
   CheckCircle2, 
-  DollarSign, 
+  IndianRupee, 
   Users, 
   Briefcase, 
   Package, 
@@ -220,7 +220,7 @@ export default function ProjectDetailModal({
                             {req.type?.replace('_', ' ')}
                           </span>
                           <span className="font-bold text-slate-800">
-                            {isFunding && `$${Number(req.current_quantity).toLocaleString()} / $${Number(req.target_quantity).toLocaleString()}`}
+                            {isFunding && `₹${Number(req.current_quantity).toLocaleString('en-IN')} / ₹${Number(req.target_quantity).toLocaleString('en-IN')}`}
                             {isVolunteers && `${req.current_quantity} / ${req.target_quantity} Volunteers`}
                             {!isFunding && !isVolunteers && `${req.target_quantity} ${req.unit || 'units'}`}
                           </span>
@@ -266,7 +266,7 @@ export default function ProjectDetailModal({
                   <div key={idx} className="p-4 rounded-2xl border border-slate-200 bg-white space-y-2">
                     <div className="flex items-center justify-between text-xs">
                       <span className="font-bold text-slate-800">{item.category}</span>
-                      <span className="font-black text-[#16A36A]">{item.percentage}% ({item.amount ? `$${item.amount.toLocaleString()}` : ''})</span>
+                      <span className="font-black text-[#16A36A]">{item.percentage}% ({item.amount ? `₹${item.amount.toLocaleString('en-IN')}` : ''})</span>
                     </div>
                     <div className="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
                       <div

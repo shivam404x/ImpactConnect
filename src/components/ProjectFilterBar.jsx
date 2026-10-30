@@ -3,7 +3,7 @@ import {
   Search, 
   MapPin, 
   Flame, 
-  DollarSign, 
+  IndianRupee, 
   Users, 
   Package, 
   Briefcase, 

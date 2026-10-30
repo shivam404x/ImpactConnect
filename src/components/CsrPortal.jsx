@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { 
   Building2, 
   Award, 
-  DollarSign, 
+  IndianRupee, 
   FileText, 
   Plus, 
   CheckCircle2, 
@@ -162,7 +162,7 @@ export default function CsrPortal({
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
             <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200">
               <span className="text-xs text-slate-500 font-semibold block">Available Grant Pool</span>
-              <span className="text-2xl font-black text-[#16A36A] mt-1 block">$185,000</span>
+              <span className="text-2xl font-black text-[#16A36A] mt-1 block">₹1,85,00,000</span>
               <span className="text-[10px] text-slate-400">Targeted across 6 SDG sectors</span>
             </div>
             <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200">
@@ -215,7 +215,7 @@ export default function CsrPortal({
                   <div className="mt-4 pt-4 border-t border-slate-100 space-y-2 text-xs">
                     <div className="flex justify-between">
                       <span className="text-slate-400">Total Grant Value:</span>
-                      <span className="font-black text-[#16A36A]">${Number(rfp.grant_pool).toLocaleString()}</span>
+                      <span className="font-black text-[#16A36A]">₹{Number(rfp.grant_pool).toLocaleString('en-IN')}</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-slate-400">Focus Domain:</span>
@@ -342,7 +342,7 @@ export default function CsrPortal({
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1">Grant Pool ($ USD)</label>
+                  <label className="block text-xs font-bold text-slate-700 mb-1">Grant Pool (₹ INR)</label>
                   <input
                     type="number"
                     required

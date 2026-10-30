@@ -6,7 +6,7 @@ import {
   Sparkles, 
   ArrowRight, 
   MapPin, 
-  DollarSign, 
+  IndianRupee, 
   Users 
 } from 'lucide-react';
 
@@ -21,7 +21,7 @@ const FEATURED_SLIDES = [
     ngo: 'Aashray Rural Trust',
     location: 'Mumbai, India',
     image: 'https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=1600&q=80',
-    stat: '$16,500 / $28,000 Raised',
+    stat: '₹16,50,000 / ₹28,00,000 Raised',
     urgency: 'High Urgency'
   },
   {

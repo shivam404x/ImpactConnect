@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { 
   Award, 
   Search, 
-  DollarSign, 
+  IndianRupee, 
   Calendar, 
   ExternalLink, 
   Building2, 
@@ -73,7 +73,7 @@ export default function GrantsDirectoryPage({
         funder_name: funderName,
         funder_type: funderType,
         grant_amount: Number(grantAmount),
-        grant_amount_formatted: `$${Number(grantAmount).toLocaleString()} USD`,
+        grant_amount_formatted: `₹${Number(grantAmount).toLocaleString('en-IN')} INR`,
         cause_categories: ['education', 'healthcare'],
         eligibility_criteria: eligibility,
         deadline: grantDeadline,
@@ -227,7 +227,7 @@ export default function GrantsDirectoryPage({
                     <div className="flex items-center justify-between">
                       <span className="text-slate-500">Grant Budget:</span>
                       <span className="text-base font-black text-[#16A36A]">
-                        {grant.grant_amount_formatted || `$${Number(grant.grant_amount).toLocaleString()}`}
+                        {grant.grant_amount_formatted ? grant.grant_amount_formatted.replace(/\$([0-9,]+)(\s*USD)?/g, '₹$1 INR') : `₹${Number(grant.grant_amount).toLocaleString('en-IN')}`}
                       </span>
                     </div>
                     <div className="flex items-center justify-between">
@@ -321,7 +321,7 @@ export default function GrantsDirectoryPage({
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1">Grant Pool ($ USD)</label>
+                  <label className="block text-xs font-bold text-slate-700 mb-1">Grant Pool (₹ INR)</label>
                   <input
                     type="number"
                     min="1000"

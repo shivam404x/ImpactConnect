@@ -3,7 +3,7 @@ import {
   X, 
   Plus, 
   Trash2, 
-  DollarSign, 
+  IndianRupee, 
   Users, 
   Package, 
   Briefcase, 
@@ -47,7 +47,7 @@ export default function PostProjectModal({ ngos, currentUser, onClose, onSuccess
       title: 'Community Project Operational Grant',
       description: 'Covers equipment, local logistics, and volunteer kits.',
       target_quantity: 10000,
-      unit: 'USD',
+      unit: 'INR',
       skill_tags: ['Grant Funding']
     },
     {
@@ -306,7 +306,7 @@ export default function PostProjectModal({ ngos, currentUser, onClose, onSuccess
                       onChange={(e) => updateRequirement(idx, 'type', e.target.value)}
                       className="px-2 py-1 rounded-lg border border-slate-300 bg-white font-bold text-slate-800 text-[11px]"
                     >
-                      <option value="funding">Funding / Grant ($)</option>
+                      <option value="funding">Funding / Grant (₹ INR)</option>
                       <option value="volunteers">Volunteers</option>
                       <option value="resources">Supplies / Goods</option>
                       <option value="skills">Pro Bono Professional</option>

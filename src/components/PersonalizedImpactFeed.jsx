@@ -13,7 +13,7 @@ import {
   SlidersHorizontal, 
   Layers, 
   Users, 
-  DollarSign, 
+  IndianRupee, 
   ExternalLink,
   ShieldCheck,
   Calendar,
