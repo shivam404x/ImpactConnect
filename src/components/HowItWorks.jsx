@@ -41,7 +41,7 @@ export default function HowItWorks({ onExploreClick }) {
             <div>
               <h4 className="font-bold text-white text-sm">Send Partnership Offer</h4>
               <p className="text-xs text-slate-300 mt-1 leading-relaxed">
-                Click "Support Now" to pledge funds ($), volunteer hours, or supplies with 1-click simplicity.
+                Click "Support Now" to pledge funds (₹), volunteer hours, or supplies with 1-click simplicity.
               </p>
             </div>
           </div>
