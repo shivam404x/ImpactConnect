@@ -133,9 +133,50 @@
         "Strategy",
         "Mentorship"
       ]
+    },
+    {
+      "id": "user-1795205068822",
+      "created_at": "2026-11-20T20:04:28.822Z",
+      "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=Custom",
+      "favorites": [],
+      "name": "Custom",
+      "email": "custom@gmail.com",
+      "role": "ngo",
+      "organization_name": "Custom Foundation",
+      "supporter_type": "individual_volunteer",
+      "city": "Mumbai",
+      "country": "India",
+      "auth_provider": "google",
+      "ngo_id": "ngo-1795205068822"
     }
   ],
   "ngos": [
+    {
+      "id": "ngo-1795205068822",
+      "name": "Custom Foundation",
+      "slug": "custom-foundation",
+      "tagline": "Community empowerment and verified social impact.",
+      "mission": "Community service initiative.",
+      "description": "",
+      "category": "poverty",
+      "sdg_focus": [
+        1,
+        4
+      ],
+      "registration_number": "REG-068822",
+      "tax_exempt_status": "501(c)(3) / 80G Certified Non-Profit",
+      "founded_year": 2026,
+      "website": "",
+      "email": "custom@gmail.com",
+      "phone": "+1 555 0192",
+      "city": "Mumbai",
+      "country": "India",
+      "is_verified": true,
+      "verification_tier": "Gold Verified",
+      "beneficiaries_served": 1500,
+      "logo_url": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=200&h=200&q=80",
+      "created_at": "2026-11-20T20:04:28.822Z"
+    },
     {
       "id": "ngo-1",
       "name": "Aashray Rural & Slum Upliftment Trust",
@@ -648,6 +689,15 @@
       "evidence_url": "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80",
       "evidence_notes": "Teacher orientation completed for 16 educators. Battery health certified.",
       "completed_at": "2026-12-05T16:30:00Z"
+    },
+    {
+      "id": "ms-1795205104294-1",
+      "project_id": "proj-1795205104294",
+      "title": "Community Baseline Survey & Partner Kickoff",
+      "description": "Initial mobilization and household vulnerability assessment.",
+      "target_date": "2026-12-15",
+      "is_completed": false,
+      "verified_by_reviewer": false
     }
   ],
   "volunteer_roles": [
@@ -983,6 +1033,22 @@
     }
   ],
   "activity_logs": [
+    {
+      "id": "act-1795204888377",
+      "event_type": "volunteer_checked_in",
+      "title": "Volunteer Check-In Verified via QR",
+      "description": "8298689524sroy recorded 4.5 volunteering hours for \"Clean Water Wells & Solar Micro-Grids Fieldwork\".",
+      "related_id": "proj-1",
+      "created_at": "2026-11-20T20:01:28.377Z"
+    },
+    {
+      "id": "act-1795204877404",
+      "event_type": "volunteer_checked_in",
+      "title": "Volunteer Check-In Verified via QR",
+      "description": "8298689524sroy recorded 4.5 volunteering hours for \"Clean Water Wells & Solar Micro-Grids Fieldwork\".",
+      "related_id": "proj-1",
+      "created_at": "2026-11-20T20:01:17.404Z"
+    },
     {
       "id": "act-1795204775448",
       "event_type": "volunteer_checked_in",
@@ -1352,6 +1418,38 @@
   ],
   "volunteer_attendance": [
     {
+      "id": "att-1795204888375",
+      "check_in_time": "2026-11-20T20:01:28.375Z",
+      "hours_logged": 4.5,
+      "status": "verified",
+      "created_at": "2026-11-20T20:01:28.375Z",
+      "event_id": "event-1-shift-8369",
+      "project_id": "proj-1",
+      "project_title": "Clean Water Wells & Solar Micro-Grids Fieldwork",
+      "volunteer_name": "8298689524sroy",
+      "volunteer_email": "8298689524sroy@gmail.com",
+      "qr_token": "QR-IC-2026-SROY-7551",
+      "verified_by": "8298689524sroy",
+      "force": true,
+      "allow_duplicate": true
+    },
+    {
+      "id": "att-1795204877395",
+      "check_in_time": "2026-11-20T20:01:17.395Z",
+      "hours_logged": 4.5,
+      "status": "verified",
+      "created_at": "2026-11-20T20:01:17.395Z",
+      "event_id": "event-1-shift-7382",
+      "project_id": "proj-1",
+      "project_title": "Clean Water Wells & Solar Micro-Grids Fieldwork",
+      "volunteer_name": "8298689524sroy",
+      "volunteer_email": "8298689524sroy@gmail.com",
+      "qr_token": "QR-IC-2026-SROY-7551",
+      "verified_by": "8298689524sroy",
+      "force": true,
+      "allow_duplicate": true
+    },
+    {
       "id": "att-1795204775447",
       "check_in_time": "2026-11-20T19:59:35.447Z",
       "hours_logged": 4.5,
@@ -1454,6 +1552,28 @@
     }
   ],
   "activity_feed": [
+    {
+      "id": "feed-1795204888377-166",
+      "timestamp": "2026-11-20T20:01:28.377Z",
+      "type": "volunteer_checked_in",
+      "title": "Volunteer Check-In Verified via QR",
+      "description": "8298689524sroy recorded 4.5 volunteering hours for \"Clean Water Wells & Solar Micro-Grids Fieldwork\".",
+      "actor_name": "8298689524sroy",
+      "actor_role": "supporter",
+      "project_id": "proj-1",
+      "project_title": "Clean Water Wells & Solar Micro-Grids Fieldwork"
+    },
+    {
+      "id": "feed-1795204877403-182",
+      "timestamp": "2026-11-20T20:01:17.403Z",
+      "type": "volunteer_checked_in",
+      "title": "Volunteer Check-In Verified via QR",
+      "description": "8298689524sroy recorded 4.5 volunteering hours for \"Clean Water Wells & Solar Micro-Grids Fieldwork\".",
+      "actor_name": "8298689524sroy",
+      "actor_role": "supporter",
+      "project_id": "proj-1",
+      "project_title": "Clean Water Wells & Solar Micro-Grids Fieldwork"
+    },
     {
       "id": "feed-1795204775448-494",
       "timestamp": "2026-11-20T19:59:35.448Z",
@@ -1749,7 +1869,7 @@
   "notifications": [
     {
       "id": "notif-1795203855974-x8v0",
-      "is_read": false,
+      "is_read": true,
       "created_at": "2026-11-20T19:44:15.974Z",
       "user_id": "user-1795203818412",
       "recipient_email": "8298689524sroy@gmail.com",
