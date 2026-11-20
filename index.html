@@ -10,6 +10,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+      // Automatically unregister stale Service Workers and wipe PWA cache from localhost
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(function(regs) {
+          for (var r of regs) r.unregister();
+        });
+      }
+      if ('caches' in window) {
+        caches.keys().then(function(keys) {
+          for (var k of keys) caches.delete(k);
+        });
+      }
+    </script>
   </head>
   <body class="bg-white text-slate-900 min-h-screen antialiased selection:bg-emerald-500 selection:text-white">
     <div id="root"></div>
