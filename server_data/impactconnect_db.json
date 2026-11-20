@@ -97,6 +97,20 @@
         "proj-7"
       ],
       "created_at": "2026-03-01T00:00:00Z"
+    },
+    {
+      "id": "user-1795201467426",
+      "created_at": "2026-11-20T19:04:27.426Z",
+      "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=Shivam%20Roy",
+      "favorites": [],
+      "name": "Shivam Roy",
+      "email": "shivam404x@gmail.com",
+      "role": "corporate",
+      "organization_name": "Shivam Roy CSR Group",
+      "supporter_type": "corporate_csr",
+      "city": "Mumbai",
+      "country": "India",
+      "auth_provider": "google"
     }
   ],
   "ngos": [

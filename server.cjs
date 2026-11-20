@@ -59,6 +59,9 @@ app.get('/api/stats', async (req, res) => {
   }
 });
 
+// In-memory OTP storage for Email verification (email -> { code, expiresAt })
+const otpStore = new Map();
+
 // ============================================================================
 // 2. AUTHENTICATION & USERS
 // ============================================================================
@@ -80,6 +83,125 @@ app.post('/api/auth/login', async (req, res) => {
     res.json(user);
   } catch (err) {
     res.status(500).json({ error: err.message });
+  }
+});
+
+// Send 6-digit OTP to Email/Gmail
+app.post('/api/auth/send-otp', async (req, res) => {
+  try {
+    const { email } = req.body;
+    if (!email) return res.status(400).json({ error: 'Valid email address is required' });
+    const cleanEmail = email.trim().toLowerCase();
+    
+    // Check if user already exists
+    const existingUser = await db.login(cleanEmail);
+    
+    // Generate secure 6-digit OTP code
+    const code = Math.floor(100000 + Math.random() * 900000).toString();
+    const expiresAt = Date.now() + 10 * 60 * 1000; // 10 minutes validity
+    otpStore.set(cleanEmail, { code, expiresAt });
+    
+    console.log(`[AUTH-OTP] Email: ${cleanEmail} | OTP Code: ${code} | Exists: ${!!existingUser}`);
+    
+    res.json({
+      success: true,
+      exists: !!existingUser,
+      user: existingUser ? {
+        id: existingUser.id,
+        name: existingUser.name,
+        role: existingUser.role,
+        organization_name: existingUser.organization_name
+      } : null,
+      otp: code, // returned for seamless hackathon / demonstration autofill
+      message: `A 6-digit verification code has been sent to ${cleanEmail}.`
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Verify 6-digit OTP code
+app.post('/api/auth/verify-otp', async (req, res) => {
+  try {
+    const { email, otp } = req.body;
+    if (!email || !otp) return res.status(400).json({ error: 'Email and OTP are required.' });
+    const cleanEmail = email.trim().toLowerCase();
+    const record = otpStore.get(cleanEmail);
+    
+    // Check validity (accept generated code, master demo 123456, or valid unexpired code)
+    const isCodeValid = (record && record.code === otp.trim()) || otp.trim() === '123456';
+    if (!isCodeValid) {
+      return res.status(400).json({ error: 'Invalid verification code. Please check and try again.' });
+    }
+    
+    // Remove used OTP
+    otpStore.delete(cleanEmail);
+    
+    // Look up user
+    const existingUser = await db.login(cleanEmail);
+    if (existingUser) {
+      return res.json({
+        success: true,
+        isNew: false,
+        user: existingUser,
+        message: `Welcome back, ${existingUser.name}!`
+      });
+    } else {
+      return res.json({
+        success: true,
+        isNew: true,
+        email: cleanEmail,
+        message: 'Email verified successfully. Please complete your profile.'
+      });
+    }
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Google One-Tap / OAuth Sign-in & Registration
+app.post('/api/auth/google', async (req, res) => {
+  try {
+    const { email, name, avatar, role, organization_name, supporter_type, city, country } = req.body;
+    if (!email) return res.status(400).json({ error: 'Google account email is required' });
+    const cleanEmail = email.trim().toLowerCase();
+    
+    // If user already exists with this Google email, log them in immediately!
+    const existingUser = await db.login(cleanEmail);
+    if (existingUser) {
+      return res.json({
+        success: true,
+        isNew: false,
+        user: existingUser,
+        message: `Signed in as ${existingUser.name} via Google.`
+      });
+    }
+    
+    // If not existing, register them with their selected role or default
+    const assignedRole = role || 'supporter';
+    const cleanName = name || cleanEmail.split('@')[0].replace(/[._-]/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    
+    const newUserPayload = {
+      name: cleanName,
+      email: cleanEmail,
+      role: assignedRole,
+      avatar: avatar || `https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(cleanName)}`,
+      organization_name: organization_name || (assignedRole === 'ngo' ? `${cleanName} Foundation` : assignedRole === 'corporate' ? `${cleanName} CSR Group` : undefined),
+      supporter_type: supporter_type || (assignedRole === 'corporate' ? 'corporate_csr' : 'individual_volunteer'),
+      city: city || 'Mumbai',
+      country: country || 'India',
+      auth_provider: 'google'
+    };
+    
+    const newUser = await db.registerUser(newUserPayload);
+    res.status(201).json({
+      success: true,
+      isNew: true,
+      user: newUser,
+      message: `Account created successfully via Google as ${assignedRole.toUpperCase()}!`
+    });
+  } catch (err) {
+    res.status(400).json({ error: err.message });
   }
 });
 

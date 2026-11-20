@@ -30,6 +30,45 @@ export async function loginUser(email) {
   return res.json();
 }
 
+export async function sendOtp(email) {
+  const res = await fetch(`${API_BASE}/auth/send-otp`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email })
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.error || 'Failed to send OTP');
+  }
+  return res.json();
+}
+
+export async function verifyOtp(email, otp) {
+  const res = await fetch(`${API_BASE}/auth/verify-otp`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, otp })
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.error || 'OTP verification failed');
+  }
+  return res.json();
+}
+
+export async function loginWithGoogle(profile) {
+  const res = await fetch(`${API_BASE}/auth/google`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(profile)
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.error || 'Google login failed');
+  }
+  return res.json();
+}
+
 export async function registerUser(userData) {
   const res = await fetch(`${API_BASE}/auth/register`, {
     method: 'POST',

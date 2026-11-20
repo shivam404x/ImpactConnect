@@ -67,16 +67,35 @@ import { CheckCircle2, ArrowRight, WifiOff } from 'lucide-react';
 import { translations } from './data/translations';
 
 export default function App() {
-  // Navigation & Page state
-  const [activePage, setActivePage] = useState('home'); 
+  // Current authenticated user (persisted in localStorage)
+  const [currentUser, setCurrentUser] = useState(() => {
+    try {
+      const saved = localStorage.getItem('impactconnect_user');
+      return saved ? JSON.parse(saved) : null;
+    } catch {
+      return null;
+    }
+  });
+
+  // Navigation & Page state (defaults to user's dedicated role dashboard if logged in)
+  const [activePage, setActivePage] = useState(() => {
+    try {
+      const savedUser = localStorage.getItem('impactconnect_user');
+      if (savedUser) {
+        const u = JSON.parse(savedUser);
+        if (u.role === 'ngo') return 'ngo-dashboard';
+        if (u.role === 'corporate') return 'csr-portal';
+        if (u.role === 'admin') return 'admin-dashboard';
+        return 'supporter-dashboard';
+      }
+    } catch {}
+    return 'home';
+  }); 
   // 'home' | 'explore' | 'marketplace' | 'csr-portal' | 'for-ngos' | 'how-it-works' | 'about-us' | 'ngo-dashboard' | 'supporter-dashboard' | 'admin-dashboard'
 
   // Language state (English / Hindi)
   const [language, setLanguage] = useState('en');
   const t = translations[language] || translations.en;
-
-  // Current authenticated user (null initially, or demo account)
-  const [currentUser, setCurrentUser] = useState(null);
 
   // Platform Data
   const [projects, setProjects] = useState([]);
@@ -233,6 +252,11 @@ export default function App() {
 
   const handleLoginSuccess = (user) => {
     setCurrentUser(user);
+    try {
+      localStorage.setItem('impactconnect_user', JSON.stringify(user));
+    } catch (e) {
+      console.warn(e);
+    }
     showToast(`Welcome back, ${user.name}!`);
     if (user.role === 'ngo') {
       setActivePage('ngo-dashboard');
@@ -243,6 +267,7 @@ export default function App() {
     } else {
       setActivePage('supporter-dashboard');
     }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleSwitchRole = async (targetRole) => {
@@ -260,6 +285,9 @@ export default function App() {
     try {
       const user = await loginUser(email);
       setCurrentUser(user);
+      try {
+        localStorage.setItem('impactconnect_user', JSON.stringify(user));
+      } catch (e) {}
       if (user.role === 'ngo') setActivePage('ngo-dashboard');
       else if (user.role === 'admin') setActivePage('admin-dashboard');
       else if (user.role === 'corporate') setActivePage('csr-portal');
@@ -273,6 +301,9 @@ export default function App() {
 
   const handleLogout = () => {
     setCurrentUser(null);
+    try {
+      localStorage.removeItem('impactconnect_user');
+    } catch (e) {}
     setActivePage('home');
     showToast('You have been signed out.');
   };
