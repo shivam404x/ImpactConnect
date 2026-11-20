@@ -69,6 +69,19 @@ export async function loginWithGoogle(profile) {
   return res.json();
 }
 
+export async function loginWithFacebook(profile) {
+  const res = await fetch(`${API_BASE}/auth/facebook`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(profile)
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.error || 'Facebook login failed');
+  }
+  return res.json();
+}
+
 export async function registerUser(userData) {
   const res = await fetch(`${API_BASE}/auth/register`, {
     method: 'POST',

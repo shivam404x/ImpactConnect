@@ -16,7 +16,7 @@ import {
   ChevronLeft
 } from 'lucide-react';
 import Logo from './Logo';
-import { loginUser, registerUser, sendOtp, verifyOtp, loginWithGoogle } from '../utils/api';
+import { loginUser, registerUser, sendOtp, verifyOtp, loginWithGoogle, loginWithFacebook } from '../utils/api';
 import { CAUSE_CATEGORIES } from '../data/sdgConstants';
 
 export default function AuthModal({ 
@@ -28,7 +28,7 @@ export default function AuthModal({
 }) {
   if (!isOpen) return null;
 
-  // View state: 'input' | 'otp' | 'complete_profile' | 'google_picker'
+  // View state: 'input' | 'otp' | 'complete_profile' | 'google_picker' | 'facebook_picker'
   const [step, setStep] = useState('input');
   
   // Input fields
@@ -38,7 +38,7 @@ export default function AuthModal({
   const [timer, setTimer] = useState(60);
   const [canResend, setCanResend] = useState(false);
 
-  // New User Registration State (For first-time Gmail / Email registrations)
+  // New User Registration State (For first-time Gmail / Social registrations)
   const [selectedRole, setSelectedRole] = useState(initialRole || 'supporter'); // 'ngo' | 'corporate' | 'supporter'
   const [fullName, setFullName] = useState('');
   const [orgName, setOrgName] = useState('');
@@ -192,7 +192,35 @@ export default function AuthModal({
     .finally(() => setLoading(false));
   };
 
-  // 5. 1-Click Demo Logins for Hackathon presentations
+  // 5. Continue with Facebook Flow
+  const handleFacebookSignIn = (fbEmail, defaultRole = null) => {
+    const targetEmail = fbEmail || (email.trim() ? email.trim() : 'shivam.roy@facebook.com');
+    const targetName = targetEmail.includes('@') 
+      ? targetEmail.split('@')[0].replace(/[._-]/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
+      : 'Facebook User';
+    
+    setLoading(true);
+    setError(null);
+
+    loginWithFacebook({
+      email: targetEmail.toLowerCase(),
+      name: targetName,
+      role: defaultRole || selectedRole || 'supporter',
+      avatar: `https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(targetName)}&backgroundColor=1877F2`
+    })
+    .then(res => {
+      if (res.user) {
+        onLoginSuccess(res.user);
+        onClose();
+      }
+    })
+    .catch(err => {
+      setError(err.message || 'Facebook sign-in failed.');
+    })
+    .finally(() => setLoading(false));
+  };
+
+  // 6. 1-Click Demo Logins for Hackathon presentations
   const handleDemoLogin = async (demoEmail) => {
     setLoading(true);
     setError(null);
@@ -208,31 +236,35 @@ export default function AuthModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
-      <div className="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden my-8">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4">
+      <div className="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden my-6">
         
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 p-2 rounded-full hover:bg-slate-100 text-slate-400 hover:text-slate-700 transition z-10"
+          className="absolute top-4 right-4 p-2 rounded-full hover:bg-slate-100 text-slate-400 hover:text-slate-700 transition z-10 cursor-pointer"
         >
           <X className="w-5 h-5" />
         </button>
 
         {/* Modal Header */}
-        <div className="p-6 sm:p-8 pb-4 text-center border-b border-slate-100 bg-slate-50/70">
-          <Logo size="md" showTagline={true} className="justify-center mb-3" />
+        <div className="p-5 sm:p-7 pb-4 text-center border-b border-slate-100 bg-slate-50/70">
+          <Logo size="md" showTagline={true} className="justify-center mb-2.5" />
           
           <h2 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
             {step === 'otp' && 'Verify Your Email'}
             {step === 'complete_profile' && 'Complete Your Profile & Role'}
+            {step === 'google_picker' && 'Sign in with Google'}
+            {step === 'facebook_picker' && 'Sign in with Facebook'}
             {step === 'input' && 'Sign In to ImpactConnect'}
           </h2>
           
           <p className="text-xs sm:text-sm text-slate-500 mt-1 max-w-sm mx-auto">
             {step === 'otp' && `Enter the 6-digit code sent to ${email}`}
             {step === 'complete_profile' && 'Select whether you represent an NGO, Corporate CSR, or Volunteer.'}
-            {step === 'input' && 'Access role-based dashboards, manage SDG grants, or track community impact.'}
+            {step === 'google_picker' && 'Choose your Google account to continue to ImpactConnect'}
+            {step === 'facebook_picker' && 'Connect your Facebook profile to access your dashboard'}
+            {step === 'input' && 'Sign in with Google, Facebook, or Email + OTP to access your role dashboard.'}
           </p>
         </div>
 
@@ -252,34 +284,52 @@ export default function AuthModal({
         )}
 
         {/* Content Body */}
-        <div className="p-6 sm:p-8 pt-4">
+        <div className="p-5 sm:p-7 pt-4">
 
           {/* ================================================================= */}
-          {/* STEP 1: INITIAL INPUT (Google Login OR Email + OTP) */}
+          {/* STEP 1: INITIAL INPUT (Google, Facebook OR Email + OTP) */}
           {/* ================================================================= */}
           {step === 'input' && (
             <div className="space-y-4">
               
-              {/* GOOGLE SIGN-IN BUTTON */}
-              <button
-                type="button"
-                onClick={() => setStep('google_picker')}
-                className="w-full py-3 px-4 rounded-2xl border border-slate-300 bg-white hover:bg-slate-50 text-slate-700 font-bold text-xs sm:text-sm flex items-center justify-center space-x-3 transition shadow-xs hover:border-slate-400 group cursor-pointer"
-              >
-                {/* Official Google G Logo */}
-                <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24">
-                  <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
-                  <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
-                  <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" />
-                  <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" />
-                </svg>
-                <span>Continue with Google</span>
-              </button>
+              {/* SOCIAL SIGN-IN BUTTONS: GOOGLE & FACEBOOK */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                
+                {/* GOOGLE BUTTON */}
+                <button
+                  type="button"
+                  onClick={() => setStep('google_picker')}
+                  className="py-2.5 px-3 rounded-2xl border border-slate-300 bg-white hover:bg-slate-50 text-slate-700 font-bold text-xs flex items-center justify-center space-x-2 transition shadow-2xs hover:border-slate-400 group cursor-pointer"
+                >
+                  {/* Official Google G Logo */}
+                  <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24">
+                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" />
+                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" />
+                  </svg>
+                  <span>Google</span>
+                </button>
+
+                {/* FACEBOOK BUTTON */}
+                <button
+                  type="button"
+                  onClick={() => setStep('facebook_picker')}
+                  className="py-2.5 px-3 rounded-2xl border border-[#1877F2]/40 bg-[#1877F2]/5 hover:bg-[#1877F2]/10 text-[#1877F2] font-bold text-xs flex items-center justify-center space-x-2 transition shadow-2xs hover:border-[#1877F2] group cursor-pointer"
+                >
+                  {/* Official Facebook 'f' Logo */}
+                  <svg className="w-4 h-4 shrink-0 fill-[#1877F2]" viewBox="0 0 24 24">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                  <span>Facebook</span>
+                </button>
+
+              </div>
 
               {/* DIVIDER */}
-              <div className="relative flex py-2 items-center">
+              <div className="relative flex py-1 items-center">
                 <div className="flex-grow border-t border-slate-200"></div>
-                <span className="flex-shrink mx-4 text-slate-400 text-[11px] font-bold uppercase tracking-wider">
+                <span className="flex-shrink mx-3 text-slate-400 text-[11px] font-bold uppercase tracking-wider">
                   Or use Email & OTP
                 </span>
                 <div className="flex-grow border-t border-slate-200"></div>
@@ -289,7 +339,7 @@ export default function AuthModal({
               <form onSubmit={handleSendOtp} className="space-y-3">
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
-                    Email / Gmail Address
+                    Email Address
                   </label>
                   <div className="relative">
                     <Mail className="w-4 h-4 text-slate-400 absolute left-3.5 top-3" />
@@ -298,19 +348,19 @@ export default function AuthModal({
                       required
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      placeholder="e.g. yourname@gmail.com"
+                      placeholder="e.g. name@gmail.com"
                       className="w-full pl-10 pr-3.5 py-2.5 rounded-xl border border-slate-300 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#16A36A]/40 focus:border-[#16A36A]"
                     />
                   </div>
                   <p className="text-[11px] text-slate-500 mt-1">
-                    Registered accounts log in directly; new users select their role after verification.
+                    Existing users log in directly; new users select their role after verification.
                   </p>
                 </div>
 
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-2.5 rounded-xl btn-primary font-bold text-sm flex items-center justify-center space-x-2 shadow-xs disabled:opacity-50 cursor-pointer"
+                  className="w-full py-2.5 rounded-xl btn-primary font-bold text-sm flex items-center justify-center space-x-2 shadow-2xs disabled:opacity-50 cursor-pointer"
                 >
                   {loading ? (
                     <Loader2 className="w-4 h-4 animate-spin" />
@@ -324,8 +374,8 @@ export default function AuthModal({
               </form>
 
               {/* 1-CLICK HACKATHON DEMO ROLES */}
-              <div className="pt-4 border-t border-slate-100">
-                <div className="text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-2.5 text-center flex items-center justify-center gap-1.5">
+              <div className="pt-3.5 border-t border-slate-100">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-2 text-center flex items-center justify-center gap-1.5">
                   <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
                   <span>Instant Role Switch (1-Click Demo):</span>
                 </div>
@@ -336,8 +386,8 @@ export default function AuthModal({
                     className="p-2.5 rounded-xl border border-slate-200 hover:border-emerald-300 hover:bg-emerald-50/40 text-left transition flex items-center space-x-2 cursor-pointer"
                   >
                     <Building2 className="w-4 h-4 text-[#16A36A] shrink-0" />
-                    <div>
-                      <div className="font-bold text-slate-900">NGO Director</div>
+                    <div className="truncate">
+                      <div className="font-bold text-slate-900 truncate">NGO Director</div>
                       <div className="text-[10px] text-slate-500 truncate">Aashray Trust</div>
                     </div>
                   </button>
@@ -348,8 +398,8 @@ export default function AuthModal({
                     className="p-2.5 rounded-xl border border-slate-200 hover:border-sky-300 hover:bg-sky-50/40 text-left transition flex items-center space-x-2 cursor-pointer"
                   >
                     <Briefcase className="w-4 h-4 text-sky-600 shrink-0" />
-                    <div>
-                      <div className="font-bold text-slate-900">Corporate CSR</div>
+                    <div className="truncate">
+                      <div className="font-bold text-slate-900 truncate">Corporate CSR</div>
                       <div className="text-[10px] text-slate-500 truncate">Apex Tech Global</div>
                     </div>
                   </button>
@@ -360,8 +410,8 @@ export default function AuthModal({
                     className="p-2.5 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50/40 text-left transition flex items-center space-x-2 cursor-pointer"
                   >
                     <User className="w-4 h-4 text-amber-600 shrink-0" />
-                    <div>
-                      <div className="font-bold text-slate-900">Volunteer / Pro</div>
+                    <div className="truncate">
+                      <div className="font-bold text-slate-900 truncate">Volunteer / Pro</div>
                       <div className="text-[10px] text-slate-500 truncate">Priya Sharma</div>
                     </div>
                   </button>
@@ -372,8 +422,8 @@ export default function AuthModal({
                     className="p-2.5 rounded-xl border border-purple-200 bg-purple-50/40 hover:bg-purple-100/60 text-left transition flex items-center space-x-2 cursor-pointer"
                   >
                     <ShieldCheck className="w-4 h-4 text-purple-600 shrink-0" />
-                    <div>
-                      <div className="font-bold text-purple-900">Super Admin</div>
+                    <div className="truncate">
+                      <div className="font-bold text-purple-900 truncate">Super Admin</div>
                       <div className="text-[10px] text-purple-600 truncate">Sarah Mitchell</div>
                     </div>
                   </button>
@@ -445,6 +495,74 @@ export default function AuthModal({
                       className="px-4 py-2 rounded-xl btn-primary text-xs font-bold cursor-pointer"
                     >
                       Sign In
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* ================================================================= */}
+          {/* FACEBOOK ACCOUNT SELECTOR DIALOG */}
+          {/* ================================================================= */}
+          {step === 'facebook_picker' && (
+            <div className="space-y-4 animate-fade-in">
+              <button
+                type="button"
+                onClick={() => setStep('input')}
+                className="text-xs text-slate-500 hover:text-slate-800 flex items-center space-x-1 font-semibold cursor-pointer"
+              >
+                <ChevronLeft className="w-4 h-4" />
+                <span>Back to options</span>
+              </button>
+
+              <div className="bg-[#1877F2]/5 p-4 rounded-2xl border border-[#1877F2]/20 text-center">
+                <div className="w-10 h-10 rounded-full bg-[#1877F2] text-white flex items-center justify-center mx-auto mb-2 shadow-sm">
+                  <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                </div>
+                <div className="font-bold text-sm text-slate-900">Continue with Facebook</div>
+                <div className="text-xs text-slate-500">Sign in securely using your Facebook account</div>
+              </div>
+
+              {/* Sample Facebook Profiles */}
+              <div className="space-y-2">
+                <button
+                  type="button"
+                  onClick={() => handleFacebookSignIn('shivam.roy@facebook.com', 'supporter')}
+                  className="w-full p-3 rounded-2xl border border-slate-200 hover:border-[#1877F2] hover:bg-[#1877F2]/5 text-left transition flex items-center space-x-3 cursor-pointer"
+                >
+                  <div className="w-10 h-10 rounded-full bg-[#1877F2] text-white font-bold flex items-center justify-center shrink-0">
+                    S
+                  </div>
+                  <div className="flex-1 truncate">
+                    <div className="text-xs font-bold text-slate-900">Shivam Roy (Facebook)</div>
+                    <div className="text-[11px] text-slate-500 truncate">Continue as Shivam</div>
+                  </div>
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-[#1877F2]/10 text-[#1877F2]">
+                    1-Click
+                  </span>
+                </button>
+
+                <div className="pt-2">
+                  <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-600 mb-1">
+                    Or Enter Facebook Email / Phone:
+                  </label>
+                  <div className="flex space-x-2">
+                    <input
+                      type="text"
+                      placeholder="facebook_user@example.com"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="flex-1 px-3 py-2 rounded-xl border border-slate-300 text-xs text-slate-900"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => handleFacebookSignIn(email)}
+                      className="px-4 py-2 rounded-xl bg-[#1877F2] hover:bg-[#166FE5] text-white text-xs font-bold transition shadow-xs cursor-pointer"
+                    >
+                      Continue
                     </button>
                   </div>
                 </div>

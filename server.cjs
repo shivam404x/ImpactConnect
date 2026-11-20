@@ -205,6 +205,52 @@ app.post('/api/auth/google', async (req, res) => {
   }
 });
 
+// Facebook OAuth Sign-in & Registration
+app.post('/api/auth/facebook', async (req, res) => {
+  try {
+    const { email, name, avatar, role, organization_name, supporter_type, city, country } = req.body;
+    if (!email) return res.status(400).json({ error: 'Facebook account email is required' });
+    const cleanEmail = email.trim().toLowerCase();
+    
+    // If user already exists with this Facebook email, log them in immediately!
+    const existingUser = await db.login(cleanEmail);
+    if (existingUser) {
+      return res.json({
+        success: true,
+        isNew: false,
+        user: existingUser,
+        message: `Signed in as ${existingUser.name} via Facebook.`
+      });
+    }
+    
+    // If not existing, register them with their selected role or default
+    const assignedRole = role || 'supporter';
+    const cleanName = name || cleanEmail.split('@')[0].replace(/[._-]/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    
+    const newUserPayload = {
+      name: cleanName,
+      email: cleanEmail,
+      role: assignedRole,
+      avatar: avatar || `https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(cleanName)}`,
+      organization_name: organization_name || (assignedRole === 'ngo' ? `${cleanName} Foundation` : assignedRole === 'corporate' ? `${cleanName} CSR Group` : undefined),
+      supporter_type: supporter_type || (assignedRole === 'corporate' ? 'corporate_csr' : 'individual_volunteer'),
+      city: city || 'Mumbai',
+      country: country || 'India',
+      auth_provider: 'facebook'
+    };
+    
+    const newUser = await db.registerUser(newUserPayload);
+    res.status(201).json({
+      success: true,
+      isNew: true,
+      user: newUser,
+      message: `Account created successfully via Facebook as ${assignedRole.toUpperCase()}!`
+    });
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
 app.post('/api/auth/register', async (req, res) => {
   try {
     const { email, role, name } = req.body;
