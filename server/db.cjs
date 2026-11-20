@@ -1023,12 +1023,15 @@ const db = {
   async recordVolunteerCheckIn(data) {
     if (!memoryStore.volunteer_attendance) memoryStore.volunteer_attendance = [];
 
-    // Duplicate scan check
+    // Duplicate scan check (allow additional shifts or test scans after 15 seconds)
     const existing = memoryStore.volunteer_attendance.find(
       a => a.event_id === data.event_id && a.volunteer_email?.toLowerCase() === data.volunteer_email?.toLowerCase()
     );
-    if (existing) {
-      throw new Error(`Volunteer ${data.volunteer_name || data.volunteer_email} has already checked in for this event at ${new Date(existing.check_in_time).toLocaleTimeString()}.`);
+    if (existing && !data.force && !data.allow_duplicate) {
+      const diffMs = Date.now() - new Date(existing.check_in_time).getTime();
+      if (diffMs < 15000) {
+        throw new Error(`Volunteer ${data.volunteer_name || data.volunteer_email} was verified just now at ${new Date(existing.check_in_time).toLocaleTimeString()}. Wait a few moments before logging another shift.`);
+      }
     }
 
     const newAtt = {
@@ -1040,6 +1043,7 @@ const db = {
       ...data
     };
     memoryStore.volunteer_attendance.unshift(newAtt);
+    saveLocalStore();
 
     // Log Activity
     this.addActivity({

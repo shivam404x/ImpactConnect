@@ -17,7 +17,8 @@ import {
   Zap,
   ShieldCheck,
   Calendar,
-  Truck
+  Truck,
+  QrCode
 } from 'lucide-react';
 import { fetchPartnershipRequests, fetchProjects, fetchAiMatches, toggleFavorite } from '../utils/api';
 
@@ -26,6 +27,7 @@ export default function SupporterDashboard({
   onSelectProject, 
   onPartnerClick,
   onOpenWorkspace,
+  onOpenQrAttendance,
   onNavigate 
 }) {
   const [activeTab, setActiveTab] = useState('requests'); // 'requests' | 'recommended' | 'profile'
@@ -108,10 +110,26 @@ export default function SupporterDashboard({
       </div>
 
       {/* Volunteer Action Hub / Toolbelt */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3.5 mb-8">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5 mb-8">
+        {onOpenQrAttendance && (
+          <button
+            onClick={onOpenQrAttendance}
+            className="p-4 rounded-2xl bg-white border border-emerald-300 hover:border-emerald-500 hover:shadow-sm text-left transition group bg-gradient-to-br from-emerald-50/60 to-white cursor-pointer"
+          >
+            <div className="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center mb-2.5 group-hover:scale-105 transition">
+              <QrCode className="w-5 h-5" />
+            </div>
+            <div className="font-black text-slate-900 text-xs flex items-center justify-between">
+              <span>QR Attendance</span>
+              <span className="text-[10px] text-emerald-700 font-bold bg-emerald-100 px-1.5 py-0.5 rounded">Scan</span>
+            </div>
+            <p className="text-[11px] text-slate-500 mt-1 line-clamp-1">Kiosk check-in & hours</p>
+          </button>
+        )}
+
         <button
           onClick={() => onNavigate && onNavigate('micro-tasks')}
-          className="p-4 rounded-2xl bg-white border border-slate-200 hover:border-amber-300 hover:shadow-sm text-left transition group"
+          className="p-4 rounded-2xl bg-white border border-slate-200 hover:border-amber-300 hover:shadow-sm text-left transition group cursor-pointer"
         >
           <div className="w-9 h-9 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center mb-2.5 group-hover:scale-105 transition">
             <Zap className="w-5 h-5" />
@@ -125,7 +143,7 @@ export default function SupporterDashboard({
 
         <button
           onClick={() => onNavigate && onNavigate('passport')}
-          className="p-4 rounded-2xl bg-white border border-slate-200 hover:border-emerald-300 hover:shadow-sm text-left transition group"
+          className="p-4 rounded-2xl bg-white border border-slate-200 hover:border-emerald-300 hover:shadow-sm text-left transition group cursor-pointer"
         >
           <div className="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-2.5 group-hover:scale-105 transition">
             <ShieldCheck className="w-5 h-5" />
@@ -139,7 +157,7 @@ export default function SupporterDashboard({
 
         <button
           onClick={() => onNavigate && onNavigate('calendar')}
-          className="p-4 rounded-2xl bg-white border border-slate-200 hover:border-sky-300 hover:shadow-sm text-left transition group"
+          className="p-4 rounded-2xl bg-white border border-slate-200 hover:border-sky-300 hover:shadow-sm text-left transition group cursor-pointer"
         >
           <div className="w-9 h-9 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center mb-2.5 group-hover:scale-105 transition">
             <Calendar className="w-5 h-5" />
@@ -153,7 +171,7 @@ export default function SupporterDashboard({
 
         <button
           onClick={() => onNavigate && onNavigate('deliveries')}
-          className="p-4 rounded-2xl bg-white border border-slate-200 hover:border-indigo-300 hover:shadow-sm text-left transition group"
+          className="p-4 rounded-2xl bg-white border border-slate-200 hover:border-indigo-300 hover:shadow-sm text-left transition group cursor-pointer"
         >
           <div className="w-9 h-9 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-2.5 group-hover:scale-105 transition">
             <Truck className="w-5 h-5" />

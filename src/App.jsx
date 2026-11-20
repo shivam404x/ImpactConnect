@@ -704,6 +704,7 @@ export default function App() {
             onSelectProject={(p) => setSelectedProject(p)}
             onPartnerClick={(p) => setPartnershipProject(p)}
             onOpenWorkspace={(p) => setWorkspacePartnership(p)}
+            onOpenQrAttendance={() => setIsQrAttendanceOpen(true)}
             onNavigate={(pageId) => {
               setActivePage(pageId);
               window.scrollTo({ top: 0, behavior: 'smooth' });

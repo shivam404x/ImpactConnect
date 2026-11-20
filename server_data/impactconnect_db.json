@@ -111,6 +111,28 @@
       "city": "Mumbai",
       "country": "India",
       "auth_provider": "google"
+    },
+    {
+      "id": "user-1795203818412",
+      "created_at": "2026-11-20T19:43:38.412Z",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&h=150&q=80",
+      "favorites": [],
+      "name": "8298689524sroy",
+      "email": "8298689524sroy@gmail.com",
+      "role": "supporter",
+      "supporter_type": "individual_volunteer",
+      "city": "Mumbai, India",
+      "country": "India",
+      "category": "poverty",
+      "sdg_focus": [
+        1,
+        4
+      ],
+      "skills": [
+        "Funding",
+        "Strategy",
+        "Mentorship"
+      ]
     }
   ],
   "ngos": [
@@ -303,8 +325,8 @@
       "country": "United States",
       "latitude": 30.2672,
       "longitude": -97.7431,
-      "is_verified": false,
-      "verification_tier": "Pending Review",
+      "is_verified": true,
+      "verification_tier": "Gold Verified",
       "logo_url": "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=200&h=200&q=80",
       "banner_url": "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=1200&h=400&q=80",
       "leadership_contact": "Elena Vasquez, Program Director",
@@ -726,6 +748,46 @@
   ],
   "partnership_requests": [
     {
+      "id": "req-part-1795203941868",
+      "status": "pending",
+      "ngo_response_note": null,
+      "responded_at": null,
+      "created_at": "2026-11-20T19:45:41.868Z",
+      "updated_at": "2026-11-20T19:45:41.868Z",
+      "project_id": "proj-1",
+      "ngo_id": "ngo-1",
+      "supporter_id": "user-1795201467426",
+      "supporter_name": "Shivam Roy",
+      "supporter_email": "shivam404x@gmail.com",
+      "supporter_phone": "+1 555 0192",
+      "supporter_type": "donor",
+      "organization_name": "corporate",
+      "offer_type": "funding",
+      "offer_value": "₹2,500",
+      "message": "I would love to support this cause and collaborate!",
+      "timeline": "Immediate"
+    },
+    {
+      "id": "req-part-1795203827750",
+      "status": "pending",
+      "ngo_response_note": null,
+      "responded_at": null,
+      "created_at": "2026-11-20T19:43:47.750Z",
+      "updated_at": "2026-11-20T19:43:47.750Z",
+      "project_id": "proj-1",
+      "ngo_id": "ngo-1",
+      "supporter_id": "user-1795203818412",
+      "supporter_name": "8298689524sroy",
+      "supporter_email": "8298689524sroy@gmail.com",
+      "supporter_phone": "+1 555 0192",
+      "supporter_type": "donor",
+      "organization_name": "supporter",
+      "offer_type": "funding",
+      "offer_value": "₹2,500",
+      "message": "I would love to support this cause and collaborate!",
+      "timeline": "Immediate"
+    },
+    {
       "id": "req-part-1",
       "project_id": "proj-1",
       "ngo_id": "ngo-1",
@@ -831,7 +893,7 @@
       "id": "vr-1",
       "ngo_id": "ngo-6",
       "ngo_name": "NourishNation Hunger Project & Food Rescue",
-      "status": "pending",
+      "status": "approved",
       "submitted_documents": [
         {
           "type": "501(c)(3) IRS Determination Letter",
@@ -849,9 +911,10 @@
           "verified_format": true
         }
       ],
-      "admin_notes": "Pending compliance cross-check with state non-profit registry database.",
+      "admin_notes": "Processed by superuser Sarah Mitchell on 11/21/2026",
       "submitted_at": "2026-10-25T14:00:00Z",
-      "reviewed_at": null
+      "reviewed_at": "2026-11-20T19:46:53.799Z",
+      "verification_tier": "Gold Verified"
     }
   ],
   "reports": [
@@ -868,6 +931,26 @@
     }
   ],
   "contributions": [
+    {
+      "id": "contrib-1795203941868",
+      "project_id": "proj-1",
+      "donor_name": "Shivam Roy",
+      "donor_type": "donor",
+      "contribution_type": "funding",
+      "amount_or_item": "₹2,500",
+      "is_sample_demo": true,
+      "created_at": "2026-11-20T19:45:41.868Z"
+    },
+    {
+      "id": "contrib-1795203827750",
+      "project_id": "proj-1",
+      "donor_name": "8298689524sroy",
+      "donor_type": "donor",
+      "contribution_type": "funding",
+      "amount_or_item": "₹2,500",
+      "is_sample_demo": true,
+      "created_at": "2026-11-20T19:43:47.750Z"
+    },
     {
       "id": "contrib-1",
       "project_id": "proj-1",
@@ -900,6 +983,46 @@
     }
   ],
   "activity_logs": [
+    {
+      "id": "act-1795204775448",
+      "event_type": "volunteer_checked_in",
+      "title": "Volunteer Check-In Verified via QR",
+      "description": "Priya Sharma recorded 4.5 volunteering hours for \"Clean Water Wells Fieldwork\".",
+      "related_id": "proj-1",
+      "created_at": "2026-11-20T19:59:35.448Z"
+    },
+    {
+      "id": "act-1795204148393",
+      "event_type": "volunteer_checked_in",
+      "title": "Volunteer Check-In Verified via QR",
+      "description": "Dr. Sunita Deshmukh recorded 4.5 volunteering hours for \"Clean Water Wells & Solar Micro-Grids Fieldwork\".",
+      "related_id": "proj-1",
+      "created_at": "2026-11-20T19:49:08.393Z"
+    },
+    {
+      "id": "act-1795204094457",
+      "event_type": "volunteer_checked_in",
+      "title": "Volunteer Check-In Verified via QR",
+      "description": "Dr. Sunita Deshmukh recorded 4.5 volunteering hours for \"Clean Water Wells & Solar Micro-Grids Fieldwork\".",
+      "related_id": "proj-1",
+      "created_at": "2026-11-20T19:48:14.457Z"
+    },
+    {
+      "id": "act-1795204076641",
+      "event_type": "volunteer_checked_in",
+      "title": "Volunteer Check-In Verified via QR",
+      "description": "Dr. Sunita Deshmukh recorded 4.5 volunteering hours for \"Clean Water Wells & Solar Micro-Grids Fieldwork\".",
+      "related_id": "proj-1",
+      "created_at": "2026-11-20T19:47:56.641Z"
+    },
+    {
+      "id": "act-1795203855979",
+      "event_type": "shift_registered",
+      "title": "Volunteer Confirmed for Miyawaki Sapling Plantation & Organic Mulch Spreading",
+      "description": "8298689524sroy committed to volunteer on 2026-11-14. (19/25 slots filled).",
+      "related_id": "proj-4",
+      "created_at": "2026-11-20T19:44:15.979Z"
+    },
     {
       "id": "act-1",
       "event_type": "partnership_accepted",
@@ -1229,6 +1352,63 @@
   ],
   "volunteer_attendance": [
     {
+      "id": "att-1795204775447",
+      "check_in_time": "2026-11-20T19:59:35.447Z",
+      "hours_logged": 4.5,
+      "status": "verified",
+      "created_at": "2026-11-20T19:59:35.447Z",
+      "event_id": "event-1-shift-test99",
+      "project_id": "proj-1",
+      "project_title": "Clean Water Wells Fieldwork",
+      "volunteer_name": "Priya Sharma",
+      "volunteer_email": "priya.sharma@earthguard.org",
+      "qr_token": "QR-TEST-999",
+      "verified_by": "Field Officer",
+      "force": true
+    },
+    {
+      "id": "att-1795204148393",
+      "check_in_time": "2026-11-20T19:49:08.393Z",
+      "hours_logged": 4.5,
+      "status": "verified",
+      "created_at": "2026-11-20T19:49:08.393Z",
+      "event_id": "event-1-session-706",
+      "project_id": "proj-1",
+      "project_title": "Clean Water Wells & Solar Micro-Grids Fieldwork",
+      "volunteer_name": "Dr. Sunita Deshmukh",
+      "volunteer_email": "contact@aashray-uplift.org",
+      "qr_token": "QR-IC-2026-USER-NGO-1-DR.S",
+      "verified_by": "Dr. Sunita Deshmukh"
+    },
+    {
+      "id": "att-1795204094457",
+      "check_in_time": "2026-11-20T19:48:14.457Z",
+      "hours_logged": 4.5,
+      "status": "verified",
+      "created_at": "2026-11-20T19:48:14.457Z",
+      "event_id": "event-1-session-267",
+      "project_id": "proj-1",
+      "project_title": "Clean Water Wells & Solar Micro-Grids Fieldwork",
+      "volunteer_name": "Dr. Sunita Deshmukh",
+      "volunteer_email": "contact@aashray-uplift.org",
+      "qr_token": "QR-IC-2026-USER-NGO-1",
+      "verified_by": "Dr. Sunita Deshmukh"
+    },
+    {
+      "id": "att-1795204076640",
+      "check_in_time": "2026-11-20T19:47:56.640Z",
+      "hours_logged": 4.5,
+      "status": "verified",
+      "created_at": "2026-11-20T19:47:56.641Z",
+      "event_id": "event-1-2026-11-20",
+      "project_id": "proj-1",
+      "project_title": "Clean Water Wells & Solar Micro-Grids Fieldwork",
+      "volunteer_name": "Dr. Sunita Deshmukh",
+      "volunteer_email": "contact@aashray-uplift.org",
+      "qr_token": "QR-IC-2026-USER-NGO-1",
+      "verified_by": "Dr. Sunita Deshmukh"
+    },
+    {
       "id": "att-1",
       "event_id": "event-1",
       "project_id": "proj-1",
@@ -1274,6 +1454,61 @@
     }
   ],
   "activity_feed": [
+    {
+      "id": "feed-1795204775448-494",
+      "timestamp": "2026-11-20T19:59:35.448Z",
+      "type": "volunteer_checked_in",
+      "title": "Volunteer Check-In Verified via QR",
+      "description": "Priya Sharma recorded 4.5 volunteering hours for \"Clean Water Wells Fieldwork\".",
+      "actor_name": "Priya Sharma",
+      "actor_role": "supporter",
+      "project_id": "proj-1",
+      "project_title": "Clean Water Wells Fieldwork"
+    },
+    {
+      "id": "feed-1795204148393-217",
+      "timestamp": "2026-11-20T19:49:08.393Z",
+      "type": "volunteer_checked_in",
+      "title": "Volunteer Check-In Verified via QR",
+      "description": "Dr. Sunita Deshmukh recorded 4.5 volunteering hours for \"Clean Water Wells & Solar Micro-Grids Fieldwork\".",
+      "actor_name": "Dr. Sunita Deshmukh",
+      "actor_role": "supporter",
+      "project_id": "proj-1",
+      "project_title": "Clean Water Wells & Solar Micro-Grids Fieldwork"
+    },
+    {
+      "id": "feed-1795204094457-779",
+      "timestamp": "2026-11-20T19:48:14.457Z",
+      "type": "volunteer_checked_in",
+      "title": "Volunteer Check-In Verified via QR",
+      "description": "Dr. Sunita Deshmukh recorded 4.5 volunteering hours for \"Clean Water Wells & Solar Micro-Grids Fieldwork\".",
+      "actor_name": "Dr. Sunita Deshmukh",
+      "actor_role": "supporter",
+      "project_id": "proj-1",
+      "project_title": "Clean Water Wells & Solar Micro-Grids Fieldwork"
+    },
+    {
+      "id": "feed-1795204076641-637",
+      "timestamp": "2026-11-20T19:47:56.641Z",
+      "type": "volunteer_checked_in",
+      "title": "Volunteer Check-In Verified via QR",
+      "description": "Dr. Sunita Deshmukh recorded 4.5 volunteering hours for \"Clean Water Wells & Solar Micro-Grids Fieldwork\".",
+      "actor_name": "Dr. Sunita Deshmukh",
+      "actor_role": "supporter",
+      "project_id": "proj-1",
+      "project_title": "Clean Water Wells & Solar Micro-Grids Fieldwork"
+    },
+    {
+      "id": "feed-1795203855979-758",
+      "timestamp": "2026-11-20T19:44:15.979Z",
+      "type": "shift_registered",
+      "title": "Volunteer Confirmed for Miyawaki Sapling Plantation & Organic Mulch Spreading",
+      "description": "8298689524sroy committed to volunteer on 2026-11-14. (19/25 slots filled).",
+      "actor_name": "8298689524sroy",
+      "actor_role": "supporter",
+      "project_id": "proj-4",
+      "project_title": "Urban Micro-Forests & Native Biodiversity Revival Across 12 Industrial Corridors"
+    },
     {
       "id": "feed-1",
       "type": "partnership_accepted",
@@ -1391,7 +1626,7 @@
       "end_time": "11:30 AM",
       "location": "Whitefield Ecological Wetland Corridor, Bengaluru",
       "capacity": 25,
-      "registered_count": 18,
+      "registered_count": 19,
       "required_skills": [
         "Plantation",
         "Outdoor Physical",
@@ -1493,9 +1728,37 @@
       "notes": "Will perform non-invasive ultrasound checkups.",
       "status": "confirmed",
       "created_at": "2026-10-24T12:00:00Z"
+    },
+    {
+      "id": "sreg-1795203855974",
+      "shift_id": "shift-2",
+      "status": "confirmed",
+      "created_at": "2026-11-20T19:44:15.974Z",
+      "volunteer_id": "user-1795203818412",
+      "volunteer_name": "8298689524sroy",
+      "volunteer_email": "8298689524sroy@gmail.com",
+      "volunteer_phone": "+91 98200 12345",
+      "selected_skills": [
+        "Funding",
+        "Strategy",
+        "Mentorship"
+      ],
+      "notes": ""
     }
   ],
   "notifications": [
+    {
+      "id": "notif-1795203855974-x8v0",
+      "is_read": false,
+      "created_at": "2026-11-20T19:44:15.974Z",
+      "user_id": "user-1795203818412",
+      "recipient_email": "8298689524sroy@gmail.com",
+      "type": "shift_confirmed",
+      "title": "Volunteering Shift Confirmed!",
+      "message": "You are confirmed for \"Miyawaki Sapling Plantation & Organic Mulch Spreading\" on 2026-11-14 (07:00 AM - 11:30 AM) at Whitefield Ecological Wetland Corridor, Bengaluru.",
+      "target_page": "calendar",
+      "target_id": "shift-2"
+    },
     {
       "id": "notif-1",
       "user_id": "user-supp-1",

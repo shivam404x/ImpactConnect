@@ -30,7 +30,9 @@ import {
   AlertTriangle,
   PlusCircle,
   Eye,
-  Gift
+  Gift,
+  HelpCircle,
+  FileSpreadsheet
 } from 'lucide-react';
 import { translations } from '../data/translations';
 
@@ -54,6 +56,7 @@ export default function Navbar({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [userDropdownOpen, setUserDropdownOpen] = useState(false);
   const [roleDropdownOpen, setRoleDropdownOpen] = useState(false);
+  const [toolsDropdownOpen, setToolsDropdownOpen] = useState(false);
 
   const navRef = useRef(null);
   const t = translations.en;
@@ -64,6 +67,7 @@ export default function Navbar({
       if (navRef.current && !navRef.current.contains(e.target)) {
         setUserDropdownOpen(false);
         setRoleDropdownOpen(false);
+        setToolsDropdownOpen(false);
       }
     }
     document.addEventListener('mousedown', handleClickOutside);
@@ -75,6 +79,7 @@ export default function Navbar({
     setMobileMenuOpen(false);
     setUserDropdownOpen(false);
     setRoleDropdownOpen(false);
+    setToolsDropdownOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -85,38 +90,42 @@ export default function Navbar({
       case 'ngo':
         return {
           label: 'NGO Command Center',
+          shortLabel: 'NGO',
           page: 'ngo-dashboard',
           badge: 'NGO Director',
           color: 'bg-emerald-50 text-emerald-800 border-emerald-200',
           accent: '#16A36A',
-          icon: <Building2 className="w-4 h-4 text-[#16A36A]" />
+          icon: <Building2 className="w-3.5 h-3.5 text-[#16A36A]" />
         };
       case 'corporate':
         return {
           label: 'Corporate CSR Hub',
+          shortLabel: 'CSR',
           page: 'csr-portal',
           badge: 'Corporate CSR',
           color: 'bg-sky-50 text-sky-800 border-sky-200',
           accent: '#0284C7',
-          icon: <Briefcase className="w-4 h-4 text-sky-600" />
+          icon: <Briefcase className="w-3.5 h-3.5 text-sky-600" />
         };
       case 'admin':
         return {
           label: 'Admin Operations',
+          shortLabel: 'Admin',
           page: 'admin-dashboard',
           badge: 'Super Admin',
           color: 'bg-purple-50 text-purple-800 border-purple-200',
           accent: '#7E22CE',
-          icon: <ShieldCheck className="w-4 h-4 text-purple-600" />
+          icon: <ShieldCheck className="w-3.5 h-3.5 text-purple-600" />
         };
       default:
         return {
           label: 'Volunteer Workspace',
+          shortLabel: 'Volunteer',
           page: 'supporter-dashboard',
-          badge: 'Skilled Volunteer',
+          badge: 'Volunteer',
           color: 'bg-amber-50 text-amber-800 border-amber-200',
           accent: '#D97706',
-          icon: <User className="w-4 h-4 text-amber-600" />
+          icon: <User className="w-3.5 h-3.5 text-amber-600" />
         };
     }
   };
@@ -124,12 +133,14 @@ export default function Navbar({
   const roleInfo = getRoleDetails();
 
   return (
-    <header ref={navRef} className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-18">
+    <header ref={navRef} className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 transition-all">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
           
-          {/* 1. BRAND LOGO & CURRENT ROLE PILL */}
-          <div className="flex items-center space-x-3 select-none shrink-0">
+          {/* ================================================================= */}
+          {/* 1. LEFT: LOGO & ROLE PILL */}
+          {/* ================================================================= */}
+          <div className="flex items-center space-x-2.5 select-none shrink-0">
             <div 
               onClick={() => handleNavClick(currentUser ? roleInfo?.page || 'home' : 'home')} 
               className="cursor-pointer"
@@ -138,80 +149,37 @@ export default function Navbar({
             </div>
 
             {currentUser && roleInfo && (
-              <span className={`hidden xl:inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-full text-[11px] font-bold border ${roleInfo.color}`}>
+              <span className={`inline-flex items-center space-x-1 px-2 py-0.5 rounded-full text-[11px] font-bold border ${roleInfo.color} whitespace-nowrap`}>
                 {roleInfo.icon}
-                <span>{roleInfo.label}</span>
+                <span className="hidden xl:inline">{roleInfo.label}</span>
+                <span className="inline xl:hidden">{roleInfo.shortLabel}</span>
               </span>
             )}
           </div>
 
-          {/* 2. DYNAMIC ROLE-BASED NAVIGATION (EACH ROLE HAS ITS OWN NAVBAR) */}
-          <nav className="hidden lg:flex items-center space-x-1">
+          {/* ================================================================= */}
+          {/* 2. CENTER: STREAMLINED ROLE NAVIGATION (NO OVERLAP / CLUTTER) */}
+          {/* ================================================================= */}
+          <nav className="hidden lg:flex items-center space-x-1 xl:space-x-1.5 flex-1 justify-center max-w-2xl px-2">
 
             {/* A. NGO COMMAND NAVBAR */}
             {currentUser?.role === 'ngo' && (
               <>
                 <button
                   onClick={() => handleNavClick('ngo-dashboard')}
-                  className={`px-3 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 ${
+                  className={`px-3 py-1.5 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 whitespace-nowrap cursor-pointer ${
                     activePage === 'ngo-dashboard'
                       ? 'text-[#16A36A] bg-emerald-50 border border-emerald-200 shadow-2xs'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                   }`}
                 >
                   <Building2 className="w-3.5 h-3.5 text-emerald-600" />
-                  <span>My NGO Dashboard</span>
-                </button>
-
-                {onOpenNeedToAction && (
-                  <button
-                    onClick={onOpenNeedToAction}
-                    className="px-3 py-2 rounded-xl text-xs font-bold text-emerald-700 bg-emerald-50/70 hover:bg-emerald-100 transition flex items-center space-x-1.5 border border-emerald-200"
-                    title="Convert problem notes to structured campaign"
-                  >
-                    <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
-                    <span>Need-to-Action AI</span>
-                  </button>
-                )}
-
-                {onOpenQrAttendance && (
-                  <button
-                    onClick={onOpenQrAttendance}
-                    className="px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:text-slate-900 hover:bg-slate-50 transition flex items-center space-x-1.5"
-                    title="Volunteer QR Attendance & Passes"
-                  >
-                    <QrCode className="w-3.5 h-3.5 text-slate-500" />
-                    <span>QR Attendance</span>
-                  </button>
-                )}
-
-                <button
-                  onClick={() => handleNavClick('document-checklist')}
-                  className={`px-3 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 ${
-                    activePage === 'document-checklist'
-                      ? 'text-[#16A36A] bg-emerald-50 border border-emerald-200'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
-                  }`}
-                >
-                  <FileCheck className="w-3.5 h-3.5 text-emerald-600" />
-                  <span>12A/80G Checklist</span>
-                </button>
-
-                <button
-                  onClick={() => handleNavClick('cross-ngo')}
-                  className={`px-3 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 ${
-                    activePage === 'cross-ngo'
-                      ? 'text-[#16A36A] bg-emerald-50 border border-emerald-200'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
-                  }`}
-                >
-                  <Users2 className="w-3.5 h-3.5 text-indigo-600" />
-                  <span>Joint Coalitions</span>
+                  <span>Dashboard</span>
                 </button>
 
                 <button
                   onClick={() => handleNavClick('urgent-needs')}
-                  className={`px-3 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 ${
+                  className={`px-3 py-1.5 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 whitespace-nowrap cursor-pointer ${
                     activePage === 'urgent-needs'
                       ? 'text-rose-700 bg-rose-50 border border-rose-200'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
@@ -224,12 +192,108 @@ export default function Navbar({
                 {onOpenPostProject && (
                   <button
                     onClick={onOpenPostProject}
-                    className="ml-1 px-3.5 py-1.5 rounded-xl btn-primary text-xs font-bold flex items-center space-x-1.5 shadow-xs"
+                    className="px-3 py-1.5 rounded-xl btn-primary text-xs font-bold flex items-center space-x-1.5 shadow-2xs whitespace-nowrap cursor-pointer"
                   >
                     <PlusCircle className="w-3.5 h-3.5" />
                     <span>Post Requirement</span>
                   </button>
                 )}
+
+                {/* NGO Tools Dropdown */}
+                <div className="relative">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setToolsDropdownOpen(!toolsDropdownOpen);
+                      setRoleDropdownOpen(false);
+                      setUserDropdownOpen(false);
+                    }}
+                    className={`px-2.5 py-1.5 rounded-xl text-xs font-bold transition flex items-center space-x-1 whitespace-nowrap cursor-pointer ${
+                      toolsDropdownOpen ? 'bg-slate-100 text-slate-900' : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
+                    }`}
+                  >
+                    <span>NGO Tools</span>
+                    <ChevronDown className="w-3.5 h-3.5 opacity-60" />
+                  </button>
+
+                  {toolsDropdownOpen && (
+                    <div className="absolute left-0 mt-2 w-64 bg-white rounded-2xl border border-slate-200 shadow-xl p-2 z-50 animate-fade-in space-y-1">
+                      <div className="px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                        Operational Utilities
+                      </div>
+
+                      {onOpenQrAttendance && (
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setToolsDropdownOpen(false);
+                            onOpenQrAttendance();
+                          }}
+                          className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 transition flex items-center space-x-2 cursor-pointer"
+                        >
+                          <QrCode className="w-4 h-4 text-emerald-600" />
+                          <div>
+                            <div>Volunteer QR Attendance</div>
+                            <div className="text-[10px] text-slate-400 font-normal">Kiosk scanner & verified hours</div>
+                          </div>
+                        </button>
+                      )}
+
+                      {onOpenNeedToAction && (
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setToolsDropdownOpen(false);
+                            onOpenNeedToAction();
+                          }}
+                          className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 transition flex items-center space-x-2 cursor-pointer"
+                        >
+                          <Sparkles className="w-4 h-4 text-emerald-600" />
+                          <div>
+                            <div>Need-to-Action AI</div>
+                            <div className="text-[10px] text-slate-400 font-normal">Prompt-to-project blueprint</div>
+                          </div>
+                        </button>
+                      )}
+
+                      <button
+                        type="button"
+                        onClick={() => handleNavClick('document-checklist')}
+                        className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:bg-slate-50 transition flex items-center space-x-2 cursor-pointer"
+                      >
+                        <FileCheck className="w-4 h-4 text-indigo-600" />
+                        <div>
+                          <div>12A/80G Document Checklist</div>
+                          <div className="text-[10px] text-slate-400 font-normal">Compliance & tax-exempt status</div>
+                        </div>
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={() => handleNavClick('cross-ngo')}
+                        className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:bg-slate-50 transition flex items-center space-x-2 cursor-pointer"
+                      >
+                        <Users2 className="w-4 h-4 text-sky-600" />
+                        <div>
+                          <div>Joint NGO Coalitions</div>
+                          <div className="text-[10px] text-slate-400 font-normal">Collaborative campaigns</div>
+                        </div>
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={() => handleNavClick('sdg')}
+                        className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:bg-slate-50 transition flex items-center space-x-2 cursor-pointer"
+                      >
+                        <Layers className="w-4 h-4 text-amber-600" />
+                        <div>
+                          <div>UN SDG Analytics</div>
+                          <div className="text-[10px] text-slate-400 font-normal">Impact goal tracking 1-17</div>
+                        </div>
+                      </button>
+                    </div>
+                  )}
+                </div>
               </>
             )}
 
@@ -238,75 +302,19 @@ export default function Navbar({
               <>
                 <button
                   onClick={() => handleNavClick('csr-portal')}
-                  className={`px-3 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 ${
+                  className={`px-3 py-1.5 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 whitespace-nowrap cursor-pointer ${
                     activePage === 'csr-portal'
                       ? 'text-sky-800 bg-sky-50 border border-sky-200 shadow-2xs'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                   }`}
                 >
                   <Briefcase className="w-3.5 h-3.5 text-sky-600" />
-                  <span>CSR Dashboard</span>
-                </button>
-
-                {onOpenCompatibilityChecker && (
-                  <button
-                    onClick={onOpenCompatibilityChecker}
-                    className="px-3 py-2 rounded-xl text-xs font-bold text-indigo-700 bg-indigo-50/70 hover:bg-indigo-100 transition flex items-center space-x-1.5 border border-indigo-200"
-                    title="AI Partner Alignment & Compatibility"
-                  >
-                    <Sliders className="w-3.5 h-3.5 text-indigo-600" />
-                    <span>Compatibility AI</span>
-                  </button>
-                )}
-
-                {onOpenMilestoneSponsorship && (
-                  <button
-                    onClick={onOpenMilestoneSponsorship}
-                    className="px-3 py-2 rounded-xl text-xs font-bold text-rose-700 hover:bg-rose-50 transition flex items-center space-x-1.5"
-                    title="Fund specific project milestones & tranches"
-                  >
-                    <Target className="w-3.5 h-3.5 text-rose-500" />
-                    <span>Milestone Grants</span>
-                  </button>
-                )}
-
-                {onOpenCsrEvidence && (
-                  <button
-                    onClick={onOpenCsrEvidence}
-                    className="px-3 py-2 rounded-xl text-xs font-bold text-emerald-800 hover:bg-emerald-50 transition flex items-center space-x-1.5"
-                    title="Generate audit-ready CSR Evidence Pack"
-                  >
-                    <FileCheck className="w-3.5 h-3.5 text-emerald-600" />
-                    <span>CSR Evidence Pack</span>
-                  </button>
-                )}
-
-                <button
-                  onClick={() => handleNavClick('corporate-volunteering')}
-                  className={`px-3 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 ${
-                    activePage === 'corporate-volunteering'
-                      ? 'text-sky-800 bg-sky-50 border border-sky-200'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
-                  }`}
-                >
-                  <Users2 className="w-3.5 h-3.5 text-sky-600" />
-                  <span>Employee Volunteering</span>
-                </button>
-
-                <button
-                  onClick={() => handleNavClick('sdg')}
-                  className={`px-3 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 ${
-                    activePage === 'sdg'
-                      ? 'text-sky-800 bg-sky-50 border border-sky-200'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
-                  }`}
-                >
-                  <span>SDG Analytics</span>
+                  <span>CSR Hub</span>
                 </button>
 
                 <button
                   onClick={() => handleNavClick('explore')}
-                  className={`px-3 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 ${
+                  className={`px-3 py-1.5 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 whitespace-nowrap cursor-pointer ${
                     activePage === 'explore'
                       ? 'text-sky-800 bg-sky-50 border border-sky-200'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
@@ -315,6 +323,117 @@ export default function Navbar({
                   <Search className="w-3.5 h-3.5 text-slate-400" />
                   <span>Explore Projects</span>
                 </button>
+
+                {onOpenMilestoneSponsorship && (
+                  <button
+                    onClick={onOpenMilestoneSponsorship}
+                    className="px-3 py-1.5 rounded-xl text-xs font-bold text-rose-700 bg-rose-50/70 hover:bg-rose-100 transition flex items-center space-x-1.5 border border-rose-200 whitespace-nowrap cursor-pointer"
+                  >
+                    <Target className="w-3.5 h-3.5 text-rose-500" />
+                    <span>Milestone Grants</span>
+                  </button>
+                )}
+
+                {/* CSR Tools Dropdown */}
+                <div className="relative">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setToolsDropdownOpen(!toolsDropdownOpen);
+                      setRoleDropdownOpen(false);
+                      setUserDropdownOpen(false);
+                    }}
+                    className={`px-2.5 py-1.5 rounded-xl text-xs font-bold transition flex items-center space-x-1 whitespace-nowrap cursor-pointer ${
+                      toolsDropdownOpen ? 'bg-slate-100 text-slate-900' : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
+                    }`}
+                  >
+                    <span>CSR Tools</span>
+                    <ChevronDown className="w-3.5 h-3.5 opacity-60" />
+                  </button>
+
+                  {toolsDropdownOpen && (
+                    <div className="absolute left-0 mt-2 w-64 bg-white rounded-2xl border border-slate-200 shadow-xl p-2 z-50 animate-fade-in space-y-1">
+                      <div className="px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                        Governance & Alignment
+                      </div>
+
+                      {onOpenQrAttendance && (
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setToolsDropdownOpen(false);
+                            onOpenQrAttendance();
+                          }}
+                          className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 transition flex items-center space-x-2 cursor-pointer"
+                        >
+                          <QrCode className="w-4 h-4 text-emerald-600" />
+                          <div>
+                            <div>Volunteer QR Attendance</div>
+                            <div className="text-[10px] text-slate-400 font-normal">Field tracking & hours verification</div>
+                          </div>
+                        </button>
+                      )}
+
+                      {onOpenCompatibilityChecker && (
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setToolsDropdownOpen(false);
+                            onOpenCompatibilityChecker();
+                          }}
+                          className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:bg-indigo-50 hover:text-indigo-800 transition flex items-center space-x-2 cursor-pointer"
+                        >
+                          <Sliders className="w-4 h-4 text-indigo-600" />
+                          <div>
+                            <div>Compatibility AI</div>
+                            <div className="text-[10px] text-slate-400 font-normal">Match CSR goals with NGOs</div>
+                          </div>
+                        </button>
+                      )}
+
+                      {onOpenCsrEvidence && (
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setToolsDropdownOpen(false);
+                            onOpenCsrEvidence();
+                          }}
+                          className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 transition flex items-center space-x-2 cursor-pointer"
+                        >
+                          <FileCheck className="w-4 h-4 text-emerald-600" />
+                          <div>
+                            <div>CSR Evidence Pack</div>
+                            <div className="text-[10px] text-slate-400 font-normal">Audit-ready PDF compliance</div>
+                          </div>
+                        </button>
+                      )}
+
+                      <button
+                        type="button"
+                        onClick={() => handleNavClick('corporate-volunteering')}
+                        className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:bg-slate-50 transition flex items-center space-x-2 cursor-pointer"
+                      >
+                        <Users2 className="w-4 h-4 text-sky-600" />
+                        <div>
+                          <div>Employee Volunteering</div>
+                          <div className="text-[10px] text-slate-400 font-normal">Corporate team volunteering</div>
+                        </div>
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={() => handleNavClick('sdg')}
+                        className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:bg-slate-50 transition flex items-center space-x-2 cursor-pointer"
+                      >
+                        <Layers className="w-4 h-4 text-amber-600" />
+                        <div>
+                          <div>SDG Analytics</div>
+                          <div className="text-[10px] text-slate-400 font-normal">Target metrics & capital flow</div>
+                        </div>
+                      </button>
+                    </div>
+                  )}
+                </div>
               </>
             )}
 
@@ -323,87 +442,125 @@ export default function Navbar({
               <>
                 <button
                   onClick={() => handleNavClick('supporter-dashboard')}
-                  className={`px-3 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 ${
+                  className={`px-3 py-1.5 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 whitespace-nowrap cursor-pointer ${
                     activePage === 'supporter-dashboard'
                       ? 'text-amber-800 bg-amber-50 border border-amber-200 shadow-2xs'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                   }`}
                 >
                   <User className="w-3.5 h-3.5 text-amber-600" />
-                  <span>My Dashboard</span>
-                </button>
-
-                <button
-                  onClick={() => handleNavClick('micro-tasks')}
-                  className={`px-3 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 ${
-                    activePage === 'micro-tasks'
-                      ? 'text-amber-800 bg-amber-50 border border-amber-200'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
-                  }`}
-                >
-                  <Zap className="w-3.5 h-3.5 text-amber-500" />
-                  <span>Micro-Tasks (15-45m)</span>
-                </button>
-
-                <button
-                  onClick={() => handleNavClick('passport')}
-                  className={`px-3 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 ${
-                    activePage === 'passport'
-                      ? 'text-emerald-800 bg-emerald-50 border border-emerald-200'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
-                  }`}
-                >
-                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-                  <span>Impact Passport</span>
-                </button>
-
-                <button
-                  onClick={() => handleNavClick('calendar')}
-                  className={`px-3 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 ${
-                    activePage === 'calendar'
-                      ? 'text-sky-800 bg-sky-50 border border-sky-200'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
-                  }`}
-                >
-                  <Calendar className="w-3.5 h-3.5 text-sky-600" />
-                  <span>Shifts Calendar</span>
-                </button>
-
-                <button
-                  onClick={() => handleNavClick('deliveries')}
-                  className={`px-3 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 ${
-                    activePage === 'deliveries'
-                      ? 'text-indigo-800 bg-indigo-50 border border-indigo-200'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
-                  }`}
-                >
-                  <Truck className="w-3.5 h-3.5 text-indigo-600" />
-                  <span>Track Deliveries</span>
-                </button>
-
-                <button
-                  onClick={() => handleNavClick('personalized')}
-                  className={`px-3 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 ${
-                    activePage === 'personalized'
-                      ? 'text-purple-800 bg-purple-50 border border-purple-200'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
-                  }`}
-                >
-                  <Sparkles className="w-3.5 h-3.5 text-purple-600" />
-                  <span>AI Matches</span>
+                  <span>Workspace</span>
                 </button>
 
                 <button
                   onClick={() => handleNavClick('explore')}
-                  className={`px-3 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 ${
+                  className={`px-3 py-1.5 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 whitespace-nowrap cursor-pointer ${
                     activePage === 'explore'
-                      ? 'text-slate-900 bg-slate-100'
+                      ? 'text-amber-800 bg-amber-50 border border-amber-200'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                   }`}
                 >
                   <Search className="w-3.5 h-3.5 text-slate-400" />
                   <span>Find Projects</span>
                 </button>
+
+                {/* QR Pass is direct & prominent for Volunteers */}
+                {onOpenQrAttendance && (
+                  <button
+                    onClick={onOpenQrAttendance}
+                    className="px-3 py-1.5 rounded-xl text-xs font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 transition flex items-center space-x-1.5 whitespace-nowrap cursor-pointer"
+                    title="Open Volunteer QR Attendance & Pass"
+                  >
+                    <QrCode className="w-3.5 h-3.5 text-emerald-600" />
+                    <span>QR Pass</span>
+                  </button>
+                )}
+
+                {/* Volunteer Tools Dropdown */}
+                <div className="relative">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setToolsDropdownOpen(!toolsDropdownOpen);
+                      setRoleDropdownOpen(false);
+                      setUserDropdownOpen(false);
+                    }}
+                    className={`px-2.5 py-1.5 rounded-xl text-xs font-bold transition flex items-center space-x-1 whitespace-nowrap cursor-pointer ${
+                      toolsDropdownOpen ? 'bg-slate-100 text-slate-900' : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
+                    }`}
+                  >
+                    <span>More</span>
+                    <ChevronDown className="w-3.5 h-3.5 opacity-60" />
+                  </button>
+
+                  {toolsDropdownOpen && (
+                    <div className="absolute left-0 mt-2 w-64 bg-white rounded-2xl border border-slate-200 shadow-xl p-2 z-50 animate-fade-in space-y-1">
+                      <div className="px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                        Volunteer Activities
+                      </div>
+
+                      <button
+                        type="button"
+                        onClick={() => handleNavClick('micro-tasks')}
+                        className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:bg-amber-50 transition flex items-center space-x-2 cursor-pointer"
+                      >
+                        <Zap className="w-4 h-4 text-amber-500" />
+                        <div>
+                          <div>Micro-Tasks (15-45m)</div>
+                          <div className="text-[10px] text-slate-400 font-normal">Quick instant contributions</div>
+                        </div>
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={() => handleNavClick('passport')}
+                        className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:bg-emerald-50 transition flex items-center space-x-2 cursor-pointer"
+                      >
+                        <ShieldCheck className="w-4 h-4 text-emerald-600" />
+                        <div>
+                          <div>Impact Passport</div>
+                          <div className="text-[10px] text-slate-400 font-normal">Verified certificates & hours</div>
+                        </div>
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={() => handleNavClick('calendar')}
+                        className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:bg-sky-50 transition flex items-center space-x-2 cursor-pointer"
+                      >
+                        <Calendar className="w-4 h-4 text-sky-600" />
+                        <div>
+                          <div>Shifts Calendar</div>
+                          <div className="text-[10px] text-slate-400 font-normal">Schedule volunteering events</div>
+                        </div>
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={() => handleNavClick('deliveries')}
+                        className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:bg-slate-50 transition flex items-center space-x-2 cursor-pointer"
+                      >
+                        <Truck className="w-4 h-4 text-indigo-600" />
+                        <div>
+                          <div>Track Deliveries</div>
+                          <div className="text-[10px] text-slate-400 font-normal">Physical goods tracking</div>
+                        </div>
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={() => handleNavClick('personalized')}
+                        className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:bg-purple-50 transition flex items-center space-x-2 cursor-pointer"
+                      >
+                        <Sparkles className="w-4 h-4 text-purple-600" />
+                        <div>
+                          <div>AI Partner Matches</div>
+                          <div className="text-[10px] text-slate-400 font-normal">Projects tailored to your skills</div>
+                        </div>
+                      </button>
+                    </div>
+                  )}
+                </div>
               </>
             )}
 
@@ -412,72 +569,104 @@ export default function Navbar({
               <>
                 <button
                   onClick={() => handleNavClick('admin-dashboard')}
-                  className={`px-3 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 ${
+                  className={`px-3 py-1.5 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 whitespace-nowrap cursor-pointer ${
                     activePage === 'admin-dashboard'
                       ? 'text-purple-800 bg-purple-50 border border-purple-200 shadow-2xs'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                   }`}
                 >
                   <ShieldCheck className="w-3.5 h-3.5 text-purple-600" />
-                  <span>Admin Operations</span>
-                </button>
-
-                {onOpenRiskAlerts && (
-                  <button
-                    onClick={onOpenRiskAlerts}
-                    className="px-3 py-2 rounded-xl text-xs font-bold text-rose-700 bg-rose-50/70 hover:bg-rose-100 transition flex items-center space-x-1.5 border border-rose-200"
-                    title="Automated risk anomaly detection & dispute flags"
-                  >
-                    <AlertTriangle className="w-3.5 h-3.5 text-rose-600" />
-                    <span>Risk Alerts & AI Audits</span>
-                  </button>
-                )}
-
-                <button
-                  onClick={() => handleNavClick('heatmap')}
-                  className={`px-3 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 ${
-                    activePage === 'heatmap'
-                      ? 'text-purple-800 bg-purple-50 border border-purple-200'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
-                  }`}
-                >
-                  <Map className="w-3.5 h-3.5 text-emerald-600" />
-                  <span>Needs Heatmap</span>
-                </button>
-
-                <button
-                  onClick={() => handleNavClick('network-graph')}
-                  className={`px-3 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 ${
-                    activePage === 'network-graph'
-                      ? 'text-purple-800 bg-purple-50 border border-purple-200'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
-                  }`}
-                >
-                  <Share2 className="w-3.5 h-3.5 text-indigo-600" />
-                  <span>Network Graph</span>
-                </button>
-
-                <button
-                  onClick={() => handleNavClick('sdg')}
-                  className={`px-3 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 ${
-                    activePage === 'sdg'
-                      ? 'text-purple-800 bg-purple-50 border border-purple-200'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
-                  }`}
-                >
-                  <span>SDG Analytics</span>
+                  <span>Admin Hub</span>
                 </button>
 
                 <button
                   onClick={() => handleNavClick('explore')}
-                  className={`px-3 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 ${
+                  className={`px-3 py-1.5 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 whitespace-nowrap cursor-pointer ${
                     activePage === 'explore'
                       ? 'text-purple-800 bg-purple-50 border border-purple-200'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                   }`}
                 >
-                  <span>All Projects</span>
+                  <Search className="w-3.5 h-3.5 text-slate-400" />
+                  <span>Projects</span>
                 </button>
+
+                {onOpenRiskAlerts && (
+                  <button
+                    onClick={onOpenRiskAlerts}
+                    className="px-3 py-1.5 rounded-xl text-xs font-bold text-rose-700 bg-rose-50/70 hover:bg-rose-100 transition flex items-center space-x-1.5 border border-rose-200 whitespace-nowrap cursor-pointer"
+                  >
+                    <AlertTriangle className="w-3.5 h-3.5 text-rose-600" />
+                    <span>Risk Alerts</span>
+                  </button>
+                )}
+
+                {/* Admin Tools Dropdown */}
+                <div className="relative">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setToolsDropdownOpen(!toolsDropdownOpen);
+                      setRoleDropdownOpen(false);
+                      setUserDropdownOpen(false);
+                    }}
+                    className={`px-2.5 py-1.5 rounded-xl text-xs font-bold transition flex items-center space-x-1 whitespace-nowrap cursor-pointer ${
+                      toolsDropdownOpen ? 'bg-slate-100 text-slate-900' : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
+                    }`}
+                  >
+                    <span>More</span>
+                    <ChevronDown className="w-3.5 h-3.5 opacity-60" />
+                  </button>
+
+                  {toolsDropdownOpen && (
+                    <div className="absolute left-0 mt-2 w-64 bg-white rounded-2xl border border-slate-200 shadow-xl p-2 z-50 animate-fade-in space-y-1">
+                      <div className="px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                        Admin Utilities
+                      </div>
+
+                      {onOpenQrAttendance && (
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setToolsDropdownOpen(false);
+                            onOpenQrAttendance();
+                          }}
+                          className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 transition flex items-center space-x-2 cursor-pointer"
+                        >
+                          <QrCode className="w-4 h-4 text-emerald-600" />
+                          <div>
+                            <div>Volunteer QR Attendance</div>
+                            <div className="text-[10px] text-slate-400 font-normal">Audit kiosk ledger</div>
+                          </div>
+                        </button>
+                      )}
+
+                      <button
+                        type="button"
+                        onClick={() => handleNavClick('heatmap')}
+                        className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:bg-slate-50 transition flex items-center space-x-2 cursor-pointer"
+                      >
+                        <Map className="w-4 h-4 text-emerald-600" />
+                        <div>
+                          <div>Needs Heatmap</div>
+                          <div className="text-[10px] text-slate-400 font-normal">Geographic crisis density</div>
+                        </div>
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={() => handleNavClick('network-graph')}
+                        className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:bg-slate-50 transition flex items-center space-x-2 cursor-pointer"
+                      >
+                        <Share2 className="w-4 h-4 text-indigo-600" />
+                        <div>
+                          <div>Collaboration Graph</div>
+                          <div className="text-[10px] text-slate-400 font-normal">Partnership connection nodes</div>
+                        </div>
+                      </button>
+                    </div>
+                  )}
+                </div>
               </>
             )}
 
@@ -485,19 +674,8 @@ export default function Navbar({
             {!currentUser && (
               <>
                 <button
-                  onClick={() => handleNavClick('home')}
-                  className={`px-3 py-2 rounded-xl text-xs font-bold transition ${
-                    activePage === 'home'
-                      ? 'text-[#16A36A] bg-emerald-50'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
-                  }`}
-                >
-                  Home
-                </button>
-
-                <button
                   onClick={() => handleNavClick('explore')}
-                  className={`px-3 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 ${
+                  className={`px-3 py-1.5 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 whitespace-nowrap cursor-pointer ${
                     activePage === 'explore'
                       ? 'text-[#16A36A] bg-emerald-50'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
@@ -508,44 +686,30 @@ export default function Navbar({
                 </button>
 
                 <button
-                  onClick={() => handleNavClick('heatmap')}
-                  className={`px-3 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 ${
-                    activePage === 'heatmap'
+                  onClick={() => handleNavClick('sdg')}
+                  className={`px-3 py-1.5 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 whitespace-nowrap cursor-pointer ${
+                    activePage === 'sdg'
                       ? 'text-[#16A36A] bg-emerald-50'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                   }`}
                 >
-                  <Map className="w-3.5 h-3.5 text-emerald-600" />
-                  <span>Needs Heatmap</span>
+                  <Layers className="w-3.5 h-3.5 text-emerald-600" />
+                  <span>UN SDGs</span>
                 </button>
 
-                <button
-                  onClick={() => handleNavClick('stories')}
-                  className={`px-3 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 ${
-                    activePage === 'stories'
-                      ? 'text-[#16A36A] bg-emerald-50'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
-                  }`}
-                >
-                  <Camera className="w-3.5 h-3.5 text-purple-600" />
-                  <span>Impact Stories</span>
-                </button>
-
-                <button
-                  onClick={() => handleNavClick('network-graph')}
-                  className={`px-3 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 ${
-                    activePage === 'network-graph'
-                      ? 'text-[#16A36A] bg-emerald-50'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
-                  }`}
-                >
-                  <Share2 className="w-3.5 h-3.5 text-indigo-600" />
-                  <span>Network Graph</span>
-                </button>
+                {onOpenQrAttendance && (
+                  <button
+                    onClick={onOpenQrAttendance}
+                    className="px-3 py-1.5 rounded-xl text-xs font-bold text-slate-700 hover:text-slate-900 hover:bg-slate-50 transition flex items-center space-x-1.5 whitespace-nowrap cursor-pointer"
+                  >
+                    <QrCode className="w-3.5 h-3.5 text-emerald-600" />
+                    <span>Volunteer QR</span>
+                  </button>
+                )}
 
                 <button
                   onClick={() => handleNavClick('about-us')}
-                  className={`px-3 py-2 rounded-xl text-xs font-bold transition ${
+                  className={`px-3 py-1.5 rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer ${
                     activePage === 'about-us'
                       ? 'text-[#16A36A] bg-emerald-50'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
@@ -553,30 +717,92 @@ export default function Navbar({
                 >
                   About
                 </button>
+
+                {/* Public More Dropdown */}
+                <div className="relative">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setToolsDropdownOpen(!toolsDropdownOpen);
+                      setRoleDropdownOpen(false);
+                      setUserDropdownOpen(false);
+                    }}
+                    className={`px-2.5 py-1.5 rounded-xl text-xs font-bold transition flex items-center space-x-1 whitespace-nowrap cursor-pointer ${
+                      toolsDropdownOpen ? 'bg-slate-100 text-slate-900' : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
+                    }`}
+                  >
+                    <span>More</span>
+                    <ChevronDown className="w-3.5 h-3.5 opacity-60" />
+                  </button>
+
+                  {toolsDropdownOpen && (
+                    <div className="absolute left-0 mt-2 w-56 bg-white rounded-2xl border border-slate-200 shadow-xl p-2 z-50 animate-fade-in space-y-1">
+                      <button
+                        type="button"
+                        onClick={() => handleNavClick('heatmap')}
+                        className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:bg-slate-50 transition flex items-center space-x-2 cursor-pointer"
+                      >
+                        <Map className="w-4 h-4 text-emerald-600" />
+                        <span>Needs Heatmap</span>
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={() => handleNavClick('stories')}
+                        className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:bg-slate-50 transition flex items-center space-x-2 cursor-pointer"
+                      >
+                        <Camera className="w-4 h-4 text-purple-600" />
+                        <span>Impact Stories</span>
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={() => handleNavClick('network-graph')}
+                        className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:bg-slate-50 transition flex items-center space-x-2 cursor-pointer"
+                      >
+                        <Share2 className="w-4 h-4 text-indigo-600" />
+                        <span>Network Graph</span>
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={() => handleNavClick('how-it-works')}
+                        className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:bg-slate-50 transition flex items-center space-x-2 cursor-pointer"
+                      >
+                        <HelpCircle className="w-4 h-4 text-sky-600" />
+                        <span>How It Works</span>
+                      </button>
+                    </div>
+                  )}
+                </div>
               </>
             )}
 
           </nav>
 
-          {/* 3. RIGHT AREA: 1-CLICK PERSONA SWITCHER & USER CONTROLS */}
-          <div className="hidden lg:flex items-center space-x-3">
+          {/* ================================================================= */}
+          {/* 3. RIGHT AREA: 1-CLICK ROLE SWITCHER & USER CONTROLS */}
+          {/* ================================================================= */}
+          <div className="hidden lg:flex items-center space-x-2 shrink-0">
             
-            {/* Quick 1-Click Role Switcher Dropdown */}
+            {/* Quick 1-Click Role Switcher */}
             <div className="relative">
               <button
-                onClick={() => setRoleDropdownOpen(!roleDropdownOpen)}
-                className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-xl border text-xs font-bold transition shadow-2xs ${
+                onClick={() => {
+                  setRoleDropdownOpen(!roleDropdownOpen);
+                  setUserDropdownOpen(false);
+                  setToolsDropdownOpen(false);
+                }}
+                className={`flex items-center space-x-1 px-2.5 py-1.5 rounded-xl border text-xs font-bold transition shadow-2xs whitespace-nowrap cursor-pointer ${
                   currentUser && roleInfo 
                     ? `${roleInfo.color} hover:brightness-95` 
                     : 'border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700'
                 }`}
                 title="Switch persona to see each role's dedicated UI & Navbar"
               >
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>
-                  {currentUser ? `Role: ${roleInfo?.badge}` : 'Switch Role (1-Click) ▾'}
-                </span>
-                <ChevronDown className="w-3.5 h-3.5 opacity-60" />
+                <Sparkles className="w-3.5 h-3.5 text-amber-500" />
+                <span>{currentUser ? `${roleInfo?.badge}` : 'Switch Role'}</span>
+                <ChevronDown className="w-3 h-3 opacity-60" />
               </button>
 
               {roleDropdownOpen && (
@@ -591,7 +817,7 @@ export default function Navbar({
                       if (onSwitchRole) onSwitchRole('ngo');
                       else onOpenAuth('login', 'ngo');
                     }}
-                    className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center justify-between transition ${
+                    className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center justify-between transition cursor-pointer ${
                       currentUser?.role === 'ngo' ? 'bg-emerald-50 text-emerald-800' : 'text-slate-700 hover:bg-slate-50'
                     }`}
                   >
@@ -611,7 +837,7 @@ export default function Navbar({
                       if (onSwitchRole) onSwitchRole('corporate');
                       else onOpenAuth('login', 'supporter');
                     }}
-                    className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center justify-between transition ${
+                    className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center justify-between transition cursor-pointer ${
                       currentUser?.role === 'corporate' ? 'bg-sky-50 text-sky-800' : 'text-slate-700 hover:bg-slate-50'
                     }`}
                   >
@@ -631,7 +857,7 @@ export default function Navbar({
                       if (onSwitchRole) onSwitchRole('supporter');
                       else onOpenAuth('login', 'supporter');
                     }}
-                    className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center justify-between transition ${
+                    className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center justify-between transition cursor-pointer ${
                       currentUser?.role === 'supporter' ? 'bg-amber-50 text-amber-800' : 'text-slate-700 hover:bg-slate-50'
                     }`}
                   >
@@ -651,7 +877,7 @@ export default function Navbar({
                       if (onSwitchRole) onSwitchRole('admin');
                       else onOpenAuth('login', 'admin');
                     }}
-                    className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center justify-between transition ${
+                    className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center justify-between transition cursor-pointer ${
                       currentUser?.role === 'admin' ? 'bg-purple-50 text-purple-800' : 'text-slate-700 hover:bg-slate-50'
                     }`}
                   >
@@ -672,7 +898,7 @@ export default function Navbar({
                         if (onSwitchRole) onSwitchRole('public');
                         else onLogout();
                       }}
-                      className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center space-x-2 text-slate-500 hover:bg-slate-100 hover:text-slate-800 transition"
+                      className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center space-x-2 text-slate-500 hover:bg-slate-100 hover:text-slate-800 transition cursor-pointer"
                     >
                       <Eye className="w-4 h-4 text-slate-400" />
                       <div>
@@ -689,7 +915,7 @@ export default function Navbar({
             {/* Notification Bell */}
             <button
               onClick={onOpenNotifications}
-              className="relative p-2 rounded-xl border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700 transition"
+              className="relative p-2 rounded-xl border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700 transition cursor-pointer"
               title="Open Notification Center"
             >
               <Bell className="w-4 h-4 text-slate-700" />
@@ -700,23 +926,26 @@ export default function Navbar({
               )}
             </button>
 
-            {/* Auth Buttons / Profile Menu */}
+            {/* Profile Avatar / Login Button */}
             {currentUser ? (
               <div className="relative">
                 <button
-                  onClick={() => setUserDropdownOpen(!userDropdownOpen)}
-                  className="flex items-center space-x-2 p-1.5 rounded-2xl hover:bg-slate-100 transition border border-transparent hover:border-slate-200"
+                  onClick={() => {
+                    setUserDropdownOpen(!userDropdownOpen);
+                    setRoleDropdownOpen(false);
+                    setToolsDropdownOpen(false);
+                  }}
+                  className="flex items-center space-x-1.5 p-1 rounded-2xl hover:bg-slate-100 transition border border-transparent hover:border-slate-200 cursor-pointer"
                 >
                   <img
                     src={currentUser.avatar || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&h=150&q=80'}
                     alt={currentUser.name}
                     className="w-8 h-8 rounded-xl object-cover ring-2 ring-emerald-500/30"
                   />
-                  <div className="hidden xl:block text-left text-xs">
-                    <div className="font-bold text-slate-900 leading-tight">{currentUser.name}</div>
-                    <div className="text-[10px] text-slate-500 capitalize">{currentUser.organization_name || currentUser.role}</div>
+                  <div className="hidden xl:block text-left text-xs max-w-[120px] truncate">
+                    <div className="font-bold text-slate-900 leading-tight truncate">{currentUser.name}</div>
                   </div>
-                  <ChevronDown className="w-3.5 h-3.5 text-slate-400" />
+                  <ChevronDown className="w-3 h-3 text-slate-400" />
                 </button>
 
                 {userDropdownOpen && (
@@ -729,7 +958,7 @@ export default function Navbar({
                     {roleInfo && (
                       <button
                         onClick={() => handleNavClick(roleInfo.page)}
-                        className="w-full text-left px-3 py-2 rounded-xl hover:bg-slate-50 font-bold text-slate-700 transition flex items-center space-x-2"
+                        className="w-full text-left px-3 py-2 rounded-xl hover:bg-slate-50 font-bold text-slate-700 transition flex items-center space-x-2 cursor-pointer"
                       >
                         {roleInfo.icon}
                         <span>Open {roleInfo.label}</span>
@@ -741,484 +970,276 @@ export default function Navbar({
                         setUserDropdownOpen(false);
                         onLogout();
                       }}
-                      className="w-full text-left px-3 py-2 rounded-xl hover:bg-rose-50 font-bold text-rose-600 transition flex items-center space-x-1.5"
+                      className="w-full text-left px-3 py-2 rounded-xl hover:bg-rose-50 font-bold text-rose-600 transition flex items-center space-x-1.5 cursor-pointer"
                     >
                       <LogOut className="w-3.5 h-3.5" />
-                      <span>{t.signOut}</span>
+                      <span>Sign Out</span>
                     </button>
                   </div>
                 )}
               </div>
             ) : (
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-1.5">
                 <button
-                  onClick={() => onOpenAuth('login')}
-                  className="px-3.5 py-1.5 rounded-xl border border-slate-200 hover:border-slate-300 text-xs font-bold text-slate-700 transition"
+                  onClick={() => onOpenAuth('login', 'supporter')}
+                  className="px-3 py-1.5 rounded-xl border border-slate-300 hover:border-slate-400 text-xs font-bold text-slate-700 hover:bg-slate-50 transition cursor-pointer"
                 >
-                  {t.logIn}
+                  Sign In
                 </button>
                 <button
-                  onClick={() => onOpenAuth('register')}
-                  className="px-3.5 py-1.5 rounded-xl btn-primary text-xs font-bold transition shadow-xs"
+                  onClick={() => onOpenAuth('register', 'ngo')}
+                  className="px-3.5 py-1.5 rounded-xl btn-primary text-xs font-bold shadow-2xs cursor-pointer"
                 >
-                  {t.getStarted}
+                  Join Us
                 </button>
               </div>
             )}
 
           </div>
 
-          {/* 4. MOBILE / TABLET CONTROLS */}
-          <div className="flex lg:hidden items-center space-x-1.5">
+          {/* ================================================================= */}
+          {/* 4. MOBILE HAMBURGER BUTTON (< 1024px) */}
+          {/* ================================================================= */}
+          <div className="flex lg:hidden items-center space-x-2">
+            <button
+              onClick={onOpenNotifications}
+              className="relative p-2 rounded-xl border border-slate-200 text-slate-700"
+            >
+              <Bell className="w-4 h-4" />
+              {unreadCount > 0 && (
+                <span className="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full bg-rose-600 text-white text-[9px] font-black flex items-center justify-center">
+                  {unreadCount}
+                </span>
+              )}
+            </button>
+
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition"
-              aria-label="Toggle menu"
+              className="p-2 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-100 transition"
+              aria-label="Toggle navigation menu"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
 
         </div>
+      </div>
 
-        {/* 5. MOBILE DRAWER MENU (ROLE-BASED) */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-slate-100 space-y-4 max-h-[85vh] overflow-y-auto animate-fade-in text-left">
-            
-            {/* Active User Pill */}
-            {currentUser && roleInfo && (
-              <div className="p-3 bg-slate-50 rounded-2xl border border-slate-200 flex items-center justify-between">
-                <div className="flex items-center space-x-2">
-                  {roleInfo.icon}
-                  <div>
-                    <div className="font-bold text-xs text-slate-900">{currentUser.name}</div>
-                    <div className="text-[10px] text-slate-500 capitalize">{roleInfo.badge}</div>
-                  </div>
-                </div>
-                <button
-                  onClick={() => handleNavClick(roleInfo.page)}
-                  className="px-3 py-1 rounded-xl bg-slate-900 text-white text-xs font-bold"
-                >
-                  Dashboard →
-                </button>
+      {/* ================================================================= */}
+      {/* 5. MOBILE DRAWER MENU (< 1024px) */}
+      {/* ================================================================= */}
+      {mobileMenuOpen && (
+        <div className="lg:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 max-h-[85vh] overflow-y-auto space-y-4 shadow-xl">
+          
+          {/* Role Status Banner on Mobile */}
+          {currentUser && roleInfo && (
+            <div className={`p-3 rounded-2xl border ${roleInfo.color} flex items-center justify-between`}>
+              <div className="flex items-center space-x-2">
+                {roleInfo.icon}
+                <span className="font-bold text-xs">{roleInfo.label}</span>
               </div>
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-white/80">Active</span>
+            </div>
+          )}
+
+          {/* 1-Click Role Switcher on Mobile */}
+          <div className="bg-slate-50 p-2.5 rounded-2xl border border-slate-200">
+            <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1.5 px-1">
+              Switch Persona (1-Click)
+            </div>
+            <div className="grid grid-cols-2 gap-1.5">
+              <button
+                onClick={() => {
+                  if (onSwitchRole) onSwitchRole('ngo');
+                  setMobileMenuOpen(false);
+                }}
+                className="p-2 rounded-xl bg-white border border-slate-200 text-left text-xs font-bold text-slate-800 flex items-center space-x-1.5"
+              >
+                <Building2 className="w-3.5 h-3.5 text-emerald-600" />
+                <span>NGO Director</span>
+              </button>
+
+              <button
+                onClick={() => {
+                  if (onSwitchRole) onSwitchRole('corporate');
+                  setMobileMenuOpen(false);
+                }}
+                className="p-2 rounded-xl bg-white border border-slate-200 text-left text-xs font-bold text-slate-800 flex items-center space-x-1.5"
+              >
+                <Briefcase className="w-3.5 h-3.5 text-sky-600" />
+                <span>Corporate CSR</span>
+              </button>
+
+              <button
+                onClick={() => {
+                  if (onSwitchRole) onSwitchRole('supporter');
+                  setMobileMenuOpen(false);
+                }}
+                className="p-2 rounded-xl bg-white border border-slate-200 text-left text-xs font-bold text-slate-800 flex items-center space-x-1.5"
+              >
+                <User className="w-3.5 h-3.5 text-amber-600" />
+                <span>Volunteer</span>
+              </button>
+
+              <button
+                onClick={() => {
+                  if (onSwitchRole) onSwitchRole('admin');
+                  setMobileMenuOpen(false);
+                }}
+                className="p-2 rounded-xl bg-white border border-slate-200 text-left text-xs font-bold text-slate-800 flex items-center space-x-1.5"
+              >
+                <ShieldCheck className="w-3.5 h-3.5 text-purple-600" />
+                <span>Super Admin</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Primary Role Navigation on Mobile */}
+          <div className="space-y-1">
+            <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 px-1">
+              Navigation
+            </div>
+
+            {currentUser && roleInfo && (
+              <button
+                onClick={() => handleNavClick(roleInfo.page)}
+                className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold bg-emerald-50 text-emerald-800 flex items-center space-x-2"
+              >
+                {roleInfo.icon}
+                <span>Open {roleInfo.label}</span>
+              </button>
             )}
 
-            {/* Role Specific Mobile Links */}
-            <div className="space-y-1">
-              <span className="text-[10px] uppercase font-bold tracking-wider text-slate-400 px-3">
-                {currentUser ? `${roleInfo?.badge} Navigation` : 'Main Navigation'}
-              </span>
+            <button
+              onClick={() => handleNavClick('explore')}
+              className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:bg-slate-50 flex items-center space-x-2"
+            >
+              <Search className="w-4 h-4 text-slate-400" />
+              <span>Explore Projects</span>
+            </button>
 
-              {/* NGO Mobile Links */}
-              {currentUser?.role === 'ngo' && (
-                <>
-                  <button
-                    onClick={() => handleNavClick('ngo-dashboard')}
-                    className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center space-x-2 ${
-                      activePage === 'ngo-dashboard' ? 'bg-emerald-50 text-[#16A36A]' : 'text-slate-700 hover:bg-slate-50'
-                    }`}
-                  >
-                    <Building2 className="w-4 h-4 text-emerald-600" />
-                    <span>My NGO Dashboard</span>
-                  </button>
+            {onOpenQrAttendance && (
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onOpenQrAttendance();
+                }}
+                className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-emerald-800 bg-emerald-50/70 border border-emerald-200 flex items-center space-x-2"
+              >
+                <QrCode className="w-4 h-4 text-emerald-600" />
+                <span>Volunteer QR Attendance & Pass</span>
+              </button>
+            )}
 
-                  {onOpenNeedToAction && (
-                    <button
-                      onClick={() => { setMobileMenuOpen(false); onOpenNeedToAction(); }}
-                      className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-emerald-700 bg-emerald-50/50 flex items-center space-x-2"
-                    >
-                      <Sparkles className="w-4 h-4 text-emerald-600" />
-                      <span>Need-to-Action AI</span>
-                    </button>
-                  )}
+            <button
+              onClick={() => handleNavClick('urgent-needs')}
+              className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:bg-slate-50 flex items-center space-x-2"
+            >
+              <span className="w-2 h-2 rounded-full bg-rose-500" />
+              <span>Urgent Community Needs</span>
+            </button>
 
-                  {onOpenQrAttendance && (
-                    <button
-                      onClick={() => { setMobileMenuOpen(false); onOpenQrAttendance(); }}
-                      className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:bg-slate-50 flex items-center space-x-2"
-                    >
-                      <QrCode className="w-4 h-4 text-slate-500" />
-                      <span>Volunteer QR Attendance</span>
-                    </button>
-                  )}
+            <button
+              onClick={() => handleNavClick('sdg')}
+              className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:bg-slate-50 flex items-center space-x-2"
+            >
+              <Layers className="w-4 h-4 text-slate-400" />
+              <span>UN Sustainable Development Goals (SDGs)</span>
+            </button>
+          </div>
 
-                  <button
-                    onClick={() => handleNavClick('document-checklist')}
-                    className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center space-x-2 ${
-                      activePage === 'document-checklist' ? 'bg-emerald-50 text-[#16A36A]' : 'text-slate-700 hover:bg-slate-50'
-                    }`}
-                  >
-                    <FileCheck className="w-4 h-4 text-emerald-600" />
-                    <span>12A/80G Document Checklist</span>
-                  </button>
-
-                  <button
-                    onClick={() => handleNavClick('cross-ngo')}
-                    className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center space-x-2 ${
-                      activePage === 'cross-ngo' ? 'bg-emerald-50 text-[#16A36A]' : 'text-slate-700 hover:bg-slate-50'
-                    }`}
-                  >
-                    <Users2 className="w-4 h-4 text-indigo-600" />
-                    <span>Joint Coalitions</span>
-                  </button>
-
-                  <button
-                    onClick={() => handleNavClick('urgent-needs')}
-                    className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center space-x-2 ${
-                      activePage === 'urgent-needs' ? 'bg-rose-50 text-rose-700' : 'text-slate-700 hover:bg-slate-50'
-                    }`}
-                  >
-                    <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
-                    <span>Urgent Community Needs</span>
-                  </button>
-                </>
-              )}
-
-              {/* Corporate CSR Mobile Links */}
-              {currentUser?.role === 'corporate' && (
-                <>
-                  <button
-                    onClick={() => handleNavClick('csr-portal')}
-                    className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center space-x-2 ${
-                      activePage === 'csr-portal' ? 'bg-sky-50 text-sky-800' : 'text-slate-700 hover:bg-slate-50'
-                    }`}
-                  >
-                    <Briefcase className="w-4 h-4 text-sky-600" />
-                    <span>CSR Dashboard</span>
-                  </button>
-
-                  {onOpenCompatibilityChecker && (
-                    <button
-                      onClick={() => { setMobileMenuOpen(false); onOpenCompatibilityChecker(); }}
-                      className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-indigo-700 bg-indigo-50/50 flex items-center space-x-2"
-                    >
-                      <Sliders className="w-4 h-4 text-indigo-600" />
-                      <span>Compatibility AI</span>
-                    </button>
-                  )}
-
-                  {onOpenMilestoneSponsorship && (
-                    <button
-                      onClick={() => { setMobileMenuOpen(false); onOpenMilestoneSponsorship(); }}
-                      className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-rose-700 hover:bg-rose-50 flex items-center space-x-2"
-                    >
-                      <Target className="w-4 h-4 text-rose-500" />
-                      <span>Milestone Grants</span>
-                    </button>
-                  )}
-
-                  {onOpenCsrEvidence && (
-                    <button
-                      onClick={() => { setMobileMenuOpen(false); onOpenCsrEvidence(); }}
-                      className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-emerald-800 hover:bg-emerald-50 flex items-center space-x-2"
-                    >
-                      <FileCheck className="w-4 h-4 text-emerald-600" />
-                      <span>CSR Evidence Pack</span>
-                    </button>
-                  )}
-
-                  <button
-                    onClick={() => handleNavClick('corporate-volunteering')}
-                    className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center space-x-2 ${
-                      activePage === 'corporate-volunteering' ? 'bg-sky-50 text-sky-800' : 'text-slate-700 hover:bg-slate-50'
-                    }`}
-                  >
-                    <Users2 className="w-4 h-4 text-sky-600" />
-                    <span>Employee Volunteering</span>
-                  </button>
-
-                  <button
-                    onClick={() => handleNavClick('sdg')}
-                    className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center space-x-2 ${
-                      activePage === 'sdg' ? 'bg-sky-50 text-sky-800' : 'text-slate-700 hover:bg-slate-50'
-                    }`}
-                  >
-                    <span>SDG Analytics</span>
-                  </button>
-
-                  <button
-                    onClick={() => handleNavClick('explore')}
-                    className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center space-x-2 ${
-                      activePage === 'explore' ? 'bg-sky-50 text-sky-800' : 'text-slate-700 hover:bg-slate-50'
-                    }`}
-                  >
-                    <Search className="w-4 h-4 text-slate-400" />
-                    <span>Explore Projects</span>
-                  </button>
-                </>
-              )}
-
-              {/* Volunteer Mobile Links */}
-              {currentUser?.role === 'supporter' && (
-                <>
-                  <button
-                    onClick={() => handleNavClick('supporter-dashboard')}
-                    className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center space-x-2 ${
-                      activePage === 'supporter-dashboard' ? 'bg-amber-50 text-amber-800' : 'text-slate-700 hover:bg-slate-50'
-                    }`}
-                  >
-                    <User className="w-4 h-4 text-amber-600" />
-                    <span>My Dashboard</span>
-                  </button>
-
-                  <button
-                    onClick={() => handleNavClick('micro-tasks')}
-                    className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center space-x-2 ${
-                      activePage === 'micro-tasks' ? 'bg-amber-50 text-amber-800' : 'text-slate-700 hover:bg-slate-50'
-                    }`}
-                  >
-                    <Zap className="w-4 h-4 text-amber-500" />
-                    <span>Micro-Tasks (15-45m)</span>
-                  </button>
-
-                  <button
-                    onClick={() => handleNavClick('passport')}
-                    className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center space-x-2 ${
-                      activePage === 'passport' ? 'bg-emerald-50 text-emerald-800' : 'text-slate-700 hover:bg-slate-50'
-                    }`}
-                  >
-                    <ShieldCheck className="w-4 h-4 text-emerald-600" />
-                    <span>Impact Passport</span>
-                  </button>
-
-                  <button
-                    onClick={() => handleNavClick('calendar')}
-                    className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center space-x-2 ${
-                      activePage === 'calendar' ? 'bg-sky-50 text-sky-800' : 'text-slate-700 hover:bg-slate-50'
-                    }`}
-                  >
-                    <Calendar className="w-4 h-4 text-sky-600" />
-                    <span>Shifts Calendar</span>
-                  </button>
-
-                  <button
-                    onClick={() => handleNavClick('deliveries')}
-                    className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center space-x-2 ${
-                      activePage === 'deliveries' ? 'bg-indigo-50 text-indigo-800' : 'text-slate-700 hover:bg-slate-50'
-                    }`}
-                  >
-                    <Truck className="w-4 h-4 text-indigo-600" />
-                    <span>Track Deliveries</span>
-                  </button>
-
-                  <button
-                    onClick={() => handleNavClick('personalized')}
-                    className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center space-x-2 ${
-                      activePage === 'personalized' ? 'bg-purple-50 text-purple-800' : 'text-slate-700 hover:bg-slate-50'
-                    }`}
-                  >
-                    <Sparkles className="w-4 h-4 text-purple-600" />
-                    <span>AI Matches</span>
-                  </button>
-
-                  <button
-                    onClick={() => handleNavClick('explore')}
-                    className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center space-x-2 ${
-                      activePage === 'explore' ? 'bg-slate-100' : 'text-slate-700 hover:bg-slate-50'
-                    }`}
-                  >
-                    <Search className="w-4 h-4 text-slate-400" />
-                    <span>Find Projects</span>
-                  </button>
-                </>
-              )}
-
-              {/* Admin Mobile Links */}
-              {currentUser?.role === 'admin' && (
-                <>
-                  <button
-                    onClick={() => handleNavClick('admin-dashboard')}
-                    className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center space-x-2 ${
-                      activePage === 'admin-dashboard' ? 'bg-purple-50 text-purple-800' : 'text-slate-700 hover:bg-slate-50'
-                    }`}
-                  >
-                    <ShieldCheck className="w-4 h-4 text-purple-600" />
-                    <span>Admin Operations</span>
-                  </button>
-
-                  {onOpenRiskAlerts && (
-                    <button
-                      onClick={() => { setMobileMenuOpen(false); onOpenRiskAlerts(); }}
-                      className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-rose-700 bg-rose-50/50 flex items-center space-x-2"
-                    >
-                      <AlertTriangle className="w-4 h-4 text-rose-600" />
-                      <span>Risk Alerts & AI Audits</span>
-                    </button>
-                  )}
-
-                  <button
-                    onClick={() => handleNavClick('heatmap')}
-                    className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center space-x-2 ${
-                      activePage === 'heatmap' ? 'bg-purple-50 text-purple-800' : 'text-slate-700 hover:bg-slate-50'
-                    }`}
-                  >
-                    <Map className="w-4 h-4 text-emerald-600" />
-                    <span>Needs Heatmap</span>
-                  </button>
-
-                  <button
-                    onClick={() => handleNavClick('network-graph')}
-                    className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center space-x-2 ${
-                      activePage === 'network-graph' ? 'bg-purple-50 text-purple-800' : 'text-slate-700 hover:bg-slate-50'
-                    }`}
-                  >
-                    <Share2 className="w-4 h-4 text-indigo-600" />
-                    <span>Network Graph</span>
-                  </button>
-
-                  <button
-                    onClick={() => handleNavClick('sdg')}
-                    className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center space-x-2 ${
-                      activePage === 'sdg' ? 'bg-purple-50 text-purple-800' : 'text-slate-700 hover:bg-slate-50'
-                    }`}
-                  >
-                    <span>SDG Analytics</span>
-                  </button>
-
-                  <button
-                    onClick={() => handleNavClick('explore')}
-                    className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center space-x-2 ${
-                      activePage === 'explore' ? 'bg-purple-50 text-purple-800' : 'text-slate-700 hover:bg-slate-50'
-                    }`}
-                  >
-                    <span>All Projects</span>
-                  </button>
-                </>
-              )}
-
-              {/* Public Mobile Links */}
-              {!currentUser && (
-                <>
-                  {[
-                    { id: 'explore', label: 'Explore Projects' },
-                    { id: 'heatmap', label: 'Community Needs Heatmap' },
-                    { id: 'stories', label: 'Impact Stories' },
-                    { id: 'network-graph', label: 'Collaboration Network Graph' },
-                    { id: 'about-us', label: 'About ImpactConnect' }
-                  ].map(item => (
-                    <button
-                      key={item.id}
-                      onClick={() => handleNavClick(item.id)}
-                      className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold ${
-                        activePage === item.id ? 'bg-emerald-50 text-[#16A36A]' : 'text-slate-700 hover:bg-slate-50'
-                      }`}
-                    >
-                      {item.label}
-                    </button>
-                  ))}
-                </>
-              )}
-
+          {/* Secondary Tools on Mobile */}
+          <div className="pt-2 border-t border-slate-100 space-y-1">
+            <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 px-1">
+              Platform Features
             </div>
+            
+            <button
+              onClick={() => handleNavClick('heatmap')}
+              className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-600 hover:bg-slate-50 flex items-center space-x-2"
+            >
+              <Map className="w-3.5 h-3.5 text-emerald-600" />
+              <span>Community Needs Heatmap</span>
+            </button>
 
-            {/* 1-Click Role Portals */}
-            <div className="space-y-1 pt-2 border-t border-slate-100">
-              <span className="text-[10px] uppercase font-bold tracking-wider text-slate-400 px-3">
-                Switch Role & Persona
-              </span>
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  if (onSwitchRole) onSwitchRole('ngo');
-                }}
-                className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center space-x-2 ${
-                  currentUser?.role === 'ngo' ? 'bg-emerald-100 text-emerald-900' : 'text-emerald-700 bg-emerald-50/50'
-                }`}
-              >
-                <Building2 className="w-4 h-4 text-emerald-600" />
-                <span>NGO Command Center UI</span>
-              </button>
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  if (onSwitchRole) onSwitchRole('corporate');
-                }}
-                className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center space-x-2 ${
-                  currentUser?.role === 'corporate' ? 'bg-sky-100 text-sky-900' : 'text-sky-700 bg-sky-50/50'
-                }`}
-              >
-                <Briefcase className="w-4 h-4 text-sky-600" />
-                <span>Corporate CSR Hub UI</span>
-              </button>
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  if (onSwitchRole) onSwitchRole('supporter');
-                }}
-                className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center space-x-2 ${
-                  currentUser?.role === 'supporter' ? 'bg-amber-100 text-amber-900' : 'text-amber-700 bg-amber-50/50'
-                }`}
-              >
-                <User className="w-4 h-4 text-amber-500" />
-                <span>Volunteer Workspace UI</span>
-              </button>
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  if (onSwitchRole) onSwitchRole('admin');
-                }}
-                className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center space-x-2 ${
-                  currentUser?.role === 'admin' ? 'bg-purple-100 text-purple-900' : 'text-purple-700 bg-purple-50/50'
-                }`}
-              >
-                <ShieldCheck className="w-4 h-4 text-purple-600" />
-                <span>Platform Admin Center UI</span>
-              </button>
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  if (onSwitchRole) onSwitchRole('public');
-                  else onLogout();
-                }}
-                className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center space-x-2 text-slate-600 hover:bg-slate-100"
-              >
-                <Eye className="w-4 h-4 text-slate-400" />
-                <span>Public Visitor View</span>
-              </button>
-            </div>
+            <button
+              onClick={() => handleNavClick('stories')}
+              className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-600 hover:bg-slate-50 flex items-center space-x-2"
+            >
+              <Camera className="w-3.5 h-3.5 text-purple-600" />
+              <span>Impact Stories</span>
+            </button>
 
-            {/* Auth Actions */}
-            <div className="pt-3 border-t border-slate-100">
-              {currentUser ? (
+            <button
+              onClick={() => handleNavClick('network-graph')}
+              className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-600 hover:bg-slate-50 flex items-center space-x-2"
+            >
+              <Share2 className="w-3.5 h-3.5 text-indigo-600" />
+              <span>Network Graph</span>
+            </button>
+
+            <button
+              onClick={() => handleNavClick('about-us')}
+              className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-600 hover:bg-slate-50"
+            >
+              About ImpactConnect
+            </button>
+          </div>
+
+          {/* User Sign In / Logout on Mobile */}
+          <div className="pt-3 border-t border-slate-100">
+            {currentUser ? (
+              <div className="space-y-2">
+                <div className="flex items-center space-x-2 px-1">
+                  <img
+                    src={currentUser.avatar || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&h=150&q=80'}
+                    alt={currentUser.name}
+                    className="w-8 h-8 rounded-xl object-cover"
+                  />
+                  <div>
+                    <div className="text-xs font-bold text-slate-900">{currentUser.name}</div>
+                    <div className="text-[10px] text-slate-500">{currentUser.email}</div>
+                  </div>
+                </div>
+
                 <button
                   onClick={() => {
                     setMobileMenuOpen(false);
                     onLogout();
                   }}
-                  className="w-full text-left px-3 py-2 text-rose-600 font-bold text-xs flex items-center space-x-2"
+                  className="w-full py-2 px-3 rounded-xl bg-rose-50 text-rose-600 text-xs font-bold flex items-center justify-center space-x-1.5"
                 >
-                  <LogOut className="w-4 h-4" />
+                  <LogOut className="w-3.5 h-3.5" />
                   <span>Sign Out</span>
                 </button>
-              ) : (
-                <div className="flex gap-2">
-                  <button
-                    onClick={() => {
-                      setMobileMenuOpen(false);
-                      onOpenAuth('login');
-                    }}
-                    className="flex-1 py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-800"
-                  >
-                    Log In
-                  </button>
-                  <button
-                    onClick={() => {
-                      setMobileMenuOpen(false);
-                      onOpenAuth('register');
-                    }}
-                    className="flex-1 py-2 rounded-xl btn-primary text-xs font-bold text-center"
-                  >
-                    Get Started
-                  </button>
-                </div>
-              )}
-            </div>
-
+              </div>
+            ) : (
+              <div className="grid grid-cols-2 gap-2">
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    onOpenAuth('login', 'supporter');
+                  }}
+                  className="w-full py-2.5 rounded-xl border border-slate-300 text-xs font-bold text-slate-700 text-center"
+                >
+                  Sign In
+                </button>
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    onOpenAuth('register', 'ngo');
+                  }}
+                  className="w-full py-2.5 rounded-xl btn-primary text-xs font-bold text-center"
+                >
+                  Join Us
+                </button>
+              </div>
+            )}
           </div>
-        )}
 
-      </div>
+        </div>
+      )}
+
     </header>
   );
 }
